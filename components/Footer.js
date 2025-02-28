@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="container mx-auto flex justify-between">
         <div>
           <h5 className="font-bold">Enosh Infra</h5>
-          <p className="mt-2">1234 Street Name, City, State, 56789</p>
+          <p className="mt-2">201, AECS B BLOCK, Singasandra, Bengaluru</p>
           <p>Email: info@enoshinfra.com</p>
           <p>Phone: (+91) 8073582033</p>
         </div>
