@@ -1,12 +1,20 @@
 import Link from 'next/link';
 export default function HeroSection() {
   return (
-    <section className="relative h-screen bg-cover bg-center" style={{ backgroundImage: 'url(/path-to-your-image.jpg)' }}>
-      <div className="absolute inset-0 bg-black opacity-50"></div>
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-white text-center">
-        <h2 className="text-4xl font-bold">Discover Premium Properties in Whitefield</h2>
-        <p className="mt-4 text-lg">Find your dream home with Enosh Infra</p>
-        <a href="/properties" className="mt-6 px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-full">Explore Now</a>
+    <section className="relative bg-gray-900 text-white h-[80vh] flex items-center">
+      <div className="absolute inset-0 bg-black bg-opacity-60"></div> {/* Dark overlay for contrast */}
+      <div className="container mx-auto px-6 text-center relative z-10">
+        <h1 className="text-4xl md:text-5xl font-bold">
+          Premium Commercial Spaces in Bangalore
+        </h1>
+        <p className="mt-4 text-lg md:text-xl max-w-2xl mx-auto">
+          Enosh Infra is your trusted partner in securing high-quality commercial, industrial, and warehouse properties in Bangalore. Elevate your business with strategic locations and seamless transactions.
+        </p>
+        <div className="mt-6">
+          <Link href="/services" className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg shadow-lg transition duration-300">
+            Explore Our Listings
+          </Link>
+        </div>
       </div>
     </section>
   );

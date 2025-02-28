@@ -10,7 +10,7 @@ export default function PropertyList() {
             <div className="p-4">
               <h4 className="text-xl font-semibold">Property Name</h4>
               <p className="mt-2 text-gray-600">Brief description of the property highlighting key features.</p>
-              <a href="/property-details" className="mt-4 inline-block text-blue-600 hover:underline">View Details</a>
+              <Link href="/property-details" className="mt-4 inline-block text-blue-600 hover:underline">View Details</Link>
             </div>
           </div>
         </div>
