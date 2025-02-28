@@ -13,7 +13,7 @@ function MyApp({ Component, pageProps }) {
       <Navbar />
       
       {/* Add padding-bottom equal to footer height */}
-      <main className="flex-grow">
+      <main className="flex-grow mt-16">
         <Component {...pageProps} />
       </main>
 
