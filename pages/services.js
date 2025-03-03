@@ -21,21 +21,21 @@ export default function Services() {
         </ul>
 	  <ul className="mt-4 list-disc list-inside">
           <li>
-            <Link href="/services/techparks" className="text-blue-600 hover:underline">
+            <Link href="/services/tech-parks" className="text-blue-600 hover:underline">
               Tech Parks
             </Link>
           </li>
         </ul>
 	  <ul className="mt-4 list-disc list-inside">
           <li>
-            <Link href="/services/commercial" className="text-blue-600 hover:underline">
+            <Link href="/services/commercial-retail" className="text-blue-600 hover:underline">
               Commercial & Retail
             </Link>
           </li>
         </ul>
 	  <ul className="mt-4 list-disc list-inside">
           <li>
-            <Link href="/services/coworking" className="text-blue-600 hover:underline">
+            <Link href="/services/co-working" className="text-blue-600 hover:underline">
               Co-Working Spaces
             </Link>
           </li>

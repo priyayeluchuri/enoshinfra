@@ -66,13 +66,13 @@ export default function Navbar() {
                         <Link href="/services/warehouses" className="block px-4 py-2 hover:bg-blue-500 hover:text-white">Warehouses & Logistics</Link>
                       </li>
                       <li>
-                        <Link href="/services/techparks" className="block px-4 py-2 hover:bg-blue-500 hover:text-white">Tech Parks</Link>
+                        <Link href="/services/tech-parks" className="block px-4 py-2 hover:bg-blue-500 hover:text-white">Tech Parks</Link>
                       </li>
                       <li>
-                        <Link href="/services/commercial" className="block px-4 py-2 hover:bg-blue-500 hover:text-white">Commercial & Retail</Link>
+                        <Link href="/services/commercial-retail" className="block px-4 py-2 hover:bg-blue-500 hover:text-white">Commercial & Retail</Link>
                       </li>
                       <li>
-                        <Link href="/services/coworking" className="block px-4 py-2 hover:bg-blue-500 hover:text-white">Co-working Spaces</Link>
+                        <Link href="/services/co-working" className="block px-4 py-2 hover:bg-blue-500 hover:text-white">Co-working Spaces</Link>
                       </li>
                     </ul>
                   )}
