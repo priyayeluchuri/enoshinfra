@@ -1,32 +1,34 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
-import { Menu } from 'lucide-react';
+import { Menu, ChevronRight } from 'lucide-react';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
-  let menuTimeout;
-  let servicesTimeout;
+  const menuRef = useRef(null);
+  let menuTimeout, servicesTimeout;
 
   const closeMenuWithDelay = () => {
-    menuTimeout = setTimeout(() => {
-      setIsOpen(false);
-    }, 300); // Delay before hiding menu
+    menuTimeout = setTimeout(() => setIsOpen(false), 300);
   };
 
   const closeServicesWithDelay = () => {
-    servicesTimeout = setTimeout(() => {
-      setIsServicesOpen(false);
-    }, 300); // Delay before hiding services submenu
+    servicesTimeout = setTimeout(() => setIsServicesOpen(false), 300);
   };
 
-  const clearMenuTimeout = () => {
-    clearTimeout(menuTimeout);
-  };
+  const clearMenuTimeout = () => clearTimeout(menuTimeout);
+  const clearServicesTimeout = () => clearTimeout(servicesTimeout);
 
-  const clearServicesTimeout = () => {
-    clearTimeout(servicesTimeout);
-  };
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setIsOpen(false);
+        setIsServicesOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   return (
     <nav className="bg-gray-900 text-white p-4 fixed top-0 w-full z-50">
@@ -34,17 +36,23 @@ export default function Navbar() {
         <Link href="/" className="text-2xl font-bold text-blue-400">
           EnoshInfra
         </Link>
-        
-        <div className="relative" onMouseLeave={closeMenuWithDelay} onMouseEnter={clearMenuTimeout}>
+
+        {/* Mobile & Desktop Menu */}
+        <div
+          className="relative"
+          ref={menuRef}
+          onMouseLeave={closeMenuWithDelay}
+          onMouseEnter={clearMenuTimeout}
+        >
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="p-2 bg-gray-800 rounded-lg hover:bg-blue-500 transition"
           >
             <Menu size={24} />
           </button>
-          
+
           {isOpen && (
-            <div className="absolute right-0 mt-2 w-48 bg-gray-800 shadow-lg rounded-lg">
+            <div className="absolute right-0 mt-2 w-56 bg-gray-800 shadow-lg rounded-lg">
               <ul className="py-2">
                 <li>
                   <Link href="/" className="block px-4 py-2 hover:bg-blue-500 hover:text-white">Home</Link>
@@ -52,13 +60,13 @@ export default function Navbar() {
                 <li>
                   <Link href="/about" className="block px-4 py-2 hover:bg-blue-500 hover:text-white">About</Link>
                 </li>
-                <li 
+                <li
                   className="relative"
                   onMouseEnter={() => { clearServicesTimeout(); setIsServicesOpen(true); }}
                   onMouseLeave={closeServicesWithDelay}
                 >
-                  <button className="w-full text-left px-4 py-2 hover:bg-blue-500 hover:text-white">
-                    Services
+                  <button className="w-full text-left flex justify-between items-center px-4 py-2 hover:bg-blue-500 hover:text-white">
+                    Services <ChevronRight size={18} className={`transition-transform ${isServicesOpen ? 'rotate-90' : ''}`} />
                   </button>
                   {isServicesOpen && (
                     <ul className="absolute right-full top-0 bg-gray-700 rounded-md mt-0 mr-2 w-56 shadow-lg">

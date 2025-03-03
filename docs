@@ -1,0 +1,89 @@
+# Enosh Infra Website - Technical Documentation
+
+## Overview
+Enosh Infra is a real estate consultancy website designed to showcase services, properties, and company information while providing an intuitive user experience. The website is built using modern web technologies and hosted on Netlify, with domain management via GoDaddy and email services handled through Zoho Mail.
+
+---
+
+## **Technology Stack**
+### **Frontend**
+- **Framework**: Next.js (React-based framework for server-side rendering and static site generation)
+- **Styling**: Tailwind CSS
+- **Components**: ShadCN/UI, Lucide-react for icons
+- **Navigation**: Next.js `Link` for client-side navigation
+
+### **Backend & Hosting**
+- **Hosting Provider**: Netlify
+- **Build & Deployment**: Automated via Netlify
+- **APIs**: Currently, no backend API is implemented; all content is statically generated.
+
+### **Domain & Email**
+- **Domain Provider**: GoDaddy
+- **DNS Management**: GoDaddy, configured with Netlify’s load balancer
+- **Email Provider**: Zoho Mail (info@enoshinfra.com)
+- **Email Setup**: Integrated via Zoho’s IMAP and SMTP settings for external clients
+
+---
+
+## **Website Features**
+
+### **1. Navigation & Menu**
+- Responsive navigation bar with a dropdown menu for services
+- Mobile-friendly menu with toggled sidebar
+- Submenu expands to the left on mobile for better visibility
+
+### **2. Pages & Content**
+#### **Home Page**
+- Hero section with an introduction to Enosh Infra
+- Featured properties section
+- Quick access links to services and contact
+
+#### **About Page**
+- Detailed company background, services overview, and value proposition
+
+#### **Services Pages**
+Each service has a dedicated page with descriptions and key offerings:
+- **Warehouses and Logistics**
+- **Tech Parks**
+- **Commercial and Retail**
+- **Co-Working Spaces** (Includes plug-and-play office solutions)
+
+#### **Contact Page**
+- Display of email and phone number
+- Future enhancement: Contact form integration
+
+---
+
+## **Deployment & Configuration**
+
+### **Netlify Deployment**
+- GitHub repository is linked to Netlify for continuous deployment
+- Custom domain (enoshinfra.com) configured with Netlify DNS
+
+### **GoDaddy DNS Settings**
+- ALIAS/ANAME record: `apex-loadbalancer.netlify.com`
+- CNAME for `www.enoshinfra.com` pointing to `enoshinfra.netlify.app`
+
+### **Zoho Email Configuration**
+#### **IMAP Settings for Gmail or Email Clients**
+- **Incoming Mail Server**: `imap.zoho.com` (Port: 993, SSL enabled)
+- **Outgoing Mail Server**: `smtp.zoho.com` (Port: 465, SSL enabled)
+- **Authentication Required**: Yes (Username: info@enoshinfra.com)
+
+---
+
+## **Planned Enhancements**
+- Integration of a CMS (Content Management System) for dynamic content updates
+- Adding a property listing section with search and filtering
+- Contact form with backend email handling
+- SEO optimizations for better search visibility
+
+---
+
+### **Conclusion**
+This document provides an overview of the technical setup and features of the Enosh Infra website. Any changes to the hosting, tech stack, or services should be reflected here to ensure proper documentation and maintenance.
+
+---
+**Last Updated:** [Date]
+
+

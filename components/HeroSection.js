@@ -1,7 +1,7 @@
 import Link from 'next/link';
 export default function HeroSection() {
   return (
-    <section className="relative bg-gray-900 text-white h-[80vh] flex items-center" style={{ backgroundImage: "url('/hero-bg.jpg')" }}>
+    <section className="relative bg-gray-900 text-white relative bg-gray-900 text-white bg-cover bg-center h-screen flex items-center" style={{ backgroundImage: "url('/hero-bg.jpg')" }}>
       <div className="absolute inset-0 bg-black bg-opacity-60"></div> {/* Dark overlay for contrast */}
       <div className="container mx-auto px-6 text-center relative z-10">
         <h1 className="text-4xl md:text-5xl font-bold">
