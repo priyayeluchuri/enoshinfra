@@ -14,8 +14,29 @@ export default function Services() {
         <p className="mt-4">We offer various real estate solutions, including:</p>
         <ul className="mt-4 list-disc list-inside">
           <li>
-            <Link href="/services/warehouse-for-rent-bangalore" className="text-blue-600 hover:underline">
-              Warehouse for Rent
+            <Link href="/services/warehouses" className="text-blue-600 hover:underline">
+              Warehouses & Logistics
+            </Link>
+          </li>
+        </ul>
+	  <ul className="mt-4 list-disc list-inside">
+          <li>
+            <Link href="/services/techparks" className="text-blue-600 hover:underline">
+              Tech Parks
+            </Link>
+          </li>
+        </ul>
+	  <ul className="mt-4 list-disc list-inside">
+          <li>
+            <Link href="/services/commercial" className="text-blue-600 hover:underline">
+              Commercial & Retail
+            </Link>
+          </li>
+        </ul>
+	  <ul className="mt-4 list-disc list-inside">
+          <li>
+            <Link href="/services/coworking" className="text-blue-600 hover:underline">
+              Co-Working Spaces
             </Link>
           </li>
         </ul>
