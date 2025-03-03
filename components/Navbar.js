@@ -1,12 +1,22 @@
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
-import { Menu, ChevronRight } from 'lucide-react';
+import { Menu, ChevronRight, ChevronDown } from 'lucide-react';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const menuRef = useRef(null);
   let menuTimeout, servicesTimeout;
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768); // Mobile = width < 768px
+    };
+    handleResize(); // Initial check
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const closeMenuWithDelay = () => {
     menuTimeout = setTimeout(() => setIsOpen(false), 300);
@@ -34,7 +44,7 @@ export default function Navbar() {
     <nav className="bg-gray-900 text-white p-4 fixed top-0 w-full z-50">
       <div className="container mx-auto flex justify-between items-center">
         <Link href="/" className="text-2xl font-bold text-blue-400">
-          EnoshInfra
+          Enosh Infra
         </Link>
 
         {/* Mobile & Desktop Menu */}
@@ -66,10 +76,11 @@ export default function Navbar() {
                   onMouseLeave={closeServicesWithDelay}
                 >
                   <button className="w-full text-left flex justify-between items-center px-4 py-2 hover:bg-blue-500 hover:text-white">
-                    Services <ChevronRight size={18} className={`transition-transform ${isServicesOpen ? 'rotate-90' : ''}`} />
+                    Services {isMobile ? <ChevronDown size={18} /> : <ChevronRight size={18} className={`transition-transform ${isServicesOpen ? 'rotate-90' : ''}`} />}
                   </button>
+
                   {isServicesOpen && (
-                    <ul className="absolute right-full top-0 bg-gray-700 rounded-md mt-0 mr-2 w-56 shadow-lg">
+                    <ul className={`absolute ${isMobile ? 'relative mt-0 w-full' : 'right-full top-0 w-56 mr-2'} bg-gray-700 rounded-md shadow-lg`}>
                       <li>
                         <Link href="/services/warehouses" className="block px-4 py-2 hover:bg-blue-500 hover:text-white">Warehouses & Logistics</Link>
                       </li>
