@@ -1,5 +1,7 @@
 import Link from 'next/link';
-import { Facebook, Twitter, Instagram, Mail, Phone, MessageCircle } from 'lucide-react';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebook, faTwitter, faInstagram, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 
 export default function Footer() {
   return (
@@ -17,23 +19,23 @@ export default function Footer() {
         {/* Social Media Links */}
         <div className="flex space-x-4 mt-4 md:mt-0">
           <a href="https://www.facebook.com/enoshinfra" target="_blank" rel="noopener noreferrer">
-            <Facebook className="w-6 h-6 hover:text-blue-400" />
+            <FontAwesomeIcon icon={faFacebook} className="w-6 h-6 hover:text-blue-400" style={{ color: "#1877F2" }} />
           </a>
           <a href="https://www.twitter.com/enoshinfra" target="_blank" rel="noopener noreferrer">
-            <Twitter className="w-6 h-6 hover:text-blue-400" />
-          </a>
+           <FontAwesomeIcon icon={faTwitter} className="w-6 h-6 hover:text-blue-400" style={{ color: "#1DA1F2" }} />
+	  </a>
           <a href="https://www.instagram.com/enoshinfra" target="_blank" rel="noopener noreferrer">
-            <Instagram className="w-6 h-6 hover:text-blue-400" />
-          </a>
+           <FontAwesomeIcon icon={faInstagram} className="w-6 h-6 hover:text-pink-500" style={{ color: "#E1306C" }} />
+	  </a>
           <a href="mailto:info@enoshinfra.com">
-            <Mail className="w-6 h-6 hover:text-blue-400" />
-          </a>
+           <FontAwesomeIcon icon={faEnvelope} className="w-6 h-6 hover:text-gray-400" style={{ color: "#FFFFFF" }} />
+	  </a>
           <a href="tel:+918073582033">
-            <Phone className="w-6 h-6 hover:text-blue-400" />
-          </a>
+           <FontAwesomeIcon icon={faPhone} className="w-6 h-6 hover:text-gray-400" style={{ color: "#25D366" }} />
+	  </a>
           <a href="https://wa.me/918073582033" target="_blank" rel="noopener noreferrer">
-            <MessageCircle className="w-6 h-6 hover:text-green-400" />
-          </a>
+           <FontAwesomeIcon icon={faWhatsapp} className="w-6 h-6 hover:text-green-400" style={{ color: "#25D366" }} />
+	  </a>
         </div>
       </div>
 
