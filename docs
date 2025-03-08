@@ -83,6 +83,36 @@ Each service has a dedicated page with descriptions and key offerings:
 ### **Conclusion**
 This document provides an overview of the technical setup and features of the Enosh Infra website. Any changes to the hosting, tech stack, or services should be reflected here to ensure proper documentation and maintenance.
 
+
+### Footer change colors to native on socials
+npm install @fortawesome/react-fontawesome @fortawesome/free-brands-svg-icons @fortawesome/free-solid-svg-icons
+replace lucide-react with fontswesome
+
+### contact page
+1) Create contact form in pages/contact.js
+   Takes the user input calls api
+2) Create contact api in pages/api/contact.js
+   Takes form and updates google sheets. Send out E mail to enoshinfra and customer.
+Setup:
+  npm install googleapis dotenv nodemailer
+  Set Up Google Sheets API
+Google sheets:
+    Go to Google Cloud Console:
+    Google Cloud Console
+    Create a new project.
+    Enable Google Sheets API.
+    Create a Service Account & Download JSON key file.
+    Share Google Sheet with the Service Account email(enoshinfra@onyx-glazing-453013-h0.iam.gserviceaccount.com).
+    google drive - login as enoshinfra@gmail.com and create a new google sheet
+    Copy Sheet ID from URL and store in .env.local.
+EMail:
+Go to Google Account Security:
+Google Security
+Create an App Password.
+Store credentials in .env.local
+
+
+
 ---
 **Last Updated:** [Date]
 
