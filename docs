@@ -116,4 +116,16 @@ https://console.cloud.google.com/iam-admin/serviceaccounts/details/1103214738687
 ---
 **Last Updated:** [Date]
 
+SEO:
+===
+
+create common component/seo.js and use that instead of head in all pages
+npm install next-sitemap
+create next-sitemap.config.js
+modify package.json to add "postbuild as next-sitemap"
+npm run build and npm run dev to verify.
+we have pages in public/sitemap.xml sitemap-0.xml and robots.txt
+now login as enoshinfra to google search console page ->  add property -> choose domain: add domain and choose custom intsead of godaddy(if u let google do it , it would wipe out zoho and other existing dns settings). copy the google-site-verification=xxxx. 
+ login to godaddy -> manage dns - add TXT record.
+ go back to google console and hit verify domain -> once its success -> on the menu choose sitemap -> add and paste the url "https://enoshinfra.com/sitemap.xml.
 
