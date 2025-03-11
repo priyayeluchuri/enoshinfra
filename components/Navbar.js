@@ -52,8 +52,8 @@ export default function Navbar() {
   return (
     <nav className="bg-gray-900 text-white p-4 fixed top-0 w-full z-50">
       <div className="container mx-auto flex justify-between items-center">
-        <Link href="/" className="text-2xl font-bold text-blue-400">
-          Enosh Infra
+        <Link href="/">
+	  <img src="/fullfav.png" alt="Enosh Infra Logo" className="h-20 w-auto mr-4" />
         </Link>
 
         {/* Mobile & Desktop Menu */}
