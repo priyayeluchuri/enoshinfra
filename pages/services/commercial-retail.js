@@ -1,12 +1,14 @@
-import Head from 'next/head';
+import SEO from '../../components/seo';
 
 export default function CommercialRetail() {
   return (
     <>
-      <Head>
-        <title>Commercial & Retail Spaces - EnoshInfra</title>
-        <meta name="description" content="Explore premium commercial and retail spaces with EnoshInfra, your trusted real estate consultancy in Bengaluru." />
-      </Head>
+      <SEO
+        title="Commercial & Retail Spaces - EnoshInfra"
+        description="Explore premium commercial and retail spaces with EnoshInfra, your trusted real estate consultancy in Bengaluru." 
+        url="https://www.enoshinfra.com/services/commercial-retail"
+        image="https://www.enoshinfra.com/hero-bg.jpg"
+      />
       <section className="container mx-auto py-12 px-6 text-white bg-gray-900">
         <h1 className="text-5xl font-extrabold text-center mb-8">Commercial & Retail Spaces</h1>
         <p className="text-lg leading-relaxed mb-6">

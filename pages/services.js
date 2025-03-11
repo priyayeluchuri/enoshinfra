@@ -1,14 +1,16 @@
 // pages/services.js
-import Head from 'next/head';
+import SEO from '../components/seo';
 import Link from 'next/link';
 
 export default function Services() {
   return (
     <>
-      <Head>
-        <title>Our Services - Enosh Infra</title>
-        <meta name="description" content="Discover our range of real estate consultancy services." />
-      </Head>
+      <SEO
+        title="Our Services - Enosh Infra"
+        description="Discover our range of real estate consultancy services."
+	url="https://www.enoshinfra.com/services"
+        image="https://www.enoshinfra.com/hero-bg.jpg"
+      />
       <main className="p-8">
         <h1 className="text-3xl font-bold">Our Services</h1>
         <p className="mt-4">We offer various real estate solutions, including:</p>

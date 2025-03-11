@@ -1,15 +1,17 @@
 import '../styles/globals.css';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import Head from 'next/head';
+import SEO from '../components/seo';
 
 function MyApp({ Component, pageProps }) {
   return (
     <div className="flex flex-col min-h-screen">
-      <Head>
-        <title>Enosh Infra - Real Estate Consultancy</title>
-        <meta name="description" content="Your trusted real estate consultancy for industrial, commercial, and residential properties." />
-      </Head>
+      <SEO 
+        title="Enosh Infra - Real Estate Consultancy" 
+        description="Your trusted real estate consultancy for industrial, commercial, and residential properties." 
+        url="https://www.enoshinfra.com"
+        image="https://www.enoshinfra.com/default-og-image.jpg" 
+      />
       <Navbar />
       
       {/* Add padding-bottom equal to footer height */}

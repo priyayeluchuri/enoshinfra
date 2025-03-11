@@ -1,12 +1,15 @@
-import Head from 'next/head';
+import SEO from '../components/seo';
 
 export default function About() {
   return (
     <>
-      <Head>
-        <title>About Us - Enosh Infra</title>
-        <meta name="description" content="Learn more about Enosh Infra, a trusted real estate consultancy firm." />
-      </Head>
+      <SEO
+        title="About Us - Enosh Infra"
+        description="Learn more about Enosh Infra, a trusted real estate consultancy firm."
+	url="https://www.enoshinfra.com/about"
+        image="https://www.enoshinfra.com/hero-bg.jpg"
+      />
+
       <main className="w-full min-h-screen p-6 pt-12 text-white bg-gray-900">
         <section className="container mx-auto">
           <h1 className="text-4xl font-extrabold text-center mb-4">About Us</h1>

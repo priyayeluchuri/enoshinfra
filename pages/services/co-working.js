@@ -1,12 +1,14 @@
-import Head from 'next/head';
+import SEO from '../../components/seo';
 
 export default function CoWorkingSpaces() {
   return (
     <>
-      <Head>
-        <title>Co-Working Spaces - EnoshInfra</title>
-        <meta name="description" content="Discover premium co-working spaces with plug-and-play facilities tailored for startups, freelancers, and enterprises." />
-      </Head>
+      <SEO
+        title="Co-Working Spaces - EnoshInfra"
+        description="Discover premium co-working spaces with plug-and-play facilities tailored for startups, freelancers, and enterprises."
+        url="https://www.enoshinfra.com/services/co-working"
+        image="https://www.enoshinfra.com/hero-bg.jpg"
+      />
       <section className="container mx-auto py-12 px-6 text-white bg-gray-900">
         <h1 className="text-5xl font-extrabold text-center mb-8">Co-Working Spaces</h1>
         <p className="text-lg leading-relaxed mb-6">

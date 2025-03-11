@@ -1,13 +1,15 @@
 // pages/services/tech-parks.js
-import Head from 'next/head';
+import SEO from '../../components/seo';
 
 export default function TechParks() {
   return (
     <>
-      <Head>
-        <title>Tech Parks - EnoshInfra</title>
-        <meta name="description" content="Discover top-tier tech parks and IT office spaces in Bengaluru with EnoshInfra." />
-      </Head>
+      <SEO
+        title="Tech Parks - EnoshInfra"
+        description="Discover top-tier tech parks and IT office spaces in Bengaluru with EnoshInfra."
+	url="https://www.enoshinfra.com/services/tech-parks"
+        image="https://www.enoshinfra.com/hero-bg.jpg"
+      />
       <section className="container mx-auto py-12 px-6 text-white bg-gray-900">
         <h1 className="text-5xl font-extrabold text-center mb-8">Tech Parks</h1>
         <p className="text-lg leading-relaxed mb-6">

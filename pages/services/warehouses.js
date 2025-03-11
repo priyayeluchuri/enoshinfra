@@ -1,12 +1,14 @@
-import Head from 'next/head';
+import SEO from '../../components/seo';
 
 export default function Warehouses() {
   return (
     <>
-      <Head>
-        <title>Warehouses & Logistics - EnoshInfra</title>
-        <meta name="description" content="Find premium warehouse and logistics spaces in Bengaluru with EnoshInfra." />
-      </Head>
+      <SEO
+        title="Warehouses & Logistics - EnoshInfra"
+        description="Find premium warehouse and logistics spaces in Bengaluru with EnoshInfra."
+        url="https://www.enoshinfra.com/services/warehouses"
+        image="https://www.enoshinfra.com/hero-bg.jpg"
+      />
       <section className="container mx-auto py-12 px-6 text-white bg-gray-900">
         <h1 className="text-5xl font-extrabold text-center mb-8">Warehouses & Logistics</h1>
         <p className="text-lg leading-relaxed mb-6">
