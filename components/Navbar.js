@@ -53,7 +53,7 @@ export default function Navbar() {
     <nav className="bg-gray-900 text-white p-4 fixed top-0 w-full z-50">
       <div className="container mx-auto flex justify-between items-center">
         <Link href="/">
-	  <img src="/fullfav.png" alt="Enosh Infra Logo" className="h-20 w-auto mr-4" />
+	  <img src="/fullfav.png" alt="Enosh Infra Logo" className="h-14 w-auto mr-4" />
         </Link>
 
         {/* Mobile & Desktop Menu */}
@@ -109,6 +109,9 @@ export default function Navbar() {
                 </li>
                 <li>
                   <Link href="/contact" className="block px-4 py-2 hover:bg-blue-500 hover:text-white">Contact</Link>
+                </li>
+		<li>
+                  <Link href="/partners" className="block px-4 py-2 hover:bg-blue-500 hover:text-white">Partners & Resources</Link>
                 </li>
               </ul>
             </div>

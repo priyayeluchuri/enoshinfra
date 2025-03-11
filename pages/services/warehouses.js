@@ -1,4 +1,5 @@
 import SEO from '../../components/seo';
+import Link from 'next/link';
 
 export default function Warehouses() {
   return (
@@ -25,6 +26,9 @@ export default function Warehouses() {
         <p className="text-xl font-semibold text-center text-blue-400 mt-10">
           Ideal for: E-commerce, distribution hubs, manufacturing, and storage facilities.
         </p>
+	  <Link href="/services/trending-warehouse" className="block text-blue-400 underline text-xl text-center mt-4 mx-auto">
+          Explore Most Trending Locations
+        </Link>
       </section>
     </>
   );

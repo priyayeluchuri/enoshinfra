@@ -10,7 +10,7 @@ export default function About() {
         image="https://www.enoshinfra.com/hero-bg.jpg"
       />
 
-      <main className="w-full min-h-screen p-6 pt-12 text-white bg-gray-900">
+      <main className="w-full h-[85vh] p-6 pt-12 text-white bg-gray-900">
         <section className="container mx-auto">
           <h1 className="text-4xl font-extrabold text-center mb-4">About Us</h1>
 
