@@ -1,10 +1,26 @@
 import nodemailer from 'nodemailer';
 import { google } from 'googleapis';
+import fetch from 'node-fetch';
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).send('Method Not Allowed');
 
   const { name, service, requirement, email, phone } = req.body;
+
+   // Get the user's timezone and current timestamp in IST
+  const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  const istTimestamp = new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata' });
+
+  // Get user's IP and fetch location info
+  const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+  let userCountry = 'Unknown';
+    try {
+    const geoRes = await fetch(`https://ipapi.co/${ip}/json/`);
+    const geoData = await geoRes.json();
+    userCountry = geoData.country_name || 'Unknown';
+  } catch (error) {
+    console.error('Error fetching user location:', error);
+  }
 
   try {
     const transporter = nodemailer.createTransport({
@@ -24,7 +40,14 @@ export default async function handler(req, res) {
       from: process.env.EMAIL_USER,
       to: 'info@enoshinfra.com',
       subject: 'New Contact Form Submission',
-      text: `Name: ${name}\nService: ${service}\nRequirement: ${requirement}\nEmail: ${email}\nPhone: ${phone}`,
+      text: `Name: ${name}
+Service: ${service}
+Requirement: ${requirement}
+Email: ${email}
+Phone: ${phone}
+User Timezone: ${userTimezone}
+Timestamp (IST): ${istTimestamp}
+Country: ${userCountry}`,
     });
 
     await transporter.sendMail({
@@ -50,7 +73,7 @@ export default async function handler(req, res) {
       valueInputOption: 'RAW',
       insertDataOption: 'INSERT_ROWS',
       requestBody: {
-        values: [[name, service, requirement, email, phone]],
+        values: [[name, service, requirement, email, phone, userTimezone, istTimestamp, userCountry]],
       },
     });
 
