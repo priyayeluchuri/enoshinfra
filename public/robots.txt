@@ -1,0 +1,13 @@
+# *
+User-agent: *
+Allow: /
+
+# *
+User-agent: *
+Disallow: /api/
+
+# Host
+Host: https://www.enoshinfra.com
+
+# Sitemaps
+Sitemap: https://www.enoshinfra.com/sitemap.xml

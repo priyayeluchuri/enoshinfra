@@ -25,6 +25,55 @@ const SEO = ({
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={image} />
+    
+    {/* Canonical URL */}
+      <link rel="canonical" href={url} />
+
+      {/* Schema Markup */}
+      <script type="application/ld+json">
+        {`
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Enosh Infra",
+            "url": "https://enoshinfra.com",
+            "logo": "https://enoshinfra.com/logo.png",
+            "contactPoint": [{
+              "@type": "ContactPoint",
+              "telephone": "+918073582033",
+              "contactType": "Customer Service"
+            }],
+            "sameAs": [
+              "https://www.facebook.com/enoshinfra",
+              "https://www.instagram.com/enoshinfra",
+              "https://wa.me/918073582033"
+            ],
+            "description": "Enosh Infra is a leading real estate consultancy in Bengaluru, India, specializing in commercial, industrial, and residential property solutions."
+	  }
+        `}
+      </script>
+
+      <script type="application/ld+json">
+        {`
+          {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Enosh Infra",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "#193, The Lakeview Address, E-City",
+              "addressLocality": "Bengaluru",
+              "addressRegion": "KA",
+              "postalCode": "560001",
+              "addressCountry": "IN"
+            },
+            "telephone": "+918073582033",
+            "openingHours": "Mo-Fr 09:00-18:00",
+            "url": "https://enoshinfra.com",
+	    "description": "Trusted property consultants in Bengaluru, offering tailored solutions for industrial, commercial, and residential spaces."
+          }
+        `}
+      </script>
   </Head>
 );
 

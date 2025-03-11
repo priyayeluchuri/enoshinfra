@@ -1,13 +1,12 @@
-// pages/services/tech-parks.js
 import SEO from '../../components/seo';
 
 export default function TechParks() {
   return (
     <>
       <SEO
-        title="Tech Parks - EnoshInfra"
-        description="Discover top-tier tech parks and IT office spaces in Bengaluru with EnoshInfra."
-	url="https://www.enoshinfra.com/services/tech-parks"
+        title="Tech Parks - Enosh Infra"
+        description="Discover top-tier tech parks and IT office spaces in Bengaluru with Enosh Infra."
+        url="https://www.enoshinfra.com/services/tech-parks"
         image="https://www.enoshinfra.com/hero-bg.jpg"
       />
       <section className="container mx-auto py-12 px-6 text-white bg-gray-900">
@@ -22,7 +21,9 @@ export default function TechParks() {
           <li>Fully serviced office spaces for IT and software firms</li>
           <li>Sustainable, energy-efficient office environments</li>
         </ul>
-        <p className="text-xl font-semibold text-center text-blue-400 mt-10">Ideal for: IT companies, startups, software firms, and global enterprises.</p>
+        <p className="text-xl font-semibold text-center text-blue-400 mt-10">
+          Ideal for: IT companies, startups, software firms, and global enterprises.
+        </p>
       </section>
     </>
   );

@@ -1,11 +1,13 @@
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { Menu, ChevronRight, ChevronDown } from 'lucide-react';
+import { useRouter } from 'next/router';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const router = useRouter();
   const menuRef = useRef(null);
   let menuTimeout, servicesTimeout;
 
@@ -25,7 +27,7 @@ export default function Navbar() {
   const closeServicesWithDelay = () => {
     servicesTimeout = setTimeout(() => setIsServicesOpen(false), 300);
   };
-
+  
   const clearMenuTimeout = () => clearTimeout(menuTimeout);
   const clearServicesTimeout = () => clearTimeout(servicesTimeout);
 
@@ -39,6 +41,13 @@ export default function Navbar() {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+
+  const handleServicesClick = () => {
+    setIsServicesOpen(true);
+    setTimeout(() => {
+      router.push('/services');
+    }, 200);
+  };
 
   return (
     <nav className="bg-gray-900 text-white p-4 fixed top-0 w-full z-50">
@@ -75,7 +84,9 @@ export default function Navbar() {
                   onMouseEnter={() => { clearServicesTimeout(); setIsServicesOpen(true); }}
                   onMouseLeave={closeServicesWithDelay}
                 >
-                  <button className="w-full text-left flex justify-between items-center px-4 py-2 hover:bg-blue-500 hover:text-white">
+                  <button 
+		   onClick={handleServicesClick}
+		   className="w-full text-left flex justify-between items-center px-4 py-2 hover:bg-blue-500 hover:text-white">
                     Services {isMobile ? <ChevronDown size={18} /> : <ChevronRight size={18} className={`transition-transform ${isServicesOpen ? 'rotate-90' : ''}`} />}
                   </button>
 
