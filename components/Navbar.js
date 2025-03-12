@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { Menu, ChevronRight, ChevronDown } from 'lucide-react';
 import { useRouter } from 'next/router';
+import Image from 'next/image';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -53,9 +54,21 @@ export default function Navbar() {
     <nav className="bg-gray-900 text-white p-4 fixed top-0 w-full z-50">
       <div className="container mx-auto flex justify-between items-center">
         <Link href="/">
-	  <img src="/fullfav.png" alt="Enosh Infra Logo" className="h-14 w-auto mr-4" />
-        </Link>
-
+        <Image
+        src="/fullfav.png"
+        alt="Enosh Infra Logo"
+        width={112} // 14 (h-14) x 8 for scaling proportionally
+        height={56} 
+        priority // Ensures the logo loads quickly for better LCP
+        sizes="(max-width: 768px) 56px, 112px" // Optimizes size for responsiveness
+        />
+	</Link>
+	  {/* CTA Text - Adapts to Mobile and Desktop */}
+        <div className="text-sm text-blue-400">
+          <Link href="/contact" className="hover:underline">
+            Need a space or looking for tenants? Let's Talk!
+          </Link>
+        </div>
         {/* Mobile & Desktop Menu */}
         <div
           className="relative"

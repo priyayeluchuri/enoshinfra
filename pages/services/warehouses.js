@@ -5,8 +5,8 @@ export default function Warehouses() {
   return (
     <>
       <SEO
-        title="Warehouses & Logistics - Enosh Infra"
-        description="Find premium warehouse and logistics spaces in Bengaluru with Enosh Infra."
+	title="Warehouse & Logistics Spaces for Rent in Bengaluru - Enosh Infra"
+  description="Discover premium warehouse and logistics spaces for rent in Bengaluru, including prime locations like Nelamangala, Peenya, Bommasandra, Jigani, Hoskote, Kumbalgodu, Doddaballapura, Hebbal, Whitefield, HSR and KIADB industrial areas. Enosh Infra connects property owners with businesses seeking top industrial spaces."
         url="https://www.enoshinfra.com/services/warehouses"
         image="https://www.enoshinfra.com/hero-bg.jpg"
       />
