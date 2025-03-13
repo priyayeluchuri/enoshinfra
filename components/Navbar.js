@@ -124,7 +124,7 @@ export default function Navbar() {
                   <Link href="/contact" className="block px-4 py-2 hover:bg-blue-500 hover:text-white">Contact</Link>
                 </li>
 		<li>
-                  <Link href="/partners" className="block px-4 py-2 hover:bg-blue-500 hover:text-white">Partners & Resources</Link>
+                  <Link href="/blogs-partners" className="block px-4 py-2 hover:bg-blue-500 hover:text-white">Blogs & Partners</Link>
                 </li>
               </ul>
             </div>
