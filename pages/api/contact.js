@@ -4,20 +4,31 @@ import fetch from 'node-fetch';
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).send('Method Not Allowed');
-
-  const { name, service, preferredLocation, requirement, email, phone, company } = req.body;
-
+  
+  const { name, service, preferredLocation = [], requirement, email, phone, company = "" } = req.body;
+   // Convert preferredLocation to a string
+  const preferredLocationString = Array.isArray(preferredLocation)
+    ? preferredLocation.join(", ")
+    : preferredLocation;
+  if (!name || !service || !preferredLocation || !requirement || !email || !phone) {
+    return res.status(400).json({ message: "All fields except 'company' are required." });
+  }
    // Get the user's timezone and current timestamp in IST
   const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
   const istTimestamp = new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata' });
 
-  // Get user's IP and fetch location info
-  const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+    // Correctly retrieve the user's IP address
+  const forwarded = req.headers['x-forwarded-for'];
+  const ip = forwarded ? forwarded.split(',')[0] : req.socket.remoteAddress;
+
   let userCountry = 'Unknown';
-    try {
+  let userCity = 'Unknown'; 
+  console.log('IP is:', ip, req.socket.remoteAddress);
+  try {
     const geoRes = await fetch(`https://ipapi.co/${ip}/json/`);
     const geoData = await geoRes.json();
-    userCountry = geoData.country_name || 'Unknown';
+    userCountry = geoData?.country_name || 'Unknown';
+    userCity = geoData?.city || 'Unknown';
   } catch (error) {
     console.error('Error fetching user location:', error);
   }
@@ -49,6 +60,7 @@ Phone: ${phone}
 Company: ${company}
 User Timezone: ${userTimezone}
 Timestamp (IST): ${istTimestamp}
+City: ${userCity}
 Country: ${userCountry}`,
     });
 
@@ -66,16 +78,30 @@ Country: ${userCountry}`,
       },
       scopes: ['https://www.googleapis.com/auth/spreadsheets'],
     });
-
+  
     const sheets = google.sheets({ version: 'v4', auth });
 
     await sheets.spreadsheets.values.append({
       spreadsheetId: process.env.GOOGLE_SHEET_ID,
-      range: 'Sheet1!A:E',
+      range: 'Sheet1!A:G',
       valueInputOption: 'RAW',
       insertDataOption: 'INSERT_ROWS',
       requestBody: {
-        values: [[name, service, preferredLocation, requirement, email, phone, company, userTimezone, istTimestamp, userCountry]],
+        values: [
+	  [
+            name,
+            service,
+            preferredLocationString || "Not specified",
+            requirement,
+            email,
+            phone,
+            company || "Not provided",
+	    userTimezone,
+	    istTimestamp,
+	    userCity,
+	    userCountry,
+          ],
+	],
       },
     });
 

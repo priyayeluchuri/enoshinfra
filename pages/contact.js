@@ -47,13 +47,24 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setMessage("");
-
+    setMessage("Submitting..");
+    // Prepare minimal data
+    const { name, service, preferredLocation, requirement, email, phone, company } = formData;
+    const payload = {
+    name,
+    service,
+    preferredLocation,
+    requirement,
+    email,
+    phone,
+    ...(company && { company }), // Only include company if it has value
+    };
+    setMessage("Your request is being processed..")
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(payload),
       });
 
       if (response.ok) {
