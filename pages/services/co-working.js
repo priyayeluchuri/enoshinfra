@@ -7,7 +7,7 @@ export default function CoWorkingSpaces() {
         title="Co-Working Spaces - Enosh Infra"
         description="Discover premium co-working spaces with plug-and-play facilities tailored for startups, freelancers, and enterprises."
         url="https://www.enoshinfra.com/services/co-working"
-        image="https://www.enoshinfra.com/hero-bg.jpg"
+        //image="https://www.enoshinfra.com/hero-bg.jpg"
       />
       <section className="container mx-auto py-12 px-6 text-white bg-gray-900">
         <h1 className="text-5xl font-extrabold text-center mb-8">Co-Working Spaces</h1>

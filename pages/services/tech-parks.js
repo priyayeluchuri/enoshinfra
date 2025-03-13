@@ -7,7 +7,7 @@ export default function TechParks() {
         title="Tech Parks - Enosh Infra"
         description="Discover top-tier tech parks and IT office spaces in Bengaluru with Enosh Infra."
         url="https://www.enoshinfra.com/services/tech-parks"
-        image="https://www.enoshinfra.com/hero-bg.jpg"
+        //image="https://www.enoshinfra.com/hero-bg.jpg"
       />
       <section className="container mx-auto py-12 px-6 text-white bg-gray-900">
         <h1 className="text-5xl font-extrabold text-center mb-8">Tech Parks</h1>

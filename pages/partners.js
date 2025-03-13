@@ -8,7 +8,6 @@ export default function PartnersResources() {
         title="Partners & Resources - Enosh Infra"
         description="Explore partnerships and valuable resources in the commercial real estate sector with Enosh Infra."
         url="https://enoshinfra.com/partners-resources"
-        image="https://enoshinfra.com/hero-bg.jpg"
       />
       <section className="w-full h-[85vh] p-6 pt-12 text-white bg-gray-900">
         <div className="container mx-auto px-6 text-center">

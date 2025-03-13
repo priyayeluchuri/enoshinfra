@@ -7,7 +7,7 @@ export default function About() {
         title="About Us - Enosh Infra"
         description="Discover Enosh Infra, a premier real estate consultancy firm dedicated to providing tailored commercial property solutions in India."
         url="https://www.enoshinfra.com/about"
-        image="https://www.enoshinfra.com/hero-bg.jpg"
+        //image="https://www.enoshinfra.com/hero-bg.jpg"
       />
 
       <main className="w-full h-[85vh] p-6 pt-12 text-white bg-gray-900">

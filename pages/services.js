@@ -8,7 +8,7 @@ export default function Services() {
         title="Our Services - Enosh Infra"
         description="Explore the comprehensive range of real estate consultancy services offered by Enosh Infra, specializing in premium commercial properties."
         url="https://www.enoshinfra.com/services"
-        image="https://www.enoshinfra.com/hero-bg.jpg"
+        //image="https://www.enoshinfra.com/hero-bg.jpg"
       />
 
       <main className="w-full min-h-screen p-6 pt-12 text-white bg-gray-900">

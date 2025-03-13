@@ -7,7 +7,7 @@ export default function CommercialRetail() {
         title="Commercial & Retail Spaces - Enosh Infra"
         description="Explore premium commercial and retail spaces with Enosh Infra, your trusted real estate consultancy in Bengaluru." 
         url="https://www.enoshinfra.com/services/commercial-retail"
-        image="https://www.enoshinfra.com/hero-bg.jpg"
+        //image="https://www.enoshinfra.com/hero-bg.jpg"
       />
       <section className="container mx-auto py-12 px-6 text-white bg-gray-900">
         <h1 className="text-5xl font-extrabold text-center mb-8">Commercial & Retail Spaces</h1>

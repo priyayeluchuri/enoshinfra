@@ -5,7 +5,7 @@ import fetch from 'node-fetch';
 export default async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).send('Method Not Allowed');
 
-  const { name, service, requirement, email, phone } = req.body;
+  const { name, service, preferredLocation, requirement, email, phone, company } = req.body;
 
    // Get the user's timezone and current timestamp in IST
   const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
@@ -42,9 +42,11 @@ export default async function handler(req, res) {
       subject: 'New Contact Form Submission',
       text: `Name: ${name}
 Service: ${service}
+Preferred Location: ${preferredLocation}
 Requirement: ${requirement}
 Email: ${email}
 Phone: ${phone}
+Company: ${company}
 User Timezone: ${userTimezone}
 Timestamp (IST): ${istTimestamp}
 Country: ${userCountry}`,
@@ -73,7 +75,7 @@ Country: ${userCountry}`,
       valueInputOption: 'RAW',
       insertDataOption: 'INSERT_ROWS',
       requestBody: {
-        values: [[name, service, requirement, email, phone, userTimezone, istTimestamp, userCountry]],
+        values: [[name, service, preferredLocation, requirement, email, phone, company, userTimezone, istTimestamp, userCountry]],
       },
     });
 

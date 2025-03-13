@@ -4,9 +4,11 @@ export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     service: "",
+    preferredLocation: [],
     requirement: "",
     email: "",
     phone: "",
+    company: ""
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -19,8 +21,27 @@ export default function Contact() {
     "Co-working Spaces",
   ];
 
+  const locations = [
+    "Bommasandra",
+    "Nelamangala",
+    "Peenya",
+    "Jigani",
+    "Hoskote",
+    "Kumbalgodu",
+    "Doddaballapura",
+    "Hebbal",
+    "Whitefield",
+    "Flexible"
+  ];
+
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value, multiple, options } = e.target;
+    if (multiple) {
+      const selectedOptions = Array.from(options).filter(option => option.selected).map(option => option.value);
+      setFormData({ ...formData, [name]: selectedOptions });
+    } else {
+      setFormData({ ...formData, [name]: value });
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -37,7 +58,7 @@ export default function Contact() {
 
       if (response.ok) {
         setMessage("Your request has been submitted successfully!");
-        setFormData({ name: "", service: "", requirement: "", email: "", phone: "" });
+        setFormData({ name: "", service: "", preferredLocation: [], requirement: "", email: "", phone: "", company: "" });
       } else {
         setMessage("Something went wrong. Please try again.");
       }
@@ -51,32 +72,30 @@ export default function Contact() {
   return (
     <div className="min-h-[80vh] bg-gray-900 flex items-center justify-center p-6">
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0 md:space-x-6">
-        
-        {/* Left Section - Description */}
-<div className="max-w-md text-white md:w-1/2 text-center md:text-left">
-  <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">
-    Perfect Space. <br className="hidden md:block" />
-    Perfect Location. <br className="hidden md:block" />
-    Perfect Timing.
-  </h2>
-  <p className="text-gray-400 mt-4">
-    Our AI-driven system will match your requirements with the best possible options, and we'll get back to you soon!
-  </p>
 
-  <p className="text-gray-400">
-    Please provide your detailed requirements including:
-  </p>
-  <ul className="list-disc list-inside text-gray-300 mt-2 space-y-1">
-    <li>Preferred Location</li>
-    <li>City</li>
-    <li>Property Size</li>
-    <li>Specific Needs</li>
-  </ul>
-  <p className="text-gray-400 mt-4">
-    Thank You!
-  </p>
-</div>
-        {/* Right Section - Contact Form */}
+        <div className="max-w-md text-white md:w-1/2 text-center md:text-left">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">
+            Perfect Space. <br className="hidden md:block" />
+            Perfect Location. <br className="hidden md:block" />
+            Perfect Timing.
+          </h2>
+          <p className="text-gray-400 mt-4">
+            Our AI-driven system will match your requirements with the best possible options, and we'll get back to you soon!
+          </p>
+          <p className="text-gray-400">
+            Please provide your detailed requirements including:
+          </p>
+          <ul className="list-disc list-inside text-gray-300 mt-2 space-y-1">
+            <li>Preferred Location</li>
+            <li>City</li>
+            <li>Property Size</li>
+            <li>Specific Needs</li>
+          </ul>
+          <p className="text-gray-400 mt-4">
+            Thank You!
+          </p>
+        </div>
+
         <div className="bg-gray-800 shadow-lg rounded-lg p-6 w-full md:w-1/3">
           <h2 className="text-lg font-bold mb-4 text-center text-white">Contact Us</h2>
 
@@ -89,7 +108,7 @@ export default function Contact() {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full p-2 border rounded-lg mt-1 bg-gray-700 text-white border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full p-2 border rounded-md mt-1 bg-gray-700 text-white border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
 
@@ -100,11 +119,27 @@ export default function Contact() {
                 value={formData.service}
                 onChange={handleChange}
                 required
-                className="w-full p-2 border rounded-lg mt-1 bg-gray-700 text-white border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full p-2 border rounded-md mt-1 bg-gray-700 text-white border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
               >
                 <option value="">Select a service</option>
                 {services.map((service, index) => (
                   <option key={index} value={service}>{service}</option>
+                ))}
+              </select>
+            </div>
+
+            <div>
+              <label className="block text-gray-300 text-sm font-medium">Preferred Location</label>
+              <select
+                name="preferredLocation"
+                value={formData.preferredLocation}
+                onChange={handleChange}
+                multiple
+                required
+                className="w-full p-1 border rounded-md mt-1 bg-gray-700 text-white border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+              >
+                {locations.map((location, index) => (
+                  <option key={index} value={location} className={formData.preferredLocation.includes(location) ? "bg-green-600" : ""}>{location}</option>
                 ))}
               </select>
             </div>
@@ -117,7 +152,7 @@ export default function Contact() {
                 onChange={handleChange}
                 required
                 rows="3"
-                className="w-full p-2 border rounded-lg mt-1 bg-gray-700 text-white border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full p-2 border rounded-md mt-1 bg-gray-700 text-white border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
               ></textarea>
             </div>
 
@@ -129,7 +164,7 @@ export default function Contact() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full p-2 border rounded-lg mt-1 bg-gray-700 text-white border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full p-2 border rounded-md mt-1 bg-gray-700 text-white border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
 
@@ -141,13 +176,24 @@ export default function Contact() {
                 value={formData.phone}
                 onChange={handleChange}
                 required
-                className="w-full p-2 border rounded-lg mt-1 bg-gray-700 text-white border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full p-2 border rounded-md mt-1 bg-gray-700 text-white border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+
+            <div>
+              <label className="block text-gray-300 text-sm font-medium">Company (Optional)</label>
+              <input
+                type="text"
+                name="company"
+                value={formData.company}
+                onChange={handleChange}
+                className="w-full p-2 border rounded-md mt-1 bg-gray-700 text-white border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
 
             <button
               type="submit"
-              className="w-full bg-blue-500 text-white p-2 rounded-lg hover:bg-blue-600 transition"
+              className="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 transition"
               disabled={isSubmitting}
             >
               {isSubmitting ? "Submitting..." : "Submit"}
@@ -160,4 +206,5 @@ export default function Contact() {
     </div>
   );
 }
+
 

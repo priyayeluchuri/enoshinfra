@@ -7,7 +7,7 @@ export default function TrendingWarehouses() {
         title="Trending Warehouse Locations - Enosh Infra"
         description="Explore the most sought-after warehouse locations in Bengaluru with Enosh Infra."
         url="https://www.enoshinfra.com/services/warehouses/trending"
-        image="https://www.enoshinfra.com/hero-bg.jpg"
+        //image="https://www.enoshinfra.com/hero-bg.jpg"
       />
       <section className="py-12 bg-gray-900 text-white">
   <div className="container mx-auto px-6">

@@ -8,7 +8,7 @@ export default function Warehouses() {
 	title="Warehouse & Logistics Spaces for Rent in Bengaluru - Enosh Infra"
   description="Discover premium warehouse and logistics spaces for rent in Bengaluru, including prime locations like Nelamangala, Peenya, Bommasandra, Jigani, Hoskote, Kumbalgodu, Doddaballapura, Hebbal, Whitefield, HSR and KIADB industrial areas. Enosh Infra connects property owners with businesses seeking top industrial spaces."
         url="https://www.enoshinfra.com/services/warehouses"
-        image="https://www.enoshinfra.com/hero-bg.jpg"
+        //image="https://www.enoshinfra.com/hero-bg.jpg"
       />
       <section className="container mx-auto py-12 px-6 text-white bg-gray-900">
         <h1 className="text-5xl font-extrabold text-center mb-8">Warehouses & Logistics</h1>
