@@ -1,4 +1,7 @@
-import { useState } from "react";
+import React, { useState, useRef } from "react";
+import { LoadScript, Autocomplete } from "@react-google-maps/api";
+
+const libraries = ['places'];
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -10,7 +13,7 @@ export default function Contact() {
     phone: "",
     company: ""
   });
-
+  const autocompleteRef = useRef(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [message, setMessage] = useState("");
 
@@ -20,28 +23,21 @@ export default function Contact() {
     "Commercial & Retail",
     "Co-working Spaces",
   ];
+  const purposes = ["Find a Space", "Find a Tenant"];
 
-  const locations = [
-    "Bommasandra",
-    "Nelamangala",
-    "Peenya",
-    "Jigani",
-    "Hoskote",
-    "Kumbalgodu",
-    "Doddaballapura",
-    "Hebbal",
-    "Whitefield",
-    "Flexible"
-  ];
-
-  const handleChange = (e) => {
-    const { name, value, multiple, options } = e.target;
-    if (multiple) {
-      const selectedOptions = Array.from(options).filter(option => option.selected).map(option => option.value);
-      setFormData({ ...formData, [name]: selectedOptions });
-    } else {
-      setFormData({ ...formData, [name]: value });
+  const handlePlaceSelect = () => {
+  const place = autocompleteRef.current?.getPlace();
+  if (place && place.formatted_address) {
+      setFormData((prev) => ({
+        ...prev,
+        preferredLocation: [...prev.preferredLocation, place.formatted_address],
+      }));
     }
+  };
+  
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
   };
 
   const handleSubmit = async (e) => {
@@ -49,12 +45,13 @@ export default function Contact() {
     setIsSubmitting(true);
     setMessage("Submitting..");
     // Prepare minimal data
-    const { name, service, preferredLocation, requirement, email, phone, company } = formData;
+    const { name, service, preferredLocation, requirement, purpose, email, phone, company } = formData;
     const payload = {
     name,
     service,
     preferredLocation,
     requirement,
+    purpose,
     email,
     phone,
     ...(company && { company }), // Only include company if it has value
@@ -138,27 +135,32 @@ export default function Contact() {
                 ))}
               </select>
             </div>
-
             <div>
-              <label className="block text-gray-300 text-sm font-medium">Preferred Location</label>
-              <select
-                name="preferredLocation"
-                value={formData.preferredLocation}
-                onChange={handleChange}
-                multiple
-                required
-                className="w-full p-1 border rounded-md mt-1 bg-gray-700 text-white border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
-              >
-                {locations.map((location, index) => (
-                  <option key={index} value={location} className={formData.preferredLocation.includes(location) ? "bg-green-600" : ""}>{location}</option>
+              <label className="block text-gray-300 text-sm font-medium">Preferred Location(s)</label>
+              <LoadScript googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY} libraries={libraries}>
+                <Autocomplete
+                  onLoad={(autocomplete) => (autocompleteRef.current = autocomplete)}
+                  onPlaceChanged={handlePlaceSelect}
+                >
+                  <input
+                    type="text"
+                    placeholder="Enter preferred location(s)"
+                    className="w-full p-2 border rounded-md mt-1 bg-gray-700 text-white border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  />
+                </Autocomplete>
+              </LoadScript>
+              <ul className="text-gray-300 mt-2">
+                {formData.preferredLocation.map((location, index) => (
+                  <li key={index}>{location}</li>
                 ))}
-              </select>
+              </ul>
             </div>
 
-            <div>
+	    <div>
               <label className="block text-gray-300 text-sm font-medium">Requirement</label>
               <textarea
                 name="requirement"
+	        placeholder="Please provide size of the property for better match"
                 value={formData.requirement}
                 onChange={handleChange}
                 required
@@ -166,7 +168,21 @@ export default function Contact() {
                 className="w-full p-2 border rounded-md mt-1 bg-gray-700 text-white border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
               ></textarea>
             </div>
-
+                        <div>
+              <label className="block text-gray-300 text-sm font-medium">Purpose</label>
+              <select
+                name="purpose"
+                value={formData.purpose}
+                onChange={handleChange}
+                required
+                className="w-full p-2 border rounded-md mt-1 bg-gray-700 text-white border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
+                <option value="">Select purpose</option>
+                {purposes.map((purpose, index) => (
+                  <option key={index} value={purpose}>{purpose}</option>
+                ))}
+              </select>
+            </div>
             <div>
               <label className="block text-gray-300 text-sm font-medium">Email</label>
               <input

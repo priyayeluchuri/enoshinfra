@@ -61,7 +61,8 @@ export default function Navbar() {
         height={56} 
         priority // Ensures the logo loads quickly for better LCP
         sizes="(max-width: 768px) 56px, 112px" // Optimizes size for responsiveness
-        />
+        style={{ width: "auto", height: "auto" }}
+	/>
 	</Link>
 	  {/* CTA Text - Adapts to Mobile and Desktop */}
         <div className="text-sm text-blue-400">

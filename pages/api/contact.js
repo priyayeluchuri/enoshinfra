@@ -5,12 +5,12 @@ import fetch from 'node-fetch';
 export default async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).send('Method Not Allowed');
   
-  const { name, service, preferredLocation = [], requirement, email, phone, company = "" } = req.body;
+  const { name, service, preferredLocation = [], requirement, purpose, email, phone, company = "" } = req.body;
    // Convert preferredLocation to a string
   const preferredLocationString = Array.isArray(preferredLocation)
     ? preferredLocation.join(", ")
     : preferredLocation;
-  if (!name || !service || !preferredLocation || !requirement || !email || !phone) {
+  if (!name || !service || !preferredLocation || !requirement || !purpose || !email || !phone) {
     return res.status(400).json({ message: "All fields except 'company' are required." });
   }
    // Get the user's timezone and current timestamp in IST
@@ -55,6 +55,7 @@ export default async function handler(req, res) {
 Service: ${service}
 Preferred Location: ${preferredLocation}
 Requirement: ${requirement}
+Purpose: ${purpose}
 Email: ${email}
 Phone: ${phone}
 Company: ${company}
@@ -93,7 +94,8 @@ Country: ${userCountry}`,
             service,
             preferredLocationString || "Not specified",
             requirement,
-            email,
+            purpose,
+	    email,
             phone,
             company || "Not provided",
 	    userTimezone,
