@@ -5,7 +5,7 @@ import fetch from 'node-fetch';
 export default async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).send('Method Not Allowed');
   
-  const { name, service, preferredLocation = [], requirement, purpose, email, phone, company = "" } = req.body;
+  const { name, purpose, service, preferredLocation = [], requirement, email, phone, company = "" } = req.body;
    // Convert preferredLocation to a string
   const preferredLocationString = Array.isArray(preferredLocation)
     ? preferredLocation.join(", ")
@@ -23,7 +23,7 @@ export default async function handler(req, res) {
 
   let userCountry = 'Unknown';
   let userCity = 'Unknown'; 
-  console.log('IP is:', ip, req.socket.remoteAddress);
+  // console.log('IP is:', ip, req.socket.remoteAddress);
   try {
     const geoRes = await fetch(`https://ipapi.co/${ip}/json/`);
     const geoData = await geoRes.json();
@@ -52,10 +52,10 @@ export default async function handler(req, res) {
       to: 'info@enoshinfra.com',
       subject: 'New Contact Form Submission',
       text: `Name: ${name}
+Purpose: ${purpose}
 Service: ${service}
 Preferred Location: ${preferredLocation}
 Requirement: ${requirement}
-Purpose: ${purpose}
 Email: ${email}
 Phone: ${phone}
 Company: ${company}
@@ -91,10 +91,10 @@ Country: ${userCountry}`,
         values: [
 	  [
             name,
+	    purpose,
             service,
             preferredLocationString || "Not specified",
             requirement,
-            purpose,
 	    email,
             phone,
             company || "Not provided",

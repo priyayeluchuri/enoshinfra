@@ -6,6 +6,7 @@ const libraries = ['places'];
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
+    purpose: "",
     service: "",
     preferredLocation: [],
     requirement: "",
@@ -14,6 +15,7 @@ export default function Contact() {
     company: ""
   });
   const autocompleteRef = useRef(null);
+  const inputRef = useRef(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [message, setMessage] = useState("");
 
@@ -32,6 +34,9 @@ export default function Contact() {
         ...prev,
         preferredLocation: [...prev.preferredLocation, place.formatted_address],
       }));
+      if (inputRef.current) {
+        inputRef.current.value = ""; // Clear the input field after selection
+      }
     }
   };
   
@@ -39,6 +44,13 @@ export default function Contact() {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
+
+  const handleRemoveLocation = (indexToRemove) => {
+  setFormData((prev) => ({
+    ...prev,
+    preferredLocation: prev.preferredLocation.filter((_, index) => index !== indexToRemove),
+  }));
+};
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -48,10 +60,10 @@ export default function Contact() {
     const { name, service, preferredLocation, requirement, purpose, email, phone, company } = formData;
     const payload = {
     name,
+    purpose,
     service,
     preferredLocation,
     requirement,
-    purpose,
     email,
     phone,
     ...(company && { company }), // Only include company if it has value
@@ -119,6 +131,21 @@ export default function Contact() {
                 className="w-full p-2 border rounded-md mt-1 bg-gray-700 text-white border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
+            <div>
+              <label className="block text-gray-300 text-sm font-medium">Purpose</label>
+              <select
+                name="purpose"
+                value={formData.purpose}
+                onChange={handleChange}
+                required
+                className="w-full p-2 border rounded-md mt-1 bg-gray-700 text-white border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
+                <option value="">Select purpose</option>
+                {purposes.map((purpose, index) => (
+                  <option key={index} value={purpose}>{purpose}</option>
+                ))}
+              </select>
+            </div>
 
             <div>
               <label className="block text-gray-300 text-sm font-medium">Service</label>
@@ -144,18 +171,27 @@ export default function Contact() {
                 >
                   <input
                     type="text"
-                    placeholder="Enter preferred location(s)"
+                    placeholder="Enter preferred location"
+                    ref={inputRef}
                     className="w-full p-2 border rounded-md mt-1 bg-gray-700 text-white border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </Autocomplete>
               </LoadScript>
               <ul className="text-gray-300 mt-2">
                 {formData.preferredLocation.map((location, index) => (
-                  <li key={index}>{location}</li>
+                  <li key={index} className="flex justify-between items-center">
+                    <span>{location}</span>
+                    <button
+                      type="button"
+                      onClick={() => handleRemoveLocation(index)}
+                      className="text-red-500 ml-2 hover:text-red-700"
+                    >
+                      ❌
+                    </button>
+                  </li>
                 ))}
               </ul>
             </div>
-
 	    <div>
               <label className="block text-gray-300 text-sm font-medium">Requirement</label>
               <textarea
@@ -167,21 +203,6 @@ export default function Contact() {
                 rows="3"
                 className="w-full p-2 border rounded-md mt-1 bg-gray-700 text-white border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
               ></textarea>
-            </div>
-                        <div>
-              <label className="block text-gray-300 text-sm font-medium">Purpose</label>
-              <select
-                name="purpose"
-                value={formData.purpose}
-                onChange={handleChange}
-                required
-                className="w-full p-2 border rounded-md mt-1 bg-gray-700 text-white border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              >
-                <option value="">Select purpose</option>
-                {purposes.map((purpose, index) => (
-                  <option key={index} value={purpose}>{purpose}</option>
-                ))}
-              </select>
             </div>
             <div>
               <label className="block text-gray-300 text-sm font-medium">Email</label>
