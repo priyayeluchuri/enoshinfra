@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import SEO from '../components/seo';
 import Link from 'next/link';
+import WhatsAppButton from '../components/WhatsAppbutton';
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -18,6 +19,7 @@ function MyApp({ Component, pageProps }) {
       {/* Add padding-bottom equal to footer height */}
       <main className="flex-grow mt-16">
         <Component {...pageProps} />
+	<WhatsAppButton />
       </main>
       <Footer />
     </div>
