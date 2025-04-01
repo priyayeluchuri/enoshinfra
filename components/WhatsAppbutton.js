@@ -5,7 +5,7 @@ import styles from '../styles/WhatsAppbutton.module.css';
 
 const WhatsAppButton = () => {
   const phoneNumber = '+918073582033';
-  const message = encodeURIComponent("I'm interested in your services");
+  const message = encodeURIComponent("I'm interested in your property services");
   const whatsappLink = `https://wa.me/${phoneNumber}?text=${message}`;
 
   return (
@@ -13,7 +13,7 @@ const WhatsAppButton = () => {
       <Link href={whatsappLink} passHref legacyBehavior>
         <a target="_blank" rel="noopener noreferrer" className={styles.whatsappButton}>
           <FontAwesomeIcon icon={faWhatsapp} className={styles.whatsappIcon} />
-          WhatsApp to Get Quote
+          WhatsApp to Get in Touch
         </a>
       </Link>
     </div>
