@@ -95,7 +95,9 @@ export default function Contact() {
 
         <div className="max-w-md text-white md:w-1/2 text-center md:text-left">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">
-            Perfect Space. <br className="hidden md:block" />
+            <br>
+	    <br>
+	    Perfect Space. <br className="hidden md:block" />
             Perfect Location. <br className="hidden md:block" />
             Perfect Timing.
           </h2>
