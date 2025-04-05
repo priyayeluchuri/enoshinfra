@@ -1,7 +1,7 @@
 .whatsappContainer {
   position: fixed;
-  top: 3%;
-  right: 15%; /* Adjust for responsiveness */
+  top: 13%;
+  left: 5%; /* Adjust for responsiveness */
   z-index: 1000;
 }
 

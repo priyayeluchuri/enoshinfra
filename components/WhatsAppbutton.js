@@ -13,7 +13,7 @@ const WhatsAppButton = () => {
       <Link href={whatsappLink} passHref legacyBehavior>
         <a target="_blank" rel="noopener noreferrer" className={styles.whatsappButton}>
           <FontAwesomeIcon icon={faWhatsapp} className={styles.whatsappIcon} />
-          WhatsApp to Get in Touch
+          Get in Touch
         </a>
       </Link>
     </div>
