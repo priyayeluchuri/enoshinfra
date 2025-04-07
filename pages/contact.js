@@ -175,6 +175,7 @@ export default function Contact() {
                     type="text"
                     placeholder="Enter preferred location"
                     ref={inputRef}
+	            required
                     className="w-full p-2 border rounded-md mt-1 bg-gray-700 text-white border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </Autocomplete>

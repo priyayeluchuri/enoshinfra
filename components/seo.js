@@ -4,7 +4,7 @@ const SEO = ({
   title = "Enosh Infra - Real Estate Consultancy",
   description = "Your trusted real estate consultancy for industrial, commercial, and residential properties.",
   url = "https://www.enoshinfra.com",
-  image = "https://www.enoshinfra.com/favicon.png", // Replace with your actual image URL
+  image = "https://www.enoshinfra.com/fullfav.png", // Replace with your actual image URL
 }) => (
   <Head>
     {/* Primary Meta Tags */}
@@ -22,6 +22,8 @@ const SEO = ({
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={image} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
 
     {/* Twitter */}
     <meta name="twitter:card" content="summary_large_image" />
