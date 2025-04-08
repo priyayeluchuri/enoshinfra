@@ -18,7 +18,7 @@ export default function Contact() {
   const inputRef = useRef(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [message, setMessage] = useState("");
-
+  const [locationError, setLocationError] = useState(false);
   const services = [
     "Warehouses & Logistics",
     "Tech Parks",
@@ -27,48 +27,65 @@ export default function Contact() {
   ];
   const purposes = ["Find a Space", "Find a Tenant"];
 
+  // Handle selection from Google Maps Autocomplete
   const handlePlaceSelect = () => {
-  const place = autocompleteRef.current?.getPlace();
-  if (place && place.formatted_address) {
+    const place = autocompleteRef.current?.getPlace();
+    if (place && place.formatted_address) {
       setFormData((prev) => ({
         ...prev,
         preferredLocation: [...prev.preferredLocation, place.formatted_address],
       }));
       if (inputRef.current) {
-        inputRef.current.value = ""; // Clear the input field after selection
+        inputRef.current.value = ""; // Clear input field after location selection
       }
     }
   };
-  
+
+  // Handle form input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
+  // Remove location from the list
   const handleRemoveLocation = (indexToRemove) => {
-  setFormData((prev) => ({
-    ...prev,
-    preferredLocation: prev.preferredLocation.filter((_, index) => index !== indexToRemove),
-  }));
-};
+    setFormData((prev) => ({
+      ...prev,
+      preferredLocation: prev.preferredLocation.filter((_, index) => index !== indexToRemove),
+    }));
+  };
 
+  // Form submission handler
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setMessage("Submitting..");
-    // Prepare minimal data
+    setMessage("Submitting...");
+
+    // Validate that at least one preferred location is selected
+    if (formData.preferredLocation.length === 0) {
+      setMessage("");
+      setLocationError(true); // Show error message
+      setIsSubmitting(false);
+      return; // Prevent form submission
+    } else {
+      setLocationError(false); // Hide error if there's at least one location
+    }
+
+    // Prepare the data to be sent in the request
     const { name, service, preferredLocation, requirement, purpose, email, phone, company } = formData;
     const payload = {
-    name,
-    purpose,
-    service,
-    preferredLocation,
-    requirement,
-    email,
-    phone,
-    ...(company && { company }), // Only include company if it has value
+      name,
+      purpose,
+      service,
+      preferredLocation,
+      requirement,
+      email,
+      phone,
+      ...(company && { company }), // Include company only if provided
     };
-    setMessage("Your request is being processed..")
+
+    setMessage("Your request is being processed...");
+
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
@@ -78,7 +95,16 @@ export default function Contact() {
 
       if (response.ok) {
         setMessage("Your request has been submitted successfully!");
-        setFormData({ name: "", service: "", preferredLocation: [], requirement: "", email: "", phone: "", company: "" });
+        setFormData({
+          name: "",
+          service: "",
+          preferredLocation: [],
+          requirement: "",
+          purpose: "",
+          email: "",
+          phone: "",
+          company: ""
+        });
       } else {
         setMessage("Something went wrong. Please try again.");
       }
@@ -96,8 +122,8 @@ export default function Contact() {
         <div className="max-w-md text-white md:w-1/2 text-center md:text-left">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">
             <br />
-	    <br />
-	    Perfect Space. <br className="hidden md:block" />
+            <br />
+            Perfect Space. <br className="hidden md:block" />
             Perfect Location. <br className="hidden md:block" />
             Perfect Timing.
           </h2>
@@ -179,6 +205,10 @@ export default function Contact() {
                   />
                 </Autocomplete>
               </LoadScript>
+              {/* Error message if no location has been added */}
+              {locationError && (
+                <p className="text-red-500 text-sm mt-2">Please add at least one preferred location.</p>
+              )}
               <ul className="text-gray-300 mt-2">
                 {formData.preferredLocation.map((location, index) => (
                   <li key={index} className="flex justify-between items-center">
@@ -194,11 +224,12 @@ export default function Contact() {
                 ))}
               </ul>
             </div>
-	    <div>
+
+            <div>
               <label className="block text-gray-300 text-sm font-medium">Requirement</label>
               <textarea
                 name="requirement"
-	        placeholder="Please provide size of the property for better match"
+                placeholder="Please provide size of the property for better match"
                 value={formData.requirement}
                 onChange={handleChange}
                 required
@@ -206,6 +237,7 @@ export default function Contact() {
                 className="w-full p-2 border rounded-md mt-1 bg-gray-700 text-white border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
               ></textarea>
             </div>
+
             <div>
               <label className="block text-gray-300 text-sm font-medium">Email</label>
               <input
@@ -256,5 +288,4 @@ export default function Contact() {
     </div>
   );
 }
-
 
