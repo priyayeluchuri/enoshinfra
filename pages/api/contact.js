@@ -29,6 +29,9 @@ export default async function handler(req, res) {
     const geoData = await geoRes.json();
     userCountry = geoData?.country_name || 'Unknown';
     userCity = geoData?.city || 'Unknown';
+    if (userTimezone == 'Unknown') { 
+	    userTimezone = geoData?.timezone || 'Unknown';
+    }
   } catch (error) {
     console.error('Error fetching user location:', error);
   }
@@ -69,7 +72,7 @@ Country: ${userCountry}`,
       from: process.env.EMAIL_USER,
       to: email,
       subject: 'Thank You for Contacting Enosh Infra',
-      text: `Dear ${name},\n\nThank you for reaching out. We will review your requirement and get back to you soon.\n\nBest,\nEnosh Infra Team`,
+      text: `Dear ${name},\n\nThank you for reaching out. We will review your requirement and get back to you soon.\n\nBest Regards,\nEnosh Infra Team`,
     });
 
     const auth = new google.auth.GoogleAuth({
