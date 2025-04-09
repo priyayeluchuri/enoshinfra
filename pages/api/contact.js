@@ -29,7 +29,7 @@ export default async function handler(req, res) {
     const geoData = await geoRes.json();
     userCountry = geoData?.country_name || 'Unknown';
     userCity = geoData?.city || 'Unknown';
-    if (userTimezone == 'Unknown') { 
+    if (userTimezone == 'UTC') { 
 	    userTimezone = geoData?.timezone || 'Unknown';
     }
   } catch (error) {
