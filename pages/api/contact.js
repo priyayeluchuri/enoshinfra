@@ -53,7 +53,7 @@ export default async function handler(req, res) {
     await transporter.sendMail({
       from: process.env.EMAIL_USER,
       to: 'info@enoshinfra.com',
-      subject: 'New Contact Form Submission - ${name}',
+      subject: 'New Contact Form Submission - '${name},
       text: `Name: ${name}
 Purpose: ${purpose}
 Service: ${service}
