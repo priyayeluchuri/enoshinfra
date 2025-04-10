@@ -55,9 +55,20 @@ export default function Contact() {
       preferredLocation: prev.preferredLocation.filter((_, index) => index !== indexToRemove),
     }));
   };
-  
+
   const handleFileChange = (e) => {
-    setFormData({ ...formData, images: Array.from(e.target.files) });
+  const selectedFiles = Array.from(e.target.files);
+
+  if (selectedFiles.length > 5) {
+    alert("You can only upload up to 5 images.");
+    e.target.value = ""; // Clear selection
+    return;
+  }
+
+  setFormData((prevData) => ({
+    ...prevData,
+    images: selectedFiles,
+  }));
   };
 
   // Form submission handler
@@ -201,7 +212,9 @@ export default function Contact() {
               </select>
             </div>
             <div>
-              <label className="block text-gray-300 text-sm font-medium">Preferred Location(s)</label>
+              <label className="block text-gray-300 text-sm font-medium">
+	       {formData.purpose === "Find a Tenant" ? "Property Location" : "Preferred Location(s)"}
+	      </label>
               <LoadScript googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY} libraries={libraries}>
                 <Autocomplete
                   onLoad={(autocomplete) => (autocompleteRef.current = autocomplete)}

@@ -29,12 +29,18 @@ export default async function handler(req, res) {
     const { fields, files } = parsedData;
     //console.log('Received Fields:', fields);
     //console.log('Received Files:', files);
-    const { name, purpose, service, preferredLocation = [], requirement, email, phone, company = "" } = fields;
+    const { name, purpose, service, requirement, email, phone, company = "" } = fields;
 
+    // Fix preferredLocation extraction
+    const preferredLocation = Object.keys(fields)
+     .filter(key => key.startsWith("preferredLocation"))
+     .map(key => fields[key][0]); // Extracting values
+
+    //console.log("Parsed Preferred Location:", preferredLocation);
     if (!name || !service || !preferredLocation || !requirement || !purpose || !email || !phone) {
       return res.status(400).json({ message: "All fields except 'company' are required." });
     }
-
+    
     const preferredLocationString = Array.isArray(preferredLocation) ? preferredLocation.join(", ") : preferredLocation;
     const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
     const istTimestamp = new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata' });
