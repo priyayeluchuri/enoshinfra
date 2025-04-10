@@ -1,42 +1,78 @@
 import nodemailer from 'nodemailer';
 import { google } from 'googleapis';
 import fetch from 'node-fetch';
+import formidable from 'formidable';
+import fs from 'fs';
+import sharp from 'sharp';
+
+export const config = {
+  api: {
+    bodyParser: false,
+  },
+};
 
 export default async function handler(req, res) {
-  if (req.method !== 'POST') return res.status(405).send('Method Not Allowed');
-  
-  const { name, purpose, service, preferredLocation = [], requirement, email, phone, company = "" } = req.body;
-   // Convert preferredLocation to a string
-  const preferredLocationString = Array.isArray(preferredLocation)
-    ? preferredLocation.join(", ")
-    : preferredLocation;
-  if (!name || !service || !preferredLocation || !requirement || !purpose || !email || !phone) {
-    return res.status(400).json({ message: "All fields except 'company' are required." });
+  if (req.method !== 'POST') {
+    return res.status(405).json({ message: 'Method Not Allowed' });
   }
-   // Get the user's timezone and current timestamp in IST
-  const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-  const istTimestamp = new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata' });
 
-    // Correctly retrieve the user's IP address
-  const forwarded = req.headers['x-forwarded-for'];
-  const ip = forwarded ? forwarded.split(',')[0] : req.socket.remoteAddress;
+  const form = formidable({ multiples: true, keepExtensions: true });
 
-  let userCountry = 'Unknown';
-  let userCity = 'Unknown'; 
-  // console.log('IP is:', ip, req.socket.remoteAddress);
   try {
-    const geoRes = await fetch(`https://ipapi.co/${ip}/json/`);
-    const geoData = await geoRes.json();
-    userCountry = geoData?.country_name || 'Unknown';
-    userCity = geoData?.city || 'Unknown';
-    if (userTimezone == 'UTC') { 
-	    userTimezone = geoData?.timezone || 'Unknown';
+    const parsedData = await new Promise((resolve, reject) => {
+      form.parse(req, (err, fields, files) => {
+        if (err) reject(err);
+        else resolve({ fields, files });
+      });
+    });
+
+    const { fields, files } = parsedData;
+    //console.log('Received Fields:', fields);
+    //console.log('Received Files:', files);
+    const { name, purpose, service, preferredLocation = [], requirement, email, phone, company = "" } = fields;
+
+    if (!name || !service || !preferredLocation || !requirement || !purpose || !email || !phone) {
+      return res.status(400).json({ message: "All fields except 'company' are required." });
     }
-  } catch (error) {
-    console.error('Error fetching user location:', error);
-  }
 
-  try {
+    const preferredLocationString = Array.isArray(preferredLocation) ? preferredLocation.join(", ") : preferredLocation;
+    const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    const istTimestamp = new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata' });
+    const forwarded = req.headers['x-forwarded-for'];
+    const ip = forwarded ? forwarded.split(',')[0] : req.socket.remoteAddress;
+
+    let userCountry = 'Unknown' 
+    let userCity = 'Unknown';
+    try {
+      const geoRes = await fetch(`https://ipapi.co/${ip}/json/`);
+      const geoData = await geoRes.json();
+      userCountry = geoData?.country_name || 'Unknown';
+      userCity = geoData?.city || 'Unknown';
+      if (userTimezone == 'UTC') { 
+            userTimezone = geoData?.timezone || 'Unknown';
+      }
+    } catch (error) {
+      console.error('Error fetching user location:', error);
+    }
+
+    const attachments = [];
+    if (files.images) {
+      const images = Array.isArray(files.images) ? files.images : [files.images];
+      for (const image of images) {
+        try {
+          const buffer = await sharp(image.filepath).resize(800).jpeg({ quality: 80 }).toBuffer();
+          attachments.push({
+            filename: image.originalFilename,
+            content: buffer,
+            contentType: image.mimetype,
+            cid: image.newFilename,
+          });
+        } catch (err) {
+          console.error('Error processing image:', err);
+        }
+      }
+    }
+
     const transporter = nodemailer.createTransport({
       host: process.env.EMAIL_HOST,
       port: process.env.EMAIL_PORT,
@@ -45,27 +81,27 @@ export default async function handler(req, res) {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
       },
-      tls: {
-        rejectUnauthorized: false,
-      },
+      tls: { rejectUnauthorized: false },
     });
 
     await transporter.sendMail({
       from: process.env.EMAIL_USER,
       to: 'info@enoshinfra.com',
       subject: `New Contact Form Submission - ${name}`,
-      text: `Name: ${name}
-Purpose: ${purpose}
-Service: ${service}
-Preferred Location: ${preferredLocation}
-Requirement: ${requirement}
-Email: ${email}
-Phone: ${phone}
-Company: ${company}
-User Timezone: ${userTimezone}
-Timestamp (IST): ${istTimestamp}
-City: ${userCity}
-Country: ${userCountry}`,
+      html: `<p><strong>Name:</strong> ${name}</p>
+             <p><strong>Purpose:</strong> ${purpose}</p>
+             <p><strong>Service:</strong> ${service}</p>
+             <p><strong>Preferred Location:</strong> ${preferredLocationString}</p>
+             <p><strong>Requirement:</strong> ${requirement}</p>
+             <p><strong>Email:</strong> ${email}</p>
+             <p><strong>Phone:</strong> ${phone}</p>
+             <p><strong>Company:</strong> ${company || 'Not provided'}</p>
+	     <p><strong>TimeZone:</strong> ${userTimezone}</p>
+             <p><strong>Timestamp (IST):</strong> ${istTimestamp}</p>
+             <p><strong>City:</strong> ${userCity}</p>
+             <p><strong>Country:</strong> ${userCountry}</p>
+             ${attachments.map((img) => `<p><img src="cid:${img.cid}" width="400" /></p>`).join('')}`,
+      attachments,
     });
 
     await transporter.sendMail({
@@ -82,38 +118,35 @@ Country: ${userCountry}`,
       },
       scopes: ['https://www.googleapis.com/auth/spreadsheets'],
     });
-  
+
     const sheets = google.sheets({ version: 'v4', auth });
-
     await sheets.spreadsheets.values.append({
-      spreadsheetId: process.env.GOOGLE_SHEET_ID,
-      range: 'Sheet1!A:G',
-      valueInputOption: 'RAW',
-      insertDataOption: 'INSERT_ROWS',
-      requestBody: {
-        values: [
-	  [
-            name,
-	    purpose,
-            service,
-            preferredLocationString || "Not specified",
-            requirement,
-	    email,
-            phone,
-            company || "Not provided",
-	    userTimezone,
-	    istTimestamp,
-	    userCity,
-	    userCountry,
-          ],
-	],
-      },
-    });
+  spreadsheetId: process.env.GOOGLE_SHEET_ID,
+  range: 'Sheet1!A:K', // Ensure this matches the number of values
+  valueInputOption: 'RAW',
+  insertDataOption: 'INSERT_ROWS',
+  requestBody: {
+    values: [[
+      String(name || ""), 
+      String(purpose || ""), 
+      String(service || ""), 
+      String(preferredLocationString || ""), 
+      String(requirement || ""), 
+      String(email || ""), 
+      String(phone || ""), 
+      String(company || ""), 
+      String(userTimezone || ""),
+      String(istTimestamp || ""), 
+      String(userCity || ""), 
+      String(userCountry || "")
+    ]],
+  },
+});
 
-    res.status(200).json({ success: true });
+    return res.status(200).json({ success: true });
   } catch (error) {
     console.error('Error processing contact form:', error);
-    res.status(500).json({ success: false, message: 'Internal Server Error' });
+    return res.status(500).json({ success: false, message: 'Internal Server Error' });
   }
 }
 

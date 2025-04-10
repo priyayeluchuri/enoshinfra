@@ -12,7 +12,8 @@ export default function Contact() {
     requirement: "",
     email: "",
     phone: "",
-    company: ""
+    company: "",
+    images: []
   });
   const autocompleteRef = useRef(null);
   const inputRef = useRef(null);
@@ -54,6 +55,10 @@ export default function Contact() {
       preferredLocation: prev.preferredLocation.filter((_, index) => index !== indexToRemove),
     }));
   };
+  
+  const handleFileChange = (e) => {
+    setFormData({ ...formData, images: Array.from(e.target.files) });
+  };
 
   // Form submission handler
   const handleSubmit = async (e) => {
@@ -72,25 +77,24 @@ export default function Contact() {
     }
 
     // Prepare the data to be sent in the request
-    const { name, service, preferredLocation, requirement, purpose, email, phone, company } = formData;
-    const payload = {
-      name,
-      purpose,
-      service,
-      preferredLocation,
-      requirement,
-      email,
-      phone,
-      ...(company && { company }), // Include company only if provided
-    };
+    const { name, service, preferredLocation, requirement, purpose, email, phone, company, images } = formData;
+    const payload = new FormData();
+    payload.append("name", name);
+    payload.append("purpose", purpose);
+    payload.append("service", service);
+    payload.append("requirement", requirement);
+    payload.append("email", email);
+    payload.append("phone", phone);
+    preferredLocation.forEach((loc, index) => payload.append(`preferredLocation[${index}]`, loc));
+    if (company) payload.append("company", company);
+    images.forEach((image) => payload.append("images", image));
 
     setMessage("Your request is being processed...");
 
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
+        body: payload,
       });
 
       if (response.ok) {
@@ -103,7 +107,8 @@ export default function Contact() {
           purpose: "",
           email: "",
           phone: "",
-          company: ""
+          company: "",
+	  images: []
         });
       } else {
         setMessage("Something went wrong. Please try again.");
@@ -147,7 +152,7 @@ export default function Contact() {
         <div className="bg-gray-800 shadow-lg rounded-lg p-6 w-full md:w-1/3">
           <h2 className="text-lg font-bold mb-4 text-center text-white">Contact Us</h2>
 
-          <form onSubmit={handleSubmit} className="space-y-3">
+          <form onSubmit={handleSubmit} className="space-y-3" encType="multipart/form-data">
             <div>
               <label className="block text-gray-300 text-sm font-medium">Name</label>
               <input
@@ -173,8 +178,13 @@ export default function Contact() {
                   <option key={index} value={purpose}>{purpose}</option>
                 ))}
               </select>
-            </div>
-
+	     </div>
+	      {formData.purpose === "Find a Tenant" && (
+              <div>
+                <label className="block text-gray-300 text-sm font-medium">Upload Photos</label>
+                <input type="file" multiple accept="image/*" onChange={handleFileChange} className="w-full p-2 border rounded-md bg-gray-700 text-white" />
+              </div>
+              )}
             <div>
               <label className="block text-gray-300 text-sm font-medium">Service</label>
               <select
