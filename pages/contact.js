@@ -192,7 +192,7 @@ export default function Contact() {
 	     </div>
 	      {formData.purpose === "Find a Tenant" && (
               <div>
-                <label className="block text-gray-300 text-sm font-medium">Upload Photos</label>
+                <label className="block text-gray-300 text-sm font-medium">Upload Photos(Max 5)</label>
                 <input type="file" multiple accept="image/*" onChange={handleFileChange} className="w-full p-2 border rounded-md bg-gray-700 text-white" />
               </div>
               )}
