@@ -1,10 +1,11 @@
-import React, { useState, useRef } from "react";
-import { LoadScript, Autocomplete } from "@react-google-maps/api";
+import React, { useState, useRef, useEffect } from "react";
+import { LoadScript, Autocomplete, GoogleMap, Marker } from "@react-google-maps/api";
 import Resizer from "react-image-file-resizer";
 
-const libraries = ['places'];
+const libraries = ["places"];
 const MAX_TOTAL_SIZE_MB = 6;
 const MAX_IMAGES = 5;
+const BANGALORE_COORDS = { lat: 12.97194, lng: 77.59369 };
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -16,160 +17,180 @@ export default function Contact() {
     email: "",
     phone: "",
     company: "",
-    images: []
+    images: [],
   });
-  const autocompleteRef = useRef(null);
-  const inputRef = useRef(null);
+
+  const [mapCenter, setMapCenter] = useState(BANGALORE_COORDS);
+  const [selectedCoords, setSelectedCoords] = useState(null);
+  const [selectedAddress, setSelectedAddress] = useState("");
+  const [locationError, setLocationError] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [message, setMessage] = useState("");
-  const [locationError, setLocationError] = useState(false);
-  const services = [
-    "Warehouses & Logistics",
-    "Tech Parks",
-    "Commercial & Retail",
-    "Co-working Spaces",
-  ];
-  const purposes = ["Find a Space", "Find a Tenant"];
-  const fileInputRef = useRef(null); 
+  const autocompleteRef = useRef(null);
+  const inputRef = useRef(null);
+  const fileInputRef = useRef(null);
 
-  // Handle selection from Google Maps Autocomplete
+  const services = ["Warehouses & Logistics", "Tech Parks", "Commercial & Retail", "Co-working Spaces"];
+  const purposes = ["Find a Space", "Find a Tenant"];
+
+  // Google Places Autocomplete Selection
   const handlePlaceSelect = () => {
     const place = autocompleteRef.current?.getPlace();
     if (place && place.formatted_address) {
-      setFormData((prev) => ({
-        ...prev,
-        preferredLocation: [...prev.preferredLocation, place.formatted_address],
-      }));
-      if (inputRef.current) {
-        inputRef.current.value = ""; // Clear input field after location selection
+      if (!formData.preferredLocation.includes(place.formatted_address)) {
+        setFormData((prev) => ({
+          ...prev,
+          preferredLocation: [...prev.preferredLocation, place.formatted_address],
+        }));
+        setLocationError(false);
+        setMapCenter({ lat: place.geometry.location.lat(), lng: place.geometry.location.lng() });
       }
+      if (inputRef.current) inputRef.current.value = ""; // Clear input
     }
   };
+  // Handle Map Click to Select a Location
+const handleMapClick = async (event) => {
+  const lat = event.latLng.lat();
+  const lng = event.latLng.lng();
+  setSelectedCoords({ lat, lng });
+    // Ensure Google Maps API is loaded before calling Geocoder
+  if (!window.google || !window.google.maps || !window.google.maps.Geocoder) {
+    console.error("Google Maps API not loaded!");
+    return;
+  }
+  const geocoder = new window.google.maps.Geocoder();
+  geocoder.geocode({ location: { lat, lng } }, (results, status) => {
+    if (status === "OK" && results[0]) {
+      const formattedAddress = results[0].formatted_address;
+      console.log("Geocoded Address:", formattedAddress); // Debugging log
+            // Auto-add to the preferredLocation list
+      setFormData((prev) => ({
+        ...prev,
+        preferredLocation: [...prev.preferredLocation, formattedAddress],
+      }));
+       setLocationError(false);
+    } else {
+      console.error("Geocoder failed:", status);
+    }
+  });
+};
 
-  // Handle form input changes
+  // Remove Selected Location
+  const handleRemoveLocation = (index) => {
+    setFormData((prev) => {
+      const updatedLocations = prev.preferredLocation.filter((_, i) => i !== index);
+      if (updatedLocations.length === 0) setLocationError(true);
+      return { ...prev, preferredLocation: updatedLocations };
+    });
+  };
+
+  // Update Location Error State
+  useEffect(() => {
+    if (formData.preferredLocation.length === 0) {
+      setLocationError(true);
+      setMapCenter(BANGALORE_COORDS);
+    }
+  }, [formData.preferredLocation]);
+
+  // Handle Form Input Changes
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  // Remove location from the list
-  const handleRemoveLocation = (indexToRemove) => {
+  // Handle Image Upload & Resize
+  const handleFileChange = async (e) => {
+    const selectedFiles = Array.from(e.target.files);
+    let totalSize = formData.images.reduce((acc, img) => acc + img.size, 0);
+    let validImages = [...formData.images];
+
+    const resizeImage = (file) =>
+      new Promise((resolve) => {
+        Resizer.imageFileResizer(
+          file,
+          800,
+          600,
+          "JPEG",
+          80,
+          0,
+          async (uri) => {
+            const blob = await fetch(uri).then((res) => res.blob());
+            resolve(new File([blob], file.name, { type: "image/jpeg" }));
+          },
+          "base64"
+        );
+      });
+
+    for (let file of selectedFiles) {
+      if (validImages.length >= MAX_IMAGES) break;
+      const resizedFile = await resizeImage(file);
+      const newSize = resizedFile.size;
+
+      if (totalSize + newSize > MAX_TOTAL_SIZE_MB * 1024 * 1024) break;
+      totalSize += newSize;
+      validImages.push(resizedFile);
+    }
+
+    if (validImages.length < formData.images.length + selectedFiles.length) {
+      alert(`We could only include ${validImages.length} photos due to size limits.`);
+    }
+
+    setFormData((prev) => ({ ...prev, images: validImages }));
+    e.target.value = "";
+  };
+
+  // Remove Image
+  const handleRemoveFile = (index) => {
     setFormData((prev) => ({
       ...prev,
-      preferredLocation: prev.preferredLocation.filter((_, index) => index !== indexToRemove),
+      images: prev.images.filter((_, i) => i !== index),
     }));
   };
 
-
-const handleFileChange = async (e) => {
-  const selectedFiles = Array.from(e.target.files);
-  let totalSize = formData.images.reduce((acc, img) => acc + img.size, 0);
-  let validImages = [...formData.images]; // Keep previously selected images
-
-  const resizeImage = (file) =>
-    new Promise((resolve) => {
-      Resizer.imageFileResizer(
-        file,
-        800, // Max width
-        600, // Max height
-        "JPEG", // Format
-        80, // Quality
-        0, // Rotation
-        async (uri) => {
-          const blob = await fetch(uri).then((res) => res.blob()); // Convert base64 to blob
-          const resizedFile = new File([blob], file.name, { type: "image/jpeg" });
-          resolve(resizedFile);
-        },
-        "base64"
-      );
-    });
-
-  for (let file of selectedFiles) {
-    if (validImages.length >= 5) break;
-
-    const resizedFile = await resizeImage(file);
-    const newSize = resizedFile.size;
-
-    if (totalSize + newSize > 6 * 1024 * 1024) break; // Stop if total size exceeds 6MB
-
-    totalSize += newSize;
-    validImages.push(resizedFile);
-  }
-
-  if (validImages.length < formData.images.length + selectedFiles.length) {
-    alert(`We could only include ${validImages.length} photos due to limits.`);
-  }
-
-  setFormData((prevData) => ({
-    ...prevData,
-    images: validImages,
-    totalSize, // Update total size
-  }));
-
-  e.target.value = ""; // Clear input to allow re-selecting
-};
-
-const handleRemoveFile = (index) => {
-  setFormData((prevData) => ({
-    ...prevData,
-    images: prevData.images.filter((_, i) => i !== index),
-  }));
-}; 
-
-  const handleClick = () => {
+  const handleClick = () => { 
     if (fileInputRef.current) {
       fileInputRef.current.click();
     }
   };
-  // Form submission handler
+  // Form Submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     setMessage("Submitting...");
 
-    // Validate that at least one preferred location is selected
     if (formData.preferredLocation.length === 0) {
       setMessage("");
-      setLocationError(true); // Show error message
+      setLocationError(true);
       setIsSubmitting(false);
-      return; // Prevent form submission
-    } else {
-      setLocationError(false); // Hide error if there's at least one location
+      return;
     }
 
-    // Prepare the data to be sent in the request
-    const { name, service, preferredLocation, requirement, purpose, email, phone, company, images } = formData;
     const payload = new FormData();
-    payload.append("name", name);
-    payload.append("purpose", purpose);
-    payload.append("service", service);
-    payload.append("requirement", requirement);
-    payload.append("email", email);
-    payload.append("phone", phone);
-    preferredLocation.forEach((loc, index) => payload.append(`preferredLocation[${index}]`, loc));
-    if (company) payload.append("company", company);
-    images.forEach((image) => payload.append("images", image));
-
-    setMessage("Your request is being processed...");
+    Object.keys(formData).forEach((key) => {
+      if (key === "preferredLocation") {
+        formData[key].forEach((loc, index) => payload.append(`preferredLocation[${index}]`, loc));
+      } else if (key === "images") {
+        formData[key].forEach((image) => payload.append("images", image));
+      } else {
+        payload.append(key, formData[key]);
+      }
+    });
 
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        body: payload,
-      });
+      const response = await fetch("/api/contact", { method: "POST", body: payload });
 
       if (response.ok) {
         setMessage("Your request has been submitted successfully!");
         setFormData({
           name: "",
+          purpose: "",
           service: "",
           preferredLocation: [],
           requirement: "",
-          purpose: "",
           email: "",
           phone: "",
           company: "",
-	  images: []
+          images: [],
         });
       } else {
         setMessage("Something went wrong. Please try again.");
@@ -294,43 +315,62 @@ const handleRemoveFile = (index) => {
                 ))}
               </select>
             </div>
-            <div>
-              <label className="block text-gray-300 text-sm font-medium">
-	       {formData.purpose === "Find a Tenant" ? "Property Location" : "Preferred Location(s)"}
-	      </label>
-              <LoadScript googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY} libraries={libraries}>
-                <Autocomplete
-                  onLoad={(autocomplete) => (autocompleteRef.current = autocomplete)}
-                  onPlaceChanged={handlePlaceSelect}
-                >
-                  <input
-                    type="text"
-                    placeholder="Enter preferred location"
-                    ref={inputRef}
-                    className="w-full p-2 border rounded-md mt-1 bg-gray-700 text-white border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  />
-                </Autocomplete>
-              </LoadScript>
-              {/* Error message if no location has been added */}
-              {locationError && (
-                <p className="text-red-500 text-sm mt-2">Please add at least one preferred location.</p>
-              )}
-              <ul className="text-gray-300 mt-2">
-                {formData.preferredLocation.map((location, index) => (
-                  <li key={index} className="flex justify-between items-center">
-                    <span>{location}</span>
-                    <button
-                      type="button"
-                      onClick={() => handleRemoveLocation(index)}
-                      className="text-red-500 ml-2 hover:text-red-700"
-                    >
-                      ❌
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            </div>
 
+	    <div>
+      <label className="block text-gray-300 text-sm font-medium">
+        {formData.purpose === "Find a Tenant" ? "Property Location" : "Preferred Location(s)"}
+      </label>
+
+      {/* Google Maps Autocomplete */}
+      <LoadScript googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY} libraries={libraries}>
+        <Autocomplete onLoad={(autocomplete) => (autocompleteRef.current = autocomplete)} onPlaceChanged={handlePlaceSelect}>
+          <input
+            type="text"
+            placeholder="Enter location"
+            ref={inputRef}
+            className="w-full p-2 border rounded-md mt-1 bg-gray-700 text-white border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </Autocomplete>
+
+        {/* Google Map */}
+        <GoogleMap
+          mapContainerStyle={{ width: "100%", height: "300px", marginTop: "10px" }}
+          center={mapCenter}
+          zoom={12}
+          onClick={(event) => {
+    console.log("Map clicked!"); // Debug log 1
+    handleMapClick(event);
+  }}
+	  >
+          {selectedCoords && <Marker position={selectedCoords} />}
+        </GoogleMap>
+      </LoadScript>
+      {/* Show Selected Address */}
+      {selectedAddress && (
+       <div className="mt-2">
+        <span className="text-gray-300">{selectedAddress}</span>
+       </div>
+      )}
+
+      {/* Error message if no location has been added */}
+      {locationError && <p className="text-red-500 text-sm mt-2">Please add at least one preferred location.</p>}
+
+      {/* List of Selected Locations */}
+      <ul className="text-gray-300 mt-2">
+        {formData.preferredLocation.map((location, index) => (
+          <li key={index} className="flex justify-between items-center">
+            <span>{location}</span>
+            <button
+              type="button"
+              onClick={() => handleRemoveLocation(index)}
+              className="text-red-500 ml-2 hover:text-red-700"
+            >
+              ❌
+            </button>
+          </li>
+        ))}
+      </ul>
+    </div>
             <div>
               <label className="block text-gray-300 text-sm font-medium">Requirement</label>
               <textarea
