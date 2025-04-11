@@ -1,7 +1,10 @@
 import React, { useState, useRef } from "react";
 import { LoadScript, Autocomplete } from "@react-google-maps/api";
+import Resizer from "react-image-file-resizer";
 
 const libraries = ['places'];
+const MAX_TOTAL_SIZE_MB = 6;
+const MAX_IMAGES = 5;
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -27,6 +30,7 @@ export default function Contact() {
     "Co-working Spaces",
   ];
   const purposes = ["Find a Space", "Find a Tenant"];
+  const fileInputRef = useRef(null); 
 
   // Handle selection from Google Maps Autocomplete
   const handlePlaceSelect = () => {
@@ -56,21 +60,67 @@ export default function Contact() {
     }));
   };
 
-  const handleFileChange = (e) => {
-  const selectedFiles = Array.from(e.target.files);
 
-  if (selectedFiles.length > 5) {
-    alert("You can only upload up to 5 images.");
-    e.target.value = ""; // Clear selection
-    return;
+const handleFileChange = async (e) => {
+  const selectedFiles = Array.from(e.target.files);
+  let totalSize = formData.images.reduce((acc, img) => acc + img.size, 0);
+  let validImages = [...formData.images]; // Keep previously selected images
+
+  const resizeImage = (file) =>
+    new Promise((resolve) => {
+      Resizer.imageFileResizer(
+        file,
+        800, // Max width
+        600, // Max height
+        "JPEG", // Format
+        80, // Quality
+        0, // Rotation
+        async (uri) => {
+          const blob = await fetch(uri).then((res) => res.blob()); // Convert base64 to blob
+          const resizedFile = new File([blob], file.name, { type: "image/jpeg" });
+          resolve(resizedFile);
+        },
+        "base64"
+      );
+    });
+
+  for (let file of selectedFiles) {
+    if (validImages.length >= 5) break;
+
+    const resizedFile = await resizeImage(file);
+    const newSize = resizedFile.size;
+
+    if (totalSize + newSize > 6 * 1024 * 1024) break; // Stop if total size exceeds 6MB
+
+    totalSize += newSize;
+    validImages.push(resizedFile);
+  }
+
+  if (validImages.length < formData.images.length + selectedFiles.length) {
+    alert(`We could only include ${validImages.length} images due to size limits.`);
   }
 
   setFormData((prevData) => ({
     ...prevData,
-    images: selectedFiles,
+    images: validImages,
+    totalSize, // Update total size
   }));
-  };
 
+  e.target.value = ""; // Clear input to allow re-selecting
+};
+
+const handleRemoveFile = (index) => {
+  setFormData((prevData) => ({
+    ...prevData,
+    images: prevData.images.filter((_, i) => i !== index),
+  }));
+}; 
+
+  const handleClick = () => {
+    if (fileInputRef.current) {
+      fileInputRef.current.click();
+    }
+  };
   // Form submission handler
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -193,8 +243,41 @@ export default function Contact() {
 	      {formData.purpose === "Find a Tenant" && (
               <div>
                 <label className="block text-gray-300 text-sm font-medium">Upload Photos(Max 5)</label>
-                <input type="file" multiple accept="image/*" onChange={handleFileChange} className="w-full p-2 border rounded-md bg-gray-700 text-white" />
-              </div>
+
+                <input type="file" multiple accept="image/*" onChange={handleFileChange} className="hidden" disabled={formData.images.length >= MAX_IMAGES} ref={fileInputRef} />
+		{/* ✅ Custom Upload Button */}
+                <button
+                 type="button"
+                 onClick={handleClick}
+                 className="bg-blue-600 text-white px-4 py-2 rounded-md"
+                 disabled={formData.images.length >= MAX_IMAGES}
+                 >
+                {formData.images.length === 0
+                 ? "Choose Images"
+                 : `${formData.images.length} Image(s) Selected`}
+                </button>
+		{/* Show selected files */}
+                <div className="mt-2">
+                 {formData.images.length > 0 ? (
+                  formData.images.map((file, index) => (
+                  <div key={index} className="text-white text-sm">
+                   {file.name}{" "}
+                   <button
+                    onClick={() => handleRemoveFile(index)}
+                    className="text-red-400 text-sm ml-2"
+                    >
+                    Remove
+                   </button>
+                  </div>
+                 ))
+                ) : (
+                 <p className="text-gray-400 text-sm">No images selected</p> // ✅ Shows when empty
+                )}
+               </div>
+               <p className="text-gray-400 text-sm mt-1">
+                Total size: {(formData.totalSize / 1024 / 1024).toFixed(2)}MB / {MAX_TOTAL_SIZE_MB}MB
+               </p>
+	      </div>
               )}
             <div>
               <label className="block text-gray-300 text-sm font-medium">Service</label>
