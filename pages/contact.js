@@ -86,9 +86,8 @@ const handleMapClick = async (event) => {
 
   // Update Location Error State
   useEffect(() => {
-    if (formData.preferredLocation.length === 0) {
-      setLocationError(true);
-      setMapCenter(BANGALORE_COORDS);
+    if (formData.preferredLocation.length > 0) {
+      setLocationError(false);
     }
   }, [formData.preferredLocation]);
 
@@ -156,7 +155,7 @@ const handleMapClick = async (event) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setMessage("Submitting...");
+    setMessage("Your request is being processed...");
 
     if (formData.preferredLocation.length === 0) {
       setMessage("");
