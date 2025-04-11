@@ -97,7 +97,7 @@ const handleFileChange = async (e) => {
   }
 
   if (validImages.length < formData.images.length + selectedFiles.length) {
-    alert(`We could only include ${validImages.length} images due to size limits.`);
+    alert(`We could only include ${validImages.length} photos due to limits.`);
   }
 
   setFormData((prevData) => ({
@@ -253,8 +253,8 @@ const handleRemoveFile = (index) => {
                  disabled={formData.images.length >= MAX_IMAGES}
                  >
                 {formData.images.length === 0
-                 ? "Choose Images"
-                 : `${formData.images.length} Image(s) Selected`}
+                 ? "Select Photos"
+                 : `${formData.images.length} Photo(s) Selected`}
                 </button>
 		{/* Show selected files */}
                 <div className="mt-2">
@@ -271,11 +271,11 @@ const handleRemoveFile = (index) => {
                   </div>
                  ))
                 ) : (
-                 <p className="text-gray-400 text-sm">No images selected</p> // ✅ Shows when empty
+                 <p className="text-gray-400 text-sm">No Photos selected</p> // ✅ Shows when empty
                 )}
                </div>
                <p className="text-gray-400 text-sm mt-1">
-                Total size: {(formData.totalSize / 1024 / 1024).toFixed(2)}MB / {MAX_TOTAL_SIZE_MB}MB
+                Total size: {(formData.totalSize ? formData.totalSize / 1024 / 1024 : 0).toFixed(2)}MB / {MAX_TOTAL_SIZE_MB}MB
                </p>
 	      </div>
               )}
