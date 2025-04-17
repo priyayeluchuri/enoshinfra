@@ -1,18 +1,16 @@
-'use client';
-
 import { useRouter } from 'next/router';
-import { useTranslation } from 'next-i18next';
-import { useEffect } from "react";
+import { useEffect } from 'react';
+import i18n from '../i18n'; // ✅ import the correct instance
 
 export default function LanguageSwitcher() {
   const router = useRouter();
-  const { i18n } = useTranslation();
 
   useEffect(() => {
-  if (i18n.language !== router.locale) {
-    i18n.changeLanguage(router.locale);
-  }
-}, [router.locale, i18n]);
+    if (typeof window !== 'undefined' && i18n.language !== router.locale) {
+      i18n.changeLanguage(router.locale);
+    }
+  }, [router.locale]);
+
   const changeLanguage = (e) => {
     const selectedLang = e.target.value;
     const { pathname, asPath, query } = router;
@@ -22,7 +20,7 @@ export default function LanguageSwitcher() {
 
   return (
     <select
-      value={i18n.language}
+      value={router.locale}
       onChange={changeLanguage}
       className="bg-gray-800 text-white border border-gray-600 rounded px-2 py-1 text-sm"
     >
@@ -31,10 +29,10 @@ export default function LanguageSwitcher() {
       <option value="kn">ಕನ್ನಡ</option>
       <option value="te">తెలుగు</option>
       <option value="zh">中文</option>
-      <option value="jp">日本語</option>
+      <option value="ja">日本語</option>
       <option value="ru">Русский</option>
       <option value="fr">Français</option>
-      <option value="ge">Deutsch</option>
+      <option value="de">Deutsch</option>
     </select>
   );
 }

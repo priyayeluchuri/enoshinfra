@@ -6,9 +6,9 @@ import kn from './locales/kn/common.json';
 import zh from './locales/zh/common.json';
 import ru from './locales/ru/common.json';
 import fr from './locales/fr/common.json';
-import ge from './locales/ge/common.json';
+import de from './locales/ge/common.json';
 import te from './locales/te/common.json';
-import jp from './locales/te/common.json';
+import ja from './locales/te/common.json';
 
 // Initialize i18next
 i18next
@@ -20,10 +20,10 @@ i18next
       kn: { common: kn },
       te: { common: te },
       zh: { common: zh },
-      jp: { common: jp },
+      jp: { common: ja },
       ru: { common: ru },
       fr: { common: fr },
-      ge: { common: ge }
+      ge: { common: de }
     },
     lng: 'en', // Default language
     fallbackLng: 'en', // Fallback language
