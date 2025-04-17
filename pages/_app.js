@@ -6,7 +6,7 @@ import '../styles/globals.css';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import SEO from '../components/seo';
-import WhatsAppButton from '../components/WhatsAppbutton';
+//import WhatsAppButton from '../components/WhatsAppbutton';
 
 const supportedLocales = ['en', 'hi', 'kn', 'zh']; // match next-i18next config
 
