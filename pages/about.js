@@ -1,46 +1,39 @@
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
 import SEO from '../components/seo';
 
 export default function About() {
+  const { t } = useTranslation('common'); // Import translations from 'common.json'
+
   return (
     <>
       <SEO
-        title="About Us - Enosh Infra"
-        description="Discover Enosh Infra, a premier real estate consultancy firm dedicated to providing tailored commercial property solutions in India."
+        title={t('about.title')} // Title from the translations
+        description={t('about.description')} // Description from the translations
         url="https://www.enoshinfra.com/about"
-        //image="https://www.enoshinfra.com/hero-bg.jpg"
       />
 
       <main className="w-full h-[85vh] p-6 pt-12 text-white bg-gray-900">
         <section className="container mx-auto">
-          <h1 className="text-4xl font-extrabold text-center mb-4">About Us</h1>
+          <h1 className="text-4xl font-extrabold text-center mb-4">{t('about.title')}</h1>
+
+          <p className="text-lg leading-relaxed mb-4" dangerouslySetInnerHTML={{ __html: t('about.intro.welcome') }} />
+          <p className="text-lg leading-relaxed mb-4" dangerouslySetInnerHTML={{ __html: t('about.intro.location') }} />
 
           <p className="text-lg leading-relaxed mb-4">
-            Welcome to <span className="text-blue-400 font-semibold">Enosh Infra</span>, a premier real estate consultancy specializing in commercial property rentals for multinational corporations and foreign enterprises seeking to establish a presence in India. Based in <span className="text-blue-400 font-semibold">Bengaluru</span>, India's thriving business hub, we are committed to delivering customized, high-quality real estate solutions.
+            {t('about.description')}
           </p>
 
-          <p className="text-lg leading-relaxed mb-4">
-            Our expert team excels in navigating the complexities of the Indian real estate market. We provide comprehensive services, including market analysis, location scouting, legal assistance, and negotiation support, ensuring a seamless experience for businesses entering the Indian landscape.
-          </p>
-
-          <p className="text-lg leading-relaxed mb-4">
-            Leveraging our robust network of developers, landlords, and government agencies, we facilitate access to premium office spaces that align with your strategic objectives and corporate vision.
-          </p>
-
-          <h2 className="text-3xl font-semibold mt-6 mb-3 text-center">Why Choose Enosh Infra?</h2>
+          <h2 className="text-3xl font-semibold mt-6 mb-3 text-center">{t('about.whyChoose.heading')}</h2>
           <ul className="list-disc pl-6 text-lg leading-relaxed mb-4">
-            <li>Specialists in commercial real estate for global corporations.</li>
-            <li>Exclusive access to prime office spaces in Bengaluru.</li>
-            <li>AI-powered property matching for optimal selection.</li>
-            <li>End-to-end consultancy from research to legal formalities.</li>
-            <li>Strong industry connections for seamless transactions.</li>
-            <li>Dedicated experts ensuring efficient and effective solutions.</li>
+            {t('about.whyChoose.points', { returnObjects: true }).map((point, index) => (
+              <li key={index}>{point}</li>
+            ))}
           </ul>
 
-          <p className="text-xl font-semibold text-center text-blue-400 mt-6">
-            Our Motto: <span className="italic">"Transforming Real Estate with AI-Driven Precision."</span>
-          </p>
+          <p className="text-xl font-semibold text-center text-blue-400 mt-6" dangerouslySetInnerHTML={{ __html: t('about.motto') }} />
         </section>
-     </main>
+      </main>
 
       <style jsx global>{`
         body {
@@ -51,5 +44,12 @@ export default function About() {
       `}</style>
     </>
   );
+}
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])), // load the 'common' namespace
+    },
+  };
 }
 

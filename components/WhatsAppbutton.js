@@ -1,3 +1,4 @@
+import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons'; // Import the WhatsApp icon
@@ -7,13 +8,13 @@ const WhatsAppButton = () => {
   const phoneNumber = '+918073582033';
   const message = encodeURIComponent("I'm interested in your property services");
   const whatsappLink = `https://wa.me/${phoneNumber}?text=${message}`;
-
+  const { t } = useTranslation('common');
   return (
     <div className={styles.whatsappContainer}>
       <Link href={whatsappLink} passHref legacyBehavior>
         <a target="_blank" rel="noopener noreferrer" className={styles.whatsappButton}>
           <FontAwesomeIcon icon={faWhatsapp} className={styles.whatsappIcon} />
-          Get in Touch
+          {t('whatsapp.cta')}
         </a>
       </Link>
     </div>

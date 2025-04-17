@@ -1,18 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useTranslation } from "next-i18next";
 
 export default function HeroSection() {
-  const options = [
-    "Premium Warehouses in Bengaluru – Affordable & Hassle-Free",
-    "Find a Tenant for Your Warehouse – Quick & Easy Listings",
-    "Co-Working Spaces – Flexible, Affordable & Ready to Move In",
-    "List Your Co-Working Space – Get Tenants Fast with Zero Hassle",
-    "Industrial Spaces – High-Quality, Budget-Friendly & Strategic Locations",
-    "Lease Your Industrial Space – Connect with Verified Tenants",
-    "Commercial Spaces – Prime Locations at Competitive Prices",
-    "Rent Out Your Commercial Space – Get Instant Inquiries",
-  ];
+  const { t,i18n } = useTranslation('common');
+  const options = t('hero.options', { returnObjects: true });
 
   const [index, setIndex] = useState(0);
 
@@ -42,8 +35,8 @@ export default function HeroSection() {
       {/* Hero Content */}
       <div className="container mx-auto px-6 text-center relative z-10">
         <h1 className="text-4xl md:text-5xl font-bold">
-          Premium & Affordable Commercial Spaces in Namma Bengaluru
-        </h1>
+         {t('hero.headline')}
+	</h1>
 
         {/* Dynamic Changing Text */}
         <motion.h2
@@ -58,16 +51,16 @@ export default function HeroSection() {
         </motion.h2>
 
         <p className="mt-4 text-lg md:text-xl max-w-2xl mx-auto">
-          Enosh Infra is your trusted partner in securing high-quality commercial, industrial, and warehouse properties in Bangalore. Elevate your business with strategic locations and seamless transactions.
-        </p>
+         {t('hero.subheadline')}
+	</p>
 
         {/* CTA Button */}
         <div className="mt-6">
           <a
-            href="/contact"
+	    href={`/${i18n.language}/contact`} 
             className="px-6 py-3 bg-blue-600 hover:bg-blue-700 transition rounded-lg text-white font-medium text-lg"
           >
-            Get Started
+            {t('hero.cta')}
           </a>
         </div>
       </div>

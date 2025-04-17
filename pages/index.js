@@ -1,20 +1,30 @@
 import SEO from '../components/seo';
 import HeroSection from '../components/HeroSection';
-// import PropertyList from '../components/PropertyList';
+import { useTranslation } from 'next-i18next'; // correct import
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'; // for SSR/SSG i18n
 
 export default function Home() {
+  const { t } = useTranslation('common'); // specify the namespace
+
   return (
     <>
       <SEO
-	title="Enosh Infra - Rent or Lease Industrial, Commercial & Office Spaces in Bengaluru"
-        description="Discover premium industrial, commercial, and co-working spaces for rent or lease in Bengaluru. Explore prime hubs like Nelamangala, Peenya, Bommasandra, Jigani, Hoskote, Kumbalgodu, Doddaballapura, Hebbal, Whitefield, HSR, and KIADB industrial areas with Enosh Infra."
+        title={t('seo.title')}
+        description={t('seo.description')}
         url="https://enoshinfra.com"
-        //image="https://www.enoshinfra.com/hero-bg.jpg" // Replace with the actual image URL
       />
-
       <HeroSection />
       {/* <PropertyList /> */}
     </>
   );
+}
+
+// 👇 Add this at the bottom of the file
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+    },
+  };
 }
 

@@ -1,3 +1,5 @@
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from "next-i18next";
 import React, { useState, useRef, useEffect } from "react";
 import { LoadScript, Autocomplete, GoogleMap, Marker } from "@react-google-maps/api";
 import Resizer from "react-image-file-resizer";
@@ -8,6 +10,11 @@ const MAX_IMAGES = 5;
 const BANGALORE_COORDS = { lat: 12.97194, lng: 77.59369 };
 
 export default function Contact() {
+  const { t } = useTranslation('common');
+  const purposes = [
+  { value: "findSpace", label: t("contact.purposes.findSpace") },
+  { value: "findTenant", label: t("contact.purposes.findTenant") }
+];
   const [formData, setFormData] = useState({
     name: "",
     purpose: "",
@@ -31,7 +38,6 @@ export default function Contact() {
   const fileInputRef = useRef(null);
 
   const services = ["Warehouses & Logistics", "Tech Parks", "Commercial & Retail", "Co-working Spaces"];
-  const purposes = ["Find a Space", "Find a Tenant"];
 
   // Google Places Autocomplete Selection
   const handlePlaceSelect = () => {
@@ -113,27 +119,38 @@ const handleMapClick = async (event) => {
           80,
           0,
           async (uri) => {
+	  //	   console.log('Resized Image URI:', uri);
             const blob = await fetch(uri).then((res) => res.blob());
-            resolve(new File([blob], file.name, { type: "image/jpeg" }));
+	  //	  console.log('Blob:', blob); // Log blob object
+		  const resizedFile = new File([blob], file.name, { type: "image/jpeg" });
+          //console.log('Resized File:', resizedFile, 'Size:', resizedFile.size); // Log final file
+          resolve(resizedFile);
           },
           "base64"
         );
       });
 
     for (let file of selectedFiles) {
-      if (validImages.length >= MAX_IMAGES) break;
+      if (validImages.length >= MAX_IMAGES) {
+	  //    console.log('Max images reached:', MAX_IMAGES);
+	      break;
+      }
       const resizedFile = await resizeImage(file);
       const newSize = resizedFile.size;
 
-      if (totalSize + newSize > MAX_TOTAL_SIZE_MB * 1024 * 1024) break;
+      if (totalSize + newSize > MAX_TOTAL_SIZE_MB * 1024 * 1024) {
+	//      console.log('Size limit exceeded:', totalSize + newSize);
+	      break;
+      }
       totalSize += newSize;
       validImages.push(resizedFile);
+      //console.log('Added Image:', resizedFile, 'New Total Size:', totalSize);
     }
 
     if (validImages.length < formData.images.length + selectedFiles.length) {
       alert(`We could only include ${validImages.length} photos due to size limits.`);
     }
-
+    //console.log('Final Valid Images:', validImages);
     setFormData((prev) => ({ ...prev, images: validImages }));
     e.target.value = "";
   };
@@ -155,7 +172,7 @@ const handleMapClick = async (event) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setMessage("Your request is being processed...");
+    setMessage(t('contact.message.processing'));  
 
     if (formData.preferredLocation.length === 0) {
       setMessage("");
@@ -179,8 +196,8 @@ const handleMapClick = async (event) => {
       const response = await fetch("/api/contact", { method: "POST", body: payload });
 
       if (response.ok) {
-        setMessage("Your request has been submitted successfully!");
-        setFormData({
+        setMessage(t('contact.message.success')); 
+	setFormData({
           name: "",
           purpose: "",
           service: "",
@@ -192,50 +209,51 @@ const handleMapClick = async (event) => {
           images: [],
         });
       } else {
-        setMessage("Something went wrong. Please try again.");
+       setMessage(t('contact.message.error')); 
       }
     } catch (error) {
-      setMessage("Error submitting the form.");
+       setMessage(t('contact.message.error')); 
     } finally {
       setIsSubmitting(false);
     }
   };
-
+  const totalSizeMB = (formData.images.reduce((acc, img) => acc + img.size, 0) / (1024 * 1024)).toFixed(2);
+  const translatedSizeLabel = t('contact.totalSizeLabel', {
+  used: totalSizeMB,
+  max: MAX_TOTAL_SIZE_MB
+});
+//console.log('Translated Size Label:', translatedSizeLabel);
   return (
     <div className="min-h-[80vh] bg-gray-900 flex items-center justify-center p-6">
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0 md:space-x-6">
 
         <div className="max-w-md text-white md:w-1/2 text-center md:text-left">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">
-            <br />
-            <br />
-            Perfect Space. <br className="hidden md:block" />
-            Perfect Location. <br className="hidden md:block" />
-            Perfect Timing.
-          </h2>
-          <p className="text-gray-400 mt-4">
-            Our AI-driven system will match your requirements with the best possible options, and we'll get back to you soon!
-          </p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight whitespace-pre-line">
+  {t("contact.formTitle")}
+</h2>
+	  <p className="text-gray-400 mt-4">
+	  {t("contact.description")}
+	  </p>
           <p className="text-gray-400">
-            Please provide your detailed requirements including:
-          </p>
+	  {t("contact.instructions")}
+	  </p>
           <ul className="list-disc list-inside text-gray-300 mt-2 space-y-1">
-            <li>Preferred Location</li>
-            <li>City</li>
-            <li>Property Size</li>
-            <li>Specific Needs</li>
+            <li>{t("contact.listItems.location")}</li>
+            <li>{t("contact.listItems.city")}</li>
+            <li>{t("contact.listItems.propertySize")}</li>
+            <li>{t("contact.listItems.specificNeeds")}</li>
           </ul>
           <p className="text-gray-400 mt-4">
-            Thank You!
+            {t("contact.thankYou")}
           </p>
         </div>
 
         <div className="bg-gray-800 shadow-lg rounded-lg p-6 w-full md:w-1/3">
-          <h2 className="text-lg font-bold mb-4 text-center text-white">Contact Us</h2>
+          <h2 className="text-lg font-bold mb-4 text-center text-white">{t("contact.title")}</h2>
 
           <form onSubmit={handleSubmit} className="space-y-3" encType="multipart/form-data">
             <div>
-              <label className="block text-gray-300 text-sm font-medium">Name</label>
+              <label className="block text-gray-300 text-sm font-medium">{t("contact.labels.name")}</label>
               <input
                 type="text"
                 name="name"
@@ -246,7 +264,7 @@ const handleMapClick = async (event) => {
               />
             </div>
             <div>
-              <label className="block text-gray-300 text-sm font-medium">Purpose</label>
+              <label className="block text-gray-300 text-sm font-medium">{t("contact.labels.purpose")}</label>
               <select
                 name="purpose"
                 value={formData.purpose}
@@ -254,13 +272,15 @@ const handleMapClick = async (event) => {
                 required
                 className="w-full p-2 border rounded-md mt-1 bg-gray-700 text-white border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
               >
-                <option value="">Select purpose</option>
-                {purposes.map((purpose, index) => (
-                  <option key={index} value={purpose}>{purpose}</option>
+                <option value="">{t("contact.selectPurpose")}</option>
+	        {purposes.map(({ label, value }) => (
+                  <option key={value} value={value}>
+                  {label}
+                  </option>
                 ))}
               </select>
 	     </div>
-	      {formData.purpose === "Find a Tenant" && (
+	      {formData.purpose === "findTenant" && (
               <div>
                 <label className="block text-gray-300 text-sm font-medium">Upload Photos(Max 5)</label>
 
@@ -273,8 +293,8 @@ const handleMapClick = async (event) => {
                  disabled={formData.images.length >= MAX_IMAGES}
                  >
                 {formData.images.length === 0
-                 ? "Select Photos"
-                 : `${formData.images.length} Photo(s) Selected`}
+                 ? t('contact.uploadPhotosText')
+                 : `${formData.images.length} ${t('contact.photosSelected')}`}
                 </button>
 		{/* Show selected files */}
                 <div className="mt-2">
@@ -291,16 +311,19 @@ const handleMapClick = async (event) => {
                   </div>
                  ))
                 ) : (
-                 <p className="text-gray-400 text-sm">No Photos selected</p> // ✅ Shows when empty
+                 <p className="text-gray-400 text-sm">{t('contact.noPhotosSelected')}</p> // ✅ Shows when empty
                 )}
                </div>
-               <p className="text-gray-400 text-sm mt-1">
-                Total size: {(formData.totalSize ? formData.totalSize / 1024 / 1024 : 0).toFixed(2)}MB / {MAX_TOTAL_SIZE_MB}MB
-               </p>
-	      </div>
+	<p className="text-gray-400 text-sm mt-1">
+  {t('contact.totalSizeLabel', {
+    used: totalSizeMB,
+    max: MAX_TOTAL_SIZE_MB
+  })}
+</p>      
+	</div>
               )}
             <div>
-              <label className="block text-gray-300 text-sm font-medium">Service</label>
+              <label className="block text-gray-300 text-sm font-medium">{t('contact.labels.service')}</label>
               <select
                 name="service"
                 value={formData.service}
@@ -308,16 +331,20 @@ const handleMapClick = async (event) => {
                 required
                 className="w-full p-2 border rounded-md mt-1 bg-gray-700 text-white border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
               >
-                <option value="">Select a service</option>
-                {services.map((service, index) => (
-                  <option key={index} value={service}>{service}</option>
-                ))}
-              </select>
+                <option value="">{t("contact.selectService")}</option>
+                {["warehousesLogistics", "techParks", "commercialRetail", "coworkingSpaces"].map((serviceKey, index) => (
+      <option key={index} value={serviceKey}>
+        {t(`contact.services.${serviceKey}`)} {/* Use the keys to fetch the translation */}
+      </option>
+    ))}    
+	  </select>
             </div>
 
 	    <div>
       <label className="block text-gray-300 text-sm font-medium">
-        {formData.purpose === "Find a Tenant" ? "Property Location" : "Preferred Location(s)"}
+        {formData.purpose === t("contact.purposes.findTenant") 
+    ? t("contact.propertyLocationLabel") 
+    : t("contact.locationLabel")}
       </label>
 
       {/* Google Maps Autocomplete */}
@@ -325,7 +352,7 @@ const handleMapClick = async (event) => {
         <Autocomplete onLoad={(autocomplete) => (autocompleteRef.current = autocomplete)} onPlaceChanged={handlePlaceSelect}>
           <input
             type="text"
-            placeholder="Enter location"
+            placeholder={t("contact.locationPlaceholder")}
             ref={inputRef}
             className="w-full p-2 border rounded-md mt-1 bg-gray-700 text-white border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
@@ -352,7 +379,7 @@ const handleMapClick = async (event) => {
       )}
 
       {/* Error message if no location has been added */}
-      {locationError && <p className="text-red-500 text-sm mt-2">Please add at least one preferred location.</p>}
+      {locationError && <p className="text-red-500 text-sm mt-2">t("contact.locationError")</p>}
 
       {/* List of Selected Locations */}
       <ul className="text-gray-300 mt-2">
@@ -371,10 +398,10 @@ const handleMapClick = async (event) => {
       </ul>
     </div>
             <div>
-              <label className="block text-gray-300 text-sm font-medium">Requirement</label>
+              <label className="block text-gray-300 text-sm font-medium">{t("contact.labels.requirement")}</label>
               <textarea
                 name="requirement"
-                placeholder="Please provide size of the property for better match"
+                placeholder={t("contact.requirementPlaceholder")}
                 value={formData.requirement}
                 onChange={handleChange}
                 required
@@ -384,7 +411,7 @@ const handleMapClick = async (event) => {
             </div>
 
             <div>
-              <label className="block text-gray-300 text-sm font-medium">Email</label>
+              <label className="block text-gray-300 text-sm font-medium">{t("contact.labels.email")}</label>
               <input
                 type="email"
                 name="email"
@@ -396,7 +423,7 @@ const handleMapClick = async (event) => {
             </div>
 
             <div>
-              <label className="block text-gray-300 text-sm font-medium">Phone</label>
+              <label className="block text-gray-300 text-sm font-medium">{t("contact.labels.phone")}</label>
               <input
                 type="tel"
                 name="phone"
@@ -408,7 +435,7 @@ const handleMapClick = async (event) => {
             </div>
 
             <div>
-              <label className="block text-gray-300 text-sm font-medium">Company (Optional)</label>
+              <label className="block text-gray-300 text-sm font-medium">{t("contact.labels.company")}</label>
               <input
                 type="text"
                 name="company"
@@ -417,13 +444,12 @@ const handleMapClick = async (event) => {
                 className="w-full p-2 border rounded-md mt-1 bg-gray-700 text-white border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
-
             <button
-              type="submit"
-              className="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 transition"
-              disabled={isSubmitting}
+            type="submit"
+            className="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 transition"
+            disabled={isSubmitting}
             >
-              {isSubmitting ? "Submitting..." : "Submit"}
+             {isSubmitting ? t("contact.submittingButton") : t("contact.submitButton")}
             </button>
 
             {message && <p className="text-center text-sm text-green-400 mt-2">{message}</p>}
@@ -433,4 +459,10 @@ const handleMapClick = async (event) => {
     </div>
   );
 }
-
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])), // load the 'common' namespace
+    },
+  };
+}

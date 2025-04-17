@@ -1,41 +1,44 @@
 import SEO from '../components/seo';
 import Link from 'next/link';
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 export default function Services() {
+  const { t } = useTranslation('common');
+
   return (
     <>
       <SEO
-        title="Our Services - Enosh Infra"
-        description="Explore the comprehensive range of real estate consultancy services offered by Enosh Infra, specializing in premium commercial properties."
+        title={`${t('our_services')} - Enosh Infra`}
+        description={t('services_description')}
         url="https://www.enoshinfra.com/services"
-        //image="https://www.enoshinfra.com/hero-bg.jpg"
       />
 
       <main className="w-full min-h-screen p-6 pt-12 text-white bg-gray-900">
         <section className="container mx-auto">
-          <h1 className="text-4xl font-extrabold text-center mb-4">Our Services</h1>
+          <h1 className="text-4xl font-extrabold text-center mb-4">{t('our_services')}</h1>
           <p className="text-lg leading-relaxed mb-4">
-            Enosh Infra offers a diverse range of real estate solutions tailored to meet the specific needs of businesses seeking premium properties in India. Our services include:
+            {t('services_description')}
           </p>
           <ul className="list-disc pl-6 text-lg leading-relaxed mb-4">
             <li>
               <Link href="/services/warehouses" className="text-blue-400 hover:underline">
-                Warehouses & Logistics Solutions
+                {t('warehouses')}
               </Link>
             </li>
             <li>
               <Link href="/services/tech-parks" className="text-blue-400 hover:underline">
-                Tech Parks for Innovative Enterprises
+                {t('tech_parks')}
               </Link>
             </li>
             <li>
               <Link href="/services/commercial-retail" className="text-blue-400 hover:underline">
-                Commercial & Retail Spaces for Growing Businesses
+                {t('commercial_retail')}
               </Link>
             </li>
             <li>
               <Link href="/services/co-working" className="text-blue-400 hover:underline">
-                Modern Co-Working Spaces
+                {t('co_working')}
               </Link>
             </li>
           </ul>
@@ -51,5 +54,14 @@ export default function Services() {
       `}</style>
     </>
   );
+}
+
+// Add this to support SSR translation loading
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+    },
+  };
 }
 

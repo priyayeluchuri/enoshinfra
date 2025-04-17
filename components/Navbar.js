@@ -1,3 +1,5 @@
+import { useTranslation } from 'next-i18next';
+import LanguageSwitcher from './LanguageSwitcher'; // adjust the path as needed
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { Menu, ChevronRight, ChevronDown } from 'lucide-react';
@@ -5,13 +7,15 @@ import { useRouter } from 'next/router';
 import Image from 'next/image';
 
 export default function Navbar() {
+  const { t, i18n } = useTranslation('common');
   const [isOpen, setIsOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const router = useRouter();
   const menuRef = useRef(null);
   let menuTimeout, servicesTimeout;
-
+  // Fallback text if translations are not ready yet
+  const ctaText = t('navbar.cta', { defaultValue: "Need a space or looking for tenants? Let's Talk!" });
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768); // Mobile = width < 768px
@@ -55,11 +59,10 @@ export default function Navbar() {
       setIsOpen(false); // Close the menu when a link is clicked
     }
   };
-
   return (
     <nav className="bg-gray-900 text-white p-4 fixed top-0 w-full z-50">
       <div className="container mx-auto flex justify-between items-center">
-        <Link href="/">
+        <Link href="/" locale={i18n.language}>
           <Image
             src="/fullfav.png"
             alt="Enosh Infra Logo"
@@ -70,14 +73,17 @@ export default function Navbar() {
             style={{ width: "auto", height: "auto" }}
           />
         </Link>
+         {/* Right Section (CTA + Language Switcher) */}
+    <div className="flex flex-col items-end gap-1 sm:flex-row sm:items-center sm:gap-4">
+      <div className="text-sm text-blue-400">
+	<Link href="/contact" locale={i18n.language} className="hover:underline">
+         {ctaText}
+	</Link>
+      </div>
 
-        {/* CTA Text - Adapts to Mobile and Desktop */}
-        <div className="text-sm text-blue-400">
-          <Link href="/contact" className="hover:underline">
-            Need a space or looking for tenants? Let's Talk!
-          </Link>
-        </div>
-
+      {/* Language Switcher */}
+      <LanguageSwitcher />
+    </div>
         {/* Mobile & Desktop Menu */}
         <div
           className="relative"
@@ -96,10 +102,10 @@ export default function Navbar() {
             <div className="absolute right-0 mt-2 w-56 bg-gray-800 shadow-lg rounded-lg">
               <ul className="py-2">
                 <li>
-                  <Link href="/" className="block px-4 py-2 hover:bg-blue-500 hover:text-white" onClick={closeMenuOnItemClick}>Home</Link>
+                  <Link href="/" className="block px-4 py-2 hover:bg-blue-500 hover:text-white"  locale={i18n.language} onClick={closeMenuOnItemClick}>{t('navbar.home')}</Link>
                 </li>
                 <li>
-                  <Link href="/about" className="block px-4 py-2 hover:bg-blue-500 hover:text-white" onClick={closeMenuOnItemClick}>About</Link>
+                  <Link href="/about" className="block px-4 py-2 hover:bg-blue-500 hover:text-white"  locale={i18n.language} onClick={closeMenuOnItemClick}>{t('navbar.about')}</Link>
                 </li>
                 <li
                   className="relative"
@@ -110,30 +116,30 @@ export default function Navbar() {
                     onClick={handleServicesClick}
                     className="w-full text-left flex justify-between items-center px-4 py-2 hover:bg-blue-500 hover:text-white"
                   >
-                    Services {isMobile ? <ChevronDown size={18} /> : <ChevronRight size={18} className={`transition-transform ${isServicesOpen ? 'rotate-90' : ''}`} />}
+                    {t('navbar.services')} {isMobile ? <ChevronDown size={18} /> : <ChevronRight size={18} className={`transition-transform ${isServicesOpen ? 'rotate-90' : ''}`} />}
                   </button>
                   {isServicesOpen && (
                     <ul className={`absolute ${isMobile ? 'relative mt-0 w-full' : 'right-full top-0 w-56 mr-2'} bg-gray-700 rounded-md shadow-lg`}>
                       <li>
-                        <Link href="/services/warehouses" className="block px-4 py-2 hover:bg-blue-500 hover:text-white" onClick={closeMenuOnItemClick}>Warehouses & Logistics</Link>
+                        <Link href="/services/warehouses"  locale={i18n.language} className="block px-4 py-2 hover:bg-blue-500 hover:text-white" onClick={closeMenuOnItemClick}>{t('navbar.warehouses')}</Link>
                       </li>
                       <li>
-                        <Link href="/services/tech-parks" className="block px-4 py-2 hover:bg-blue-500 hover:text-white" onClick={closeMenuOnItemClick}>Tech Parks</Link>
+                        <Link href="/services/tech-parks" locale={i18n.language}  className="block px-4 py-2 hover:bg-blue-500 hover:text-white" onClick={closeMenuOnItemClick}>{t('navbar.techParks')}</Link>
                       </li>
                       <li>
-                        <Link href="/services/commercial-retail" className="block px-4 py-2 hover:bg-blue-500 hover:text-white" onClick={closeMenuOnItemClick}>Commercial & Retail</Link>
+                        <Link href="/services/commercial-retail" locale={i18n.language}  className="block px-4 py-2 hover:bg-blue-500 hover:text-white" onClick={closeMenuOnItemClick}>{t('navbar.commercialRetail')}</Link>
                       </li>
                       <li>
-                        <Link href="/services/co-working" className="block px-4 py-2 hover:bg-blue-500 hover:text-white" onClick={closeMenuOnItemClick}>Co-working Spaces</Link>
+                        <Link href="/services/co-working"  locale={i18n.language} className="block px-4 py-2 hover:bg-blue-500 hover:text-white" onClick={closeMenuOnItemClick}>{t('navbar.coworking')}</Link>
                       </li>
                     </ul>
                   )}
                 </li>
                 <li>
-                  <Link href="/contact" className="block px-4 py-2 hover:bg-blue-500 hover:text-white" onClick={closeMenuOnItemClick}>Contact</Link>
+                  <Link href="/contact"  locale={i18n.language} className="block px-4 py-2 hover:bg-blue-500 hover:text-white" onClick={closeMenuOnItemClick}>{t('navbar.contact')}</Link>
                 </li>
                 <li>
-                  <Link href="/blogs-partners" className="block px-4 py-2 hover:bg-blue-500 hover:text-white" onClick={closeMenuOnItemClick}>Blogs & Partners</Link>
+                  <Link href="/blogs-partners"  locale={i18n.language}  className="block px-4 py-2 hover:bg-blue-500 hover:text-white" onClick={closeMenuOnItemClick}>{t('navbar.blogsPartners')}</Link>
                 </li>
               </ul>
             </div>

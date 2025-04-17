@@ -1,0 +1,265 @@
+{
+  "seo": {
+    "title": "Enosh Infra - 班加罗尔工业、商业及办公空间租赁",
+    "description": "探索班加罗尔优质的工业、商业和共享办公空间租赁服务。Enosh Infra为您提供Nelamangala、Peenya、Bommasandra、Jigani、Hoskote、Kumbalgodu、Doddaballapura、Hebbal、Whitefield、HSR和KIADB工业区等核心区域的物业。",
+    "url": "https://enoshinfra.com"
+  },
+  "our_services": "我们的服务",
+  "services_description": "Enosh Infra提供多样化的房地产解决方案，专为寻求印度优质物业的企业量身定制。我们的服务包括：",
+  "warehouses": "仓库与物流解决方案",
+  "tech_parks": "科技园区，助力创新企业",
+  "commercial_retail": "商业与零售空间，助力企业成长",
+  "co_working": "现代化共享办公空间",
+  "navbar": {
+    "cta": "需要空间或寻找租户？立即联系我们！",
+    "home": "首页",
+    "about": "关于我们",
+    "services": "服务",
+    "warehouses": "仓库与物流",
+    "techParks": "科技园区",
+    "commercialRetail": "商业与零售",
+    "coworking": "共享办公空间",
+    "contact": "联系我们",
+    "blogsPartners": "博客与合作伙伴"
+  },
+  "hero": {
+    "headline": "班加罗尔优质且实惠的商业空间",
+    "subheadline": "Enosh Infra是您在班加罗尔寻找高质量商业、工业和仓库物业的可靠合作伙伴。通过战略位置和无缝交易，提升您的业务。",
+    "cta": "开始体验",
+    "options": [
+      "班加罗尔优质仓库 – 实惠且无忧",
+      "为您的仓库寻找租户 – 快速便捷的挂牌服务",
+      "共享办公空间 – 灵活、实惠、随时入驻",
+      "挂牌您的共享办公空间 – 快速获取租户，无忧服务",
+      "工业空间 – 高质量、价格合理、位置优越",
+      "租赁您的工业空间 – 与经过验证的租户对接",
+      "商业空间 – 核心地段，价格竞争力强",
+      "出租您的商业空间 – 即时获取咨询"
+    ]
+  },
+  "about": {
+    "title": "关于我们 - Enosh Infra",
+    "description": "了解Enosh Infra，一家致力于为印度提供定制化商业物业解决方案的领先房地产咨询公司。",
+    "intro": {
+      "welcome": "欢迎体验<span class=\"text-blue-400 font-semibold\">Enosh Infra</span>，一家专注于为跨国公司和外国企业提供商业物业租赁服务的领先房地产咨询公司。",
+      "location": "我们总部位于<span class=\"text-blue-400 font-semibold\">班加罗尔</span>，印度的繁荣商业中心，致力于提供高质量、定制化的房地产解决方案。"
+    },
+    "whyChoose": {
+      "heading": "为何选择Enosh Infra？",
+      "points": [
+        "专注于为全球企业提供商业房地产服务。",
+        "独家获取班加罗尔核心办公空间。",
+        "人工智能驱动的物业匹配，确保最佳选择。",
+        "从调研到法律手续的全程咨询服务。",
+        "强大的行业关系网，确保交易顺畅。",
+        "专业团队提供高效、优质的解决方案。"
+      ]
+    },
+    "motto": "我们的宗旨：<span class=\"italic\">“以人工智能驱动的精准，革新房地产。”</span>"
+  },
+  "warehouse": {
+    "seo": {
+      "title": "班加罗尔仓库与物流空间租赁 - Enosh Infra",
+      "description": "探索班加罗尔优质的仓库与物流空间租赁服务，涵盖Nelamangala、Peenya、Bommasandra、Jigani、Hoskote、Kumbalgodu、Doddaballapura、Hebbal、Whitefield、HSR和KIADB工业区等核心区域。Enosh Infra为物业业主与寻求顶级工业空间的企业牵线搭桥。"
+    },
+    "title": "班加罗尔仓库与物流空间",
+    "intro": {
+      "1": "Enosh Infra专注于帮助企业寻找",
+      "highlight1": "班加罗尔优质的仓库与物流空间租赁服务",
+      "2": "。我们广泛的网络确保您获得最佳位置，以实现无缝供应链运营，从",
+      "highlight2": "Bommasandra到Peenya、Jigani到Whitefield"
+    },
+    "whyTitle": "为何选择Enosh Infra？",
+    "bullet1": "获取包括仓库和办公空间在内的核心商业物业",
+    "bullet2": "优越的地理位置，优化物流与分销",
+    "bullet3": "灵活的租赁选项，配备法律与合规支持",
+    "bullet4": "适合电商、制造和大规模存储的理想空间",
+    "closingLine": "探索班加罗尔顶级工业区的机会。",
+    "exploreTrending": "探索热门地点"
+  },
+  "techParks": {
+    "seo": {
+      "title": "科技园区 - Enosh Infra",
+      "description": "与Enosh Infra一起探索班加罗尔顶级的科技园区和IT办公空间。"
+    },
+    "title": "科技园区",
+    "intro": {
+      "1": "我们为全球企业对接世界一流的",
+      "highlight": "科技园区和IT办公空间",
+      "2": "，助力创新与发展。"
+    },
+    "featuresTitle": "核心特色",
+    "bullet1": "配备光纤连接的高科技基础设施",
+    "bullet2": "靠近主要商业中心和交通网络",
+    "bullet3": "为IT和软件公司提供全服务办公空间",
+    "bullet4": "可持续、节能的办公环境",
+    "closing": "适合：IT公司、初创企业、软件公司和全球企业。"
+  },
+  "commercial": {
+    "seo": {
+      "title": "商业与零售空间 - Enosh Infra",
+      "description": "与Enosh Infra一起探索班加罗尔优质的商业与零售空间，您的信赖房地产咨询伙伴。"
+    },
+    "title": "商业与零售空间",
+    "para1": "Enosh Infra专注于帮助企业寻找与其需求和品牌形象相匹配的完美商业与零售空间。无论您需要核心地段的店面、购物中心，还是高能见度的商业单位，我们提供专业指导，确保您在班加罗尔获得最佳位置。",
+    "para2": "我们深入的市场洞察力以及与顶级开发商的战略合作，使我们能够提供核心商业区的高端商业空间，确保最大的人流量和品牌曝光。",
+    "whyTitle": "为何选择我们的商业与零售空间？",
+    "point1": "班加罗尔商业中心的优越位置。",
+    "point2": "高人流量区域，确保最大能见度。",
+    "point3": "灵活的租赁选项，满足业务需求。",
+    "point4": "可定制的零售、餐厅和展示空间。",
+    "point5": "专业谈判支持，确保最佳交易。",
+    "closing": "让Enosh Infra助您在班加罗尔蓬勃发展的商业环境中立足。"
+  },
+  "coworking": {
+    "seo": {
+      "title": "共享办公空间 - Enosh Infra",
+      "description": "探索专为初创企业、自由职业者和企业设计的优质共享办公空间，配备即插即用设施。"
+    },
+    "title": "共享办公空间",
+    "para1": "Enosh Infra提供顶级的共享办公空间，专为寻求灵活、动态工作环境的初创企业、自由职业者和企业设计。我们的空间配备先进的基础设施、高速网络以及促进生产力和创新的协作氛围。",
+    "whyTitle": "为何选择我们的共享办公空间？",
+    "point1": "灵活的工作空间，满足您的需求。",
+    "point2": "高速网络和24/7全天候访问。",
+    "point3": "配备人体工学座椅和现代化内饰的完整办公设施。",
+    "point4": "与志同道合的专业人士建立联系的机会。",
+    "point5": "提供会议室、休息区和餐厅设施。",
+    "point6": "优越的地理位置，交通便利。",
+    "plugTitle": "即插即用设施",
+    "plugPara": "我们的即插即用共享办公空间配备了所有办公必需品，让您即刻入驻并开始工作。无麻烦、无停工——只需走进来，连接设备，即刻开始！",
+    "closing": "与Enosh Infra体验无缝工作空间。"
+  },
+  "trending": {
+    "seo": {
+      "title": "热门仓库地点 - Enosh Infra",
+      "description": "与Enosh Infra一起探索班加罗尔最受欢迎的仓库地点。"
+    },
+    "title": "热门仓库地点",
+    "zoneSouth": "班加罗尔南部",
+    "zoneWest": "班加罗尔西部",
+    "zoneNorth": "班加罗尔北部",
+    "zoneEast": "班加罗尔东部",
+    "bommasandra": "连接Hosur Road和Electronic City，交通便利，是工业和仓储运营的核心区域。",
+    "nelamangala": "靠近NH-75和NH-48等主要高速公路，适合大规模物流，提升分销效率。",
+    "peenya": "亚洲最大的工业中心之一，适合仓储，拥有通往主要交通网络的无缝连接。",
+    "jigani": "靠近Bannerghatta Road和Electronics City的重要工业带。",
+    "hoskote": "靠近NH-75的战略性工业和物流走廊，运输无缝衔接。",
+    "kumbalgodu": "位于Mysore Road，地理位置优越，适合物流和仓储，高速公路连接便利。",
+    "doddaballapura": "靠近班加罗尔国际机场，适合工业发展，提供充足的空间。",
+    "hebbal": "以其连接机场和外环路的便利性而闻名，适合物流运营。",
+    "whitefield": "蓬勃发展的工业和IT中心，拥有出色的公路和铁路连接。"
+  },
+  "services": {
+    "title": "我们的服务",
+    "description": "Enosh Infra提供多样化的房地产解决方案，专为寻求印度优质物业的企业量身定制。我们的服务包括：",
+    "list": [
+      {
+        "title": "仓库与物流解决方案",
+        "description": "专注于帮助企业在班加罗尔寻找优质的仓库和物流空间租赁服务。我们广泛的网络确保您获得最佳位置，以实现无缝供应链运营，从Bommasandra到Peenya、Jigani到Whitefield。",
+        "features": [
+          "获取包括仓库和办公空间在内的核心商业物业",
+          "优越的地理位置，优化物流与分销",
+          "灵活的租赁选项，配备法律与合规支持",
+          "适合电商、制造和大规模存储的理想空间"
+        ]
+      },
+      {
+        "title": "科技园区，助力创新企业",
+        "description": "为全球企业对接世界一流的科技园区和IT办公空间，助力创新与发展。",
+        "features": [
+          "配备光纤连接的高科技基础设施",
+          "靠近主要商业中心和交通网络",
+          "为IT和软件公司提供全服务办公空间",
+          "可持续、节能的办公环境"
+        ]
+      },
+      {
+        "title": "商业与零售空间，助力企业成长",
+        "description": "提供班加罗尔商业中心的优越位置，拥有高人流量区域，确保最大能见度。",
+        "features": [
+          "灵活的租赁选项，满足业务需求",
+          "可定制的零售、餐厅和展示空间",
+          "专业谈判支持，确保最佳交易"
+        ]
+      },
+      {
+        "title": "现代化共享办公空间",
+        "description": "提供专为协作和生产力设计的现代化共享办公空间。",
+        "features": [
+          "配备高速网络的完整办公设施",
+          "灵活的会员计划",
+          "提供会议室和活动空间",
+          "社区活动和网络拓展机会"
+        ]
+      }
+    ]
+  },
+  "contact": {
+    "title": "联系我们",
+    "description": "我们的人工智能系统将根据您的需求匹配合适的选项，并尽快与您联系！",
+    "instructions": "请提供您的详细需求，包括：",
+    "message": {
+      "processing": "您的请求正在处理...",
+      "success": "您的请求已成功提交！",
+      "error": "出现错误，请重试。"
+    },
+    "preferredLocationLabel": "首选地点",
+    "propertyLocationLabel": "物业地点",
+    "locationLabel": "首选地点",
+    "totalSizeLabel": "总大小：{{used}}MB / {{max}}MB",
+    "locationError": "请至少添加一个首选地点。",
+    "uploadPhotos": "上传照片（最多5张）",
+    "uploadPhotosText": "选择照片",
+    "photosSelected": "已选择照片",
+    "noPhotosSelected": "未选择照片",
+    "locationPlaceholder": "输入地点",
+    "requirementPlaceholder": "请提供物业大小以获得更精准匹配",
+    "companyLabel": "公司（可选）",
+    "submitButton": "提交",
+    "submittingButton": "提交中...",
+    "formTitle": "完美空间。\n完美地点。\n完美时机。",
+    "formSubtitle": "我们的人工智能系统将根据您的需求匹配合适的选项，并尽快与您联系！",
+    "listItems": {
+      "location": "首选地点",
+      "city": "城市",
+      "propertySize": "物业大小",
+      "specificNeeds": "具体需求"
+    },
+    "alert": {
+      "message": "由于大小限制，我们只能包含{{count}}张照片。"
+    },
+    "services": {
+      "warehousesLogistics": "仓库与物流",
+      "techParks": "科技园区",
+      "commercialRetail": "商业与零售",
+      "coworkingSpaces": "共享办公空间"
+    },
+    "purposes": {
+      "findSpace": "寻找空间",
+      "findTenant": "寻找租户"
+    },
+    "selectPurpose": "选择目的",
+    "selectService": "选择服务",
+    "labels": {
+      "name": "姓名",
+      "purpose": "目的",
+      "uploadPhotos": "上传照片（最多5张）",
+      "service": "服务",
+      "requirement": "需求",
+      "email": "电子邮件",
+      "phone": "电话",
+      "company": "公司（可选）"
+    },
+    "thankYou": "感谢您！"
+  },
+  "footer": {
+    "home": "首页",
+    "about": "关于我们",
+    "services": "服务",
+    "contact": "联系我们",
+    "rights": "© {{year}} EnoshInfra。保留所有权利。"
+  },
+  "whatsapp": {
+    "cta": "联系我们"
+  }
+}

@@ -1,19 +1,22 @@
+import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faTwitter, faInstagram, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 
 export default function Footer() {
+  const { t } = useTranslation('common');
+  const year = new Date().getFullYear();
   return (
     <footer className="bg-gray-900 text-white py-6">
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-6">
         
         {/* Quick Links */}
         <nav className="flex space-x-6">
-          <Link href="/" className="hover:text-blue-400">Home</Link>
-          <Link href="/about" className="hover:text-blue-400">About</Link>
-          <Link href="/services" className="hover:text-blue-400">Services</Link>
-          <Link href="/contact" className="hover:text-blue-400">Contact</Link>
+          <Link href="/" className="hover:text-blue-400">{t('footer.home')}</Link>
+          <Link href="/about" className="hover:text-blue-400">{t('footer.about')}</Link>
+          <Link href="/services" className="hover:text-blue-400">{t('footer.services')}</Link>
+          <Link href="/contact" className="hover:text-blue-400">{t('footer.contact')}</Link>
         </nav>
 
         {/* Social Media Links */}
@@ -41,7 +44,7 @@ export default function Footer() {
 
       {/* Copyright */}
       <div className="text-center text-sm text-gray-400 mt-4">
-        © {new Date().getFullYear()} EnoshInfra. All rights reserved.
+         {t('footer.rights',{ year })}
       </div>
     </footer>
   );
