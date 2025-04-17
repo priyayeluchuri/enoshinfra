@@ -76,25 +76,27 @@ export default function Navbar() {
             style={{ width: "auto", height: "auto" }}
           />
         </Link>
-	{/* Right Section (CTA + WhatsApp Button + Language Switcher) */}
-        <div className="flex flex-col items-end gap-1 sm:flex-row sm:items-center sm:gap-2">
+        {/* Right Section (CTA + WhatsApp Button + Language Switcher) */}
+        <div className="flex flex-col items-end gap-1">
           <div className="text-sm text-blue-400">
             <Link href="/contact" locale={i18n.language} className="hover:underline">
               {ctaText}
             </Link>
           </div>
-          {/* WhatsApp Button */}
-          <div className="text-sm">
-            <Link href={`https://wa.me/+918073582033?text=${encodeURIComponent("I'm interested in your property services")}`} passHref legacyBehavior>
-              <a target="_blank" rel="noopener noreferrer" className={styles.whatsappButton}>
-                <FontAwesomeIcon icon={faWhatsapp} className={styles.whatsappIcon} />
-                {t('whatsapp.cta')}
-              </a>
-            </Link>
+          <div className="flex items-center gap-2">
+            {/* WhatsApp Button */}
+            <div className="text-sm">
+              <Link href={`https://wa.me/+918073582033?text=${encodeURIComponent("I'm interested in your property services")}`} passHref legacyBehavior>
+                <a target="_blank" rel="noopener noreferrer" className={styles.whatsappButton}>
+                  <FontAwesomeIcon icon={faWhatsapp} className={styles.whatsappIcon} />
+                  {t('whatsapp.cta')}
+                </a>
+              </Link>
+            </div>
+            {/* Language Switcher */}
+            <LanguageSwitcher />
           </div>
-          {/* Language Switcher */}
-          <LanguageSwitcher />
-        </div>
+        </div>        
         {/* Mobile & Desktop Menu */}
         <div
           className="relative"

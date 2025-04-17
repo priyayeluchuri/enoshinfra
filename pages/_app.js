@@ -8,7 +8,7 @@ import Footer from '../components/Footer';
 import SEO from '../components/seo';
 //import WhatsAppButton from '../components/WhatsAppbutton';
 
-const supportedLocales = ['en', 'hi', 'kn', 'zh']; // match next-i18next config
+const supportedLocales = ['en', 'hi', 'kn', 'te', 'zh', 'ja', 'ru', 'fr', 'de']; // match next-i18next config
 
 function MyApp({ Component, pageProps }) {
   const { locale, asPath } = useRouter();
