@@ -42,7 +42,6 @@ function MyApp({ Component, pageProps }) {
         <Navbar />
         <main className="flex-grow mt-16">
           <Component {...pageProps} />
-          <WhatsAppButton />
         </main>
         <Footer />
       </div>

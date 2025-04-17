@@ -71,3 +71,7 @@ nav ul li button:hover {
   color: #3b82f6; /* Blue */
   cursor: pointer;
 }
+
+nav {
+  line-height: 1.2; /* Tighten text line height */
+}

@@ -28,4 +28,13 @@
   font-size: 22px; /* Adjust icon size */
   margin-right: 8px; /* Space between icon and text */
 }
-
+@media (max-width: 768px) {
+  .whatsappButton {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+  .whatsappIcon {
+    font-size: 18px;
+    margin-right: 6px;
+  }
+}
