@@ -6,9 +6,9 @@ import kn from './locales/kn/common.json';
 import zh from './locales/zh/common.json';
 import ru from './locales/ru/common.json';
 import fr from './locales/fr/common.json';
-import de from './locales/ge/common.json';
+import de from './locales/de/common.json';
 import te from './locales/te/common.json';
-import ja from './locales/te/common.json';
+import ja from './locales/ja/common.json';
 
 // Initialize i18next
 i18next
