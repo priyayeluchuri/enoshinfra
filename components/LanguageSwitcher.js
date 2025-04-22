@@ -30,6 +30,7 @@ export default function LanguageSwitcher() {
       <option value="te">తెలుగు</option>
       <option value="zh">中文</option>
       <option value="ja">日本語</option>
+      <option value="ar">العربية</option>
       <option value="ru">Русский</option>
       <option value="fr">Français</option>
       <option value="de">Deutsch</option>

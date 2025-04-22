@@ -1,5 +1,4 @@
 {
-  
   "seo": {
     "title": "Enosh Infra - Rent or Lease Industrial, Commercial & Office Spaces in Bengaluru",
     "description": "Discover premium industrial, commercial, and co-working spaces for rent or lease in Bengaluru. Explore prime hubs like Nelamangala, Peenya, Bommasandra, Jigani, Hoskote, Kumbalgodu, Doddaballapura, Hebbal, Whitefield, HSR, and KIADB industrial areas with Enosh Infra.",
@@ -11,7 +10,7 @@
   "tech_parks": "Tech Parks for Innovative Enterprises",
   "commercial_retail": "Commercial & Retail Spaces for Growing Businesses",
   "co_working": "Modern Co-Working Spaces",
-   "navbar": {
+  "navbar": {
     "cta": "Need a space or looking for tenants? Let's Talk!",
     "home": "Home",
     "about": "About",
@@ -27,7 +26,7 @@
     "headline": "Premium & Affordable Commercial Spaces in Namma Bengaluru",
     "subheadline": "Enosh Infra is your trusted partner in securing high-quality commercial, industrial, and warehouse properties in Bangalore. Elevate your business with strategic locations and seamless transactions.",
     "cta": "Get Started",
-     "options": [
+    "options": [
       "Premium Warehouses in Bengaluru – Affordable & Hassle-Free",
       "Find a Tenant for Your Warehouse – Quick & Easy Listings",
       "Co-Working Spaces – Flexible, Affordable & Ready to Move In",
@@ -38,7 +37,7 @@
       "Rent Out Your Commercial Space – Get Instant Inquiries"
     ]
   },
-    "about": {
+  "about": {
     "title": "About Us - Enosh Infra",
     "description": "Discover Enosh Infra, a premier real estate consultancy firm dedicated to providing tailored commercial property solutions in India.",
     "intro": {
@@ -58,7 +57,7 @@
     },
     "motto": "Our Motto: <span class=\"italic\">\"Transforming Real Estate with AI-Driven Precision.\"</span>"
   },
-   "warehouse": {
+  "warehouse": {
     "seo": {
       "title": "Warehouse & Logistics Spaces for Rent in Bengaluru - Enosh Infra",
       "description": "Discover premium warehouse and logistics spaces for rent in Bengaluru, including prime locations like Nelamangala, Peenya, Bommasandra, Jigani, Hoskote, Kumbalgodu, Doddaballapura, Hebbal, Whitefield, HSR, and KIADB industrial areas. Enosh Infra connects property owners with businesses seeking top industrial spaces."
@@ -78,78 +77,378 @@
     "closingLine": "Discover opportunities in Bengaluru's top industrial zones.",
     "exploreTrending": "Explore Most Trending Locations"
   },
+  "guideSetupBusiness": {
+    "seo": {
+      "title": "Step-by-Step Guide to Setting Up Your Industrial Warehouse Space in Bengaluru - Enosh Infra",
+      "description": "Learn how to set up your industrial warehouse space in Bengaluru with Enosh Infra’s expert guide. From selecting prime locations with highway connectivity to securing cost-effective industrial spaces for rent or lease, discover the key steps for success.",
+      "keywords": "industrial warehouse for rent Bengaluru, warehouse for lease Bengaluru, industrial spaces near highways Bengaluru, set up manufacturing facility Bengaluru, logistics warehouse Bengaluru, cost-effective industrial property Bengaluru, best industrial locations Bengaluru, professional warehouse solutions Bengaluru, economic industrial spaces Bengaluru, industrial real estate Bengaluru"
+    },
+    "title": "Step-by-Step Guide to Setting Up Your Industrial Warehouse Space in Bengaluru",
+    "intro": {
+      "text1": "New to Bengaluru and planning to establish an industrial business? This comprehensive guide outlines the essential steps to set up your ",
+      "highlight1": "industrial warehouse for rent or lease in Bengaluru",
+      "text2": ", ensuring optimal connectivity, modern infrastructure, and cost-effective solutions for industries like manufacturing, logistics, and e-commerce."
+    },
+    "step1": {
+      "title": "1. Define Your Industrial Warehouse Requirements",
+      "text1": "Begin by identifying the specific needs of your business. Consider the size and type of ",
+      "highlight1": "industrial warehouse for rent in Bengaluru",
+      "text2": " or ",
+      "highlight2": "warehouse for lease in Bengaluru",
+      "text3": ", proximity to national highways for seamless logistics, and access to utilities like uninterrupted power, water, and waste management. These factors ensure a ",
+      "highlight3": "professional industrial space in Bengaluru",
+      "text4": " that supports efficient operations and long-term growth."
+    },
+    "step2": {
+      "title": "2. Select the Best Location for Industrial Spaces",
+      "text1": "Choosing the right location is critical for industrial success. Focus on Bengaluru’s top industrial hubs, such as Bommasandra, Nelamangala, Jigani, and Hoskote, which offer ",
+      "highlight1": "industrial spaces near highways in Bengaluru",
+      "text2": ". These areas provide excellent connectivity to major transport networks, logistics hubs, and raw material suppliers, enhancing your supply chain efficiency. Prioritize locations that balance cost, accessibility, and strategic value for your ",
+      "highlight2": "logistics warehouse in Bengaluru",
+      "text3": "."
+    },
+    "step3": {
+      "title": "3. Evaluate Infrastructure for Industrial Properties",
+      "text1": "Ensure your chosen ",
+      "highlight1": "industrial property in Bengaluru",
+      "text2": " has modern infrastructure, including reliable power, ample water supply, and well-maintained internal roads. Properties with ",
+      "highlight2": "highway connectivity for industrial spaces in Bengaluru",
+      "text3": " reduce transportation costs and delays. Verify provisions for future expansion and opt for cost-effective industrial spaces in Bengaluru that meet professional standards without compromising quality."
+    },
+    "step4": {
+      "title": "4. Balance Costs, Timing, and Location",
+      "text1": "Setting up a ",
+      "highlight1": "manufacturing facility in Bengaluru",
+      "text2": " or a logistics hub requires careful consideration of costs, timing, and location. Research the market to find ",
+      "highlight2": "economic industrial spaces in Bengaluru",
+      "text3": " that align with your budget while maintaining strategic positioning. Timely acquisition of a warehouse for lease in Bengaluru can boost operational efficiency and support business growth. Evaluate lease or purchase options based on your long-term goals."
+    },
+    "step5": {
+      "title": "5. Partner with Enosh Infra for Expert Solutions",
+      "text1": "Collaborate with Enosh Infra to access premium ",
+      "highlight1": "industrial real estate in Bengaluru",
+      "text2": ". Our expertise helps you secure professional warehouse solutions in Bengaluru with top-tier infrastructure, highway connectivity, and cost-effective options. We tailor our services to your industrial needs, ensuring a strategic and efficient setup for your business."
+    },
+    "cta": "Contact Us for Industrial Property Consultation"
+  },
+  "guideSetupITStartup": {
+    "seo": {
+      "title": "Guide to Setting Up Your IT Startup Office Space in Bengaluru - Enosh Infra",
+      "description": "Discover how to establish your IT startup office space in Bengaluru with Enosh Infra’s comprehensive guide. From selecting affordable coworking spaces to securing professional office spaces near tech hubs, learn the essential steps for a successful IT business setup.",
+      "keywords": "IT startup office space Bengaluru, coworking spaces for startups Bengaluru, tech startup office lease Bengaluru, affordable office spaces Bengaluru, IT business setup Bengaluru, tech hubs office spaces Bengaluru, professional coworking spaces Bengaluru, economic IT office solutions Bengaluru, startup office spaces near tech parks Bengaluru, Bengaluru IT startup ecosystem"
+    },
+    "title": "How to Set Up Your IT Startup Office Space in Bengaluru: A Step-by-Step Guide",
+    "intro": {
+      "text1": "Bengaluru, India’s Silicon Valley, is the perfect hub for launching your IT startup. This guide provides key steps to set up your ",
+      "highlight1": "IT startup office space in Bengaluru",
+      "text2": ", ensuring access to modern facilities, strategic locations, and cost-effective solutions for tech businesses."
+    },
+    "step1": {
+      "title": "1. Define Your IT Startup Office Requirements",
+      "text1": "Start by assessing your startup’s needs. Decide if you require a ",
+      "highlight1": "professional office space in Bengaluru",
+      "text2": ", a ",
+      "highlight2": "coworking space for IT startups in Bengaluru",
+      "text3": ", or a ",
+      "highlight3": "tech startup office lease in Bengaluru",
+      "text4": ". Consider size, budget, and growth potential to choose a space that boosts productivity and scalability."
+    },
+    "step2": {
+      "title": "2. Choose the Best Location for Tech Startups",
+      "text1": "Select from Bengaluru’s top tech hubs like Whitefield, Electronic City, and Outer Ring Road, which offer ",
+      "highlight1": "office spaces near tech hubs Bengaluru",
+      "text2": ". Proximity to talent pools, transit links, and IT infrastructure is key. Opt for ",
+      "highlight2": "affordable office spaces for startups Bengaluru",
+      "text3": " that balance cost and strategic advantages."
+    },
+    "step3": {
+      "title": "3. Ensure Infrastructure and Connectivity",
+      "text1": "Verify that your ",
+      "highlight1": "startup office spaces with connectivity Bengaluru",
+      "text2": " have high-speed internet, modern amenities, and access to major roads or metro lines. This supports collaboration, client visits, and operational efficiency for your IT business."
+    },
+    "step4": {
+      "title": "4. Analyze Costs and Flexibility",
+      "text1": "Flexibility is vital for startups. Seek ",
+      "highlight1": "economic IT office solutions in Bengaluru",
+      "text2": " with scalable lease terms to accommodate growth. Choose ",
+      "highlight2": "tech startup office solutions Bengaluru",
+      "text3": " that align with your budget, timeline, and operational goals."
+    },
+    "step5": {
+      "title": "5. Partner with Enosh Infra for Expert Solutions",
+      "text1": "Work with Enosh Infra to access ",
+      "highlight1": "professional coworking spaces Bengaluru",
+      "text2": " and premium office spaces in tech parks or business hubs. Our expertise ensures your IT startup finds the ideal space for growth and innovation."
+    },
+    "cta": "Contact Us for Office Space Consultation"
+  },
+  "optimizingWarehouse": {
+    "seo": {
+      "title": "Optimize Warehouse Efficiency in Bengaluru - Enosh Infra",
+      "description": "Maximize your warehouse space efficiency in Bengaluru with Enosh Infra’s expert strategies. Learn how to leverage modern infrastructure, strategic locations, and cost-effective warehouse solutions for seamless logistics.",
+      "keywords": "optimize warehouse efficiency Bengaluru, warehouse space optimization Bengaluru, cost-effective warehouse solutions Bengaluru, strategic warehouse location Bengaluru, modern warehouse infrastructure Bengaluru, warehouse for rent Bengaluru, logistics warehouse efficiency Bengaluru, affordable warehouse spaces Bengaluru, warehouse layout planning Bengaluru, high-rack storage solutions Bengaluru"
+    },
+    "title": "Optimize Warehouse Space Efficiency in Bengaluru",
+    "intro": {
+      "text1": "In today’s competitive industrial landscape, optimizing your ",
+      "highlight1": "warehouse space efficiency in Bengaluru",
+      "text2": " is key to reducing costs and enhancing operational performance. Discover expert strategies to ensure your warehouse runs at peak efficiency."
+    },
+    "list": {
+      "item1": {
+        "title": "Strategic Layout Planning: ",
+        "description": "Design your warehouse with strategic warehouse layout planning Bengaluru to ensure smooth movement and quick access to goods, boosting productivity."
+      },
+      "item2": {
+        "title": "Utilize Vertical Space: ",
+        "description": "Implement high-rack storage solutions for warehouses Bengaluru to maximize vertical space and increase storage capacity efficiently."
+      },
+      "item3": {
+        "title": "Modern Infrastructure: ",
+        "description": "Equip your facility with modern warehouse infrastructure in Bengaluru, including advanced shelving and warehouse inventory management Bengaluru systems."
+      },
+      "item4": {
+        "title": "Strategic Location: ",
+        "description": "Choose a warehouse for rent near highways Bengaluru to ensure strategic warehouse location advantages Bengaluru, reducing logistics costs."
+      },
+      "item5": {
+        "title": "Cost Efficiency: ",
+        "description": "Opt for cost-effective warehouse leasing Bengaluru that balances affordability with essential features for efficient logistics warehouse Bengaluru."
+      },
+      "item6": {
+        "title": "Timely Operations: ",
+        "description": "Streamline processes in affordable warehouse spaces in Bengaluru to ensure efficient handling and dispatch of goods, enhancing overall performance."
+      }
+    },
+    "closing": {
+      "text1": "At Enosh Infra, we help businesses find ",
+      "highlight1": "cost-effective warehouse solutions Bengaluru",
+      "text2": " that align with their operational and growth objectives. Explore our listings to secure your ideal warehouse space."
+    }
+  },
+  "topIndustrialAreas": {
+    "seo": {
+      "title": "Top Industrial Areas for Business Growth in Bengaluru 2025 - Enosh Infra",
+      "description": "Discover the top industrial areas in Bengaluru for business growth in 2025. Explore prime locations like Bommasandra, Jigani, Hoskote, Nelamangala, and Kumbalgodu for warehouse rentals and cost-effective industrial spaces.",
+      "keywords": "top industrial areas Bengaluru 2025, warehouse rentals Bengaluru 2025, industrial spaces for lease Bengaluru, Bommasandra warehouse for rent, Jigani industrial spaces Bengaluru, Hoskote logistics hubs Bengaluru, Nelamangala warehouse leasing, Kumbalgodu industrial properties Bengaluru, cost-effective industrial spaces Bengaluru, Bengaluru industrial business growth"
+    },
+    "title": "Top Industrial Areas for Business Growth in Bengaluru 2025",
+    "intro": {
+      "text1": "Bengaluru is a thriving hub for industrial businesses, offering ",
+      "highlight1": "top industrial areas for business growth Bengaluru",
+      "text2": ". Explore prime locations ideal for warehouses, manufacturing, and logistics in 2025."
+    },
+    "area1": {
+      "title": "1. Bommasandra Industrial Area",
+      "text1": "Bommasandra remains a leading industrial zone, offering ",
+      "highlight1": "Bommasandra warehouse rentals Bengaluru",
+      "text2": " and ",
+      "highlight2": "industrial spaces for lease Bengaluru",
+      "text3": " with excellent highway connectivity and robust infrastructure for efficient logistics."
+    },
+    "area2": {
+      "title": "2. Jigani Industrial Zone",
+      "text1": "Jigani is ideal for manufacturing and logistics, with ",
+      "highlight1": "Jigani warehouse for rent Bengaluru",
+      "text2": " and connectivity to Bannerghatta Road and Electronic City, supporting business expansion."
+    },
+    "area3": {
+      "title": "3. Hoskote Industrial Belt",
+      "text1": "Hoskote offers spacious ",
+      "highlight1": "Hoskote industrial spaces for lease",
+      "text2": " with proximity to major highways, enabling seamless transportation for logistics hubs."
+    },
+    "area4": {
+      "title": "4. Nelamangala Industrial Area",
+      "text1": "Nelamangala provides diverse ",
+      "highlight1": "Nelamangala logistics warehouse Bengaluru",
+      "text2": " with access to NH-75, ideal for logistics and distribution centers."
+    },
+    "area5": {
+      "title": "5. Kumbalgodu Industrial Zone",
+      "text1": "Kumbalgodu, with access to Mysore Road, offers ",
+      "highlight1": "Kumbalgodu warehouse leasing Bengaluru",
+      "text2": " for businesses seeking professional industrial spaces Bengaluru."
+    },
+    "legal": {
+      "title": "Legal Considerations for Industrial Spaces",
+      "text": "Ensure clear legal agreements for industrial plots Bengaluru 2025, defining lease terms, payments, and usage to secure operations and avoid disputes."
+    },
+    "conclusion": {
+      "title": "Conclusion",
+      "text1": "Choosing ",
+      "highlight1": "strategic industrial locations Bengaluru",
+      "text2": " drives business growth. Partner with Enosh Infra for cost-effective warehouse solutions Bengaluru tailored to your needs."
+    },
+    "cta": "Contact Us for Industrial Space Consultation"
+  },
+  "bengaluruIndustrialHub": {
+    "seo": {
+      "title": "Why Bengaluru is the Next Big Industrial Hub for Global Businesses in 2025 - Enosh Infra",
+      "description": "Discover why Bengaluru is the next global industrial hub for foreign companies in 2025. Explore industrial investment opportunities, Trump tariffs impact, and how Enosh Infra simplifies warehouse leasing for businesses.",
+      "keywords": "Bengaluru industrial hub 2025, foreign companies industrial investment Bengaluru, warehouse for rent Bengaluru foreign businesses, Trump tariffs impact Bengaluru industry, industrial spaces for lease Bengaluru 2025, Bommasandra industrial hub foreign companies, Jigani warehouse rentals Bengaluru, Hoskote logistics hubs global businesses, cost-effective industrial spaces Bengaluru, Bengaluru manufacturing growth 2025"
+    },
+    "title": "Why Bengaluru is the Next Big Industrial Hub for Global Businesses in 2025",
+    "intro": {
+      "text1": "Bengaluru is emerging as the ",
+      "highlight1": "next industrial hub for global companies",
+      "text2": ", driven by strategic locations, a skilled workforce, and favorable trade dynamics in 2025. Discover why foreign businesses are choosing Bengaluru for industrial investment opportunities."
+    },
+    "whyBengaluru": {
+      "title": "Why Bengaluru is a Magnet for Foreign Companies",
+      "text1": "Bengaluru’s industrial sector, contributing ~30% to Karnataka’s GDP, is projected to grow 8-10% annually through 2025. With ",
+      "highlight1": "industrial investment opportunities Bengaluru",
+      "text2": ", the city attracts global giants like Apple and Adobe, leveraging its skilled workforce and robust infrastructure.",
+      "bullet1": "Skilled Workforce: 12% growth in 2024, ideal for manufacturing and logistics.",
+      "bullet2": "FDI Surge: $10 billion in 2024, up 20% from 2023, fueling industrial expansion.",
+      "bullet3": "Ease of Doing Business: Karnataka ranks #1 in India, with streamlined approvals.",
+      "bullet4": "Strategic Hubs: Bommasandra, Jigani, and Hoskote offer cost-effective industrial spaces."
+    },
+    "tariffs": {
+      "title": "Navigating Trump’s Tariffs: Opportunities for Bengaluru",
+      "text1": "Trump’s 26% tariffs on Indian goods (effective April 2025) are lower than China’s 54% and Vietnam’s 46%, making ",
+      "highlight1": "Bengaluru manufacturing growth 2025",
+      "text2": " a competitive choice. Tariff exemptions on electronics make Indian exports 20% cheaper, driving $5-7 billion in new investments."
+    },
+    "keyAreas": {
+      "title": "Key Industrial Areas for Foreign Investment",
+      "text1": "Bengaluru’s ",
+      "highlight1": "strategic industrial locations Bengaluru 2025",
+      "text2": " offer unmatched connectivity and infrastructure for foreign businesses.",
+      "area1": {
+        "title": "Bommasandra",
+        "text": "A hub for Bommasandra warehouse for rent foreign companies, with highway access and 15% leasing growth in 2024."
+      },
+      "area2": {
+        "title": "Jigani",
+        "text": "Ideal for Jigani industrial spaces global investment, connected to Electronic City."
+      },
+      "area3": {
+        "title": "Hoskote",
+        "text": "Offers Hoskote industrial plots for lease, perfect for logistics hubs."
+      }
+    },
+    "enoshInfra": {
+      "title": "How Enosh Infra Simplifies the Process",
+      "text1": "Enosh Infra makes ",
+      "highlight1": "foreign businesses warehouse leasing Bengaluru",
+      "text2": " seamless with AI-driven property matching and end-to-end support.",
+      "bullet1": "AI Property Matching: Reduces setup time by 30%.",
+      "bullet2": "Legal Support: Ensures clear agreements for cost-effective industrial spaces Bengaluru.",
+      "bullet3": "Prime Locations: Access to Nelamangala logistics warehouse Bengaluru and more."
+    },
+    "conclusion": {
+      "title": "Conclusion",
+      "text1": "Bengaluru’s rise as a ",
+      "highlight1": "Bengaluru industrial hub 2025",
+      "text2": " offers unmatched opportunities for foreign companies. Partner with Enosh Infra to navigate Trump tariffs and secure your industrial space."
+    },
+    "cta": "Contact Us for Industrial Investment Consultation"
+  },
+  "blogsPartners": {
+    "seo": {
+      "title": "Bengaluru Commercial Real Estate Blogs & Partnerships 2025 - Enosh Infra",
+      "description": "Explore the latest industrial blogs Bengaluru 2025, commercial property trends, and partnership opportunities with Enosh Infra. Stay informed on warehouse leasing, IT startups, and industrial growth insights.",
+      "keywords": "Bengaluru commercial real estate blogs 2025, industrial property insights Bengaluru, warehouse leasing trends Bengaluru, business growth Bengaluru blog, foreign companies industrial hub Bengaluru, Enosh Infra partnership opportunities, Bengaluru industrial investment blogs, cost-effective warehouse solutions blogs, strategic industrial locations Bengaluru, real estate collaboration Bengaluru"
+    },
+    "title": "Blogs & Partnerships",
+    "blogs": {
+      "title": "Latest Industrial Blogs Bengaluru 2025",
+      "text1": "Stay ahead with our ",
+      "highlight1": "latest industrial blogs Bengaluru 2025",
+      "text2": ", offering insights on commercial property trends Bengaluru, warehouse optimization, and business growth.",
+      "list": {
+        "item1": "Bengaluru Global Industrial Hub 2025: Opportunities for Foreign Companies",
+        "item2": "Bengaluru IT Startup Setup Guide: From Idea to Office",
+        "item3": "Industrial Business Setup Bengaluru: Step-by-Step Guide",
+        "item4": "Warehouse Optimization Insights Bengaluru: Maximize Efficiency",
+        "item5": "Top Industrial Areas Bengaluru Blog: Growth Hubs for 2025"
+      }
+    },
+    "partnerships": {
+      "title": "Partnership Opportunities Real Estate Bengaluru",
+      "text1": "Join Enosh Infra to access ",
+      "highlight1": "partnership opportunities real estate Bengaluru",
+      "text2": ", offering exclusive properties and strategic collaboration for growth.",
+      "bullet1": "Exclusive access to Bengaluru’s prime industrial and commercial properties.",
+      "bullet2": "Collaborative marketing for broader reach and visibility.",
+      "bullet3": "Dedicated support for long-term real estate collaboration Bengaluru.",
+      "cta": "Join Our Partnership Program"
+    }
+  },
   "techParks": {
-  "seo": {
-    "title": "Tech Parks - Enosh Infra",
-    "description": "Discover top-tier tech parks and IT office spaces in Bengaluru with Enosh Infra."
+    "seo": {
+      "title": "Tech Parks - Enosh Infra",
+      "description": "Discover top-tier tech parks and IT office spaces in Bengaluru with Enosh Infra."
+    },
+    "title": "Tech Parks",
+    "intro": {
+      "1": "We connect global enterprises with world-class",
+      "highlight": "tech parks and IT office spaces",
+      "2": "that foster innovation and growth."
+    },
+    "featuresTitle": "Key Features",
+    "bullet1": "High-tech infrastructure with fiber-optic connectivity",
+    "bullet2": "Proximity to major business hubs and transport networks",
+    "bullet3": "Fully serviced office spaces for IT and software firms",
+    "bullet4": "Sustainable, energy-efficient office environments",
+    "closing": "Ideal for: IT companies, startups, software firms, and global enterprises."
   },
-  "title": "Tech Parks",
-  "intro": {
-    "1": "We connect global enterprises with world-class",
-    "highlight": "tech parks and IT office spaces",
-    "2": "that foster innovation and growth."
+  "commercial": {
+    "seo": {
+      "title": "Commercial & Retail Spaces - Enosh Infra",
+      "description": "Explore premium commercial and retail spaces with Enosh Infra, your trusted real estate consultancy in Bengaluru."
+    },
+    "title": "Commercial & Retail Spaces",
+    "para1": "Enosh Infra specializes in helping businesses find the perfect commercial and retail spaces that align with their needs and brand image. Whether you are looking for a prime storefront, a shopping complex, or a high-visibility commercial unit, we provide expert guidance to secure the best locations in Bengaluru.",
+    "para2": "Our deep market insights and strategic partnerships with top developers enable us to offer high-end commercial spaces in key business districts, ensuring maximum footfall and brand exposure.",
+    "whyTitle": "Why Choose Our Commercial & Retail Spaces?",
+    "point1": "Prime locations in Bengaluru’s business hubs.",
+    "point2": "High footfall areas for maximum visibility.",
+    "point3": "Flexible leasing options tailored to business needs.",
+    "point4": "Customizable spaces for retail, restaurants, and showrooms.",
+    "point5": "Expert negotiation support for the best deals.",
+    "closing": "Let Enosh Infra help you establish your presence in Bengaluru’s thriving commercial landscape."
   },
-  "featuresTitle": "Key Features",
-  "bullet1": "High-tech infrastructure with fiber-optic connectivity",
-  "bullet2": "Proximity to major business hubs and transport networks",
-  "bullet3": "Fully serviced office spaces for IT and software firms",
-  "bullet4": "Sustainable, energy-efficient office environments",
-  "closing": "Ideal for: IT companies, startups, software firms, and global enterprises."
-},
-"commercial": {
-  "seo": {
-    "title": "Commercial & Retail Spaces - Enosh Infra",
-    "description": "Explore premium commercial and retail spaces with Enosh Infra, your trusted real estate consultancy in Bengaluru."
+  "coworking": {
+    "seo": {
+      "title": "Co-Working Spaces - Enosh Infra",
+      "description": "Discover premium co-working spaces with plug-and-play facilities tailored for startups, freelancers, and enterprises."
+    },
+    "title": "Co-Working Spaces",
+    "para1": "Enosh Infra provides top-tier co-working spaces designed for startups, freelancers, and enterprises looking for a flexible and dynamic work environment. Our spaces offer state-of-the-art infrastructure, high-speed internet, and a collaborative atmosphere that fosters productivity and innovation.",
+    "whyTitle": "Why Choose Our Co-Working Spaces?",
+    "point1": "Flexible workspaces tailored to your needs.",
+    "point2": "High-speed internet and 24/7 access.",
+    "point3": "Fully furnished with ergonomic seating and modern interiors.",
+    "point4": "Networking opportunities with like-minded professionals.",
+    "point5": "Access to conference rooms, breakout areas, and cafeteria.",
+    "point6": "Prime locations with excellent connectivity.",
+    "plugTitle": "Plug-and-Play Facilities",
+    "plugPara": "Our plug-and-play co-working spaces come fully equipped with office essentials, enabling you to set up and start working immediately. No hassle, no downtime—just walk in, plug in, and get to work!",
+    "closing": "Experience seamless workspaces with Enosh Infra."
   },
-  "title": "Commercial & Retail Spaces",
-  "para1": "Enosh Infra specializes in helping businesses find the perfect commercial and retail spaces that align with their needs and brand image. Whether you are looking for a prime storefront, a shopping complex, or a high-visibility commercial unit, we provide expert guidance to secure the best locations in Bengaluru.",
-  "para2": "Our deep market insights and strategic partnerships with top developers enable us to offer high-end commercial spaces in key business districts, ensuring maximum footfall and brand exposure.",
-  "whyTitle": "Why Choose Our Commercial & Retail Spaces?",
-  "point1": "Prime locations in Bengaluru’s business hubs.",
-  "point2": "High footfall areas for maximum visibility.",
-  "point3": "Flexible leasing options tailored to business needs.",
-  "point4": "Customizable spaces for retail, restaurants, and showrooms.",
-  "point5": "Expert negotiation support for the best deals.",
-  "closing": "Let Enosh Infra help you establish your presence in Bengaluru’s thriving commercial landscape."
-},
-"coworking": {
-  "seo": {
-    "title": "Co-Working Spaces - Enosh Infra",
-    "description": "Discover premium co-working spaces with plug-and-play facilities tailored for startups, freelancers, and enterprises."
+  "trending": {
+    "seo": {
+      "title": "Trending Warehouse Locations - Enosh Infra",
+      "description": "Explore the most sought-after warehouse locations in Bengaluru with Enosh Infra."
+    },
+    "title": "Trending Warehouse Locations",
+    "zoneSouth": "Bangalore South",
+    "zoneWest": "Bangalore West",
+    "zoneNorth": "Bangalore North",
+    "zoneEast": "Bangalore East",
+    "bommasandra": "Offers excellent connectivity to Hosur Road and Electronic City, making it a prime hub for industrial and warehousing operations.",
+    "nelamangala": "Ideal for large-scale logistics with proximity to major highways like NH-75 and NH-48, enhancing distribution efficiency.",
+    "peenya": "One of Asia's largest industrial hubs, perfect for warehousing with seamless access to major transport networks.",
+    "jigani": "A key industrial belt with close connectivity to Bannerghatta Road and Electronics City.",
+    "hoskote": "A strategic industrial and logistics corridor with access to NH-75, making transportation seamless.",
+    "kumbalgodu": "Strategically located on Mysore Road, ideal for logistics and warehousing operations with excellent highway access.",
+    "doddaballapura": "Offers ample space for industrial development with proximity to the Bangalore International Airport.",
+    "hebbal": "Known for its connectivity to the airport and Outer Ring Road, making it suitable for logistics operations.",
+    "whitefield": "A booming industrial and IT hub with excellent road and rail connectivity."
   },
-  "title": "Co-Working Spaces",
-  "para1": "Enosh Infra provides top-tier co-working spaces designed for startups, freelancers, and enterprises looking for a flexible and dynamic work environment. Our spaces offer state-of-the-art infrastructure, high-speed internet, and a collaborative atmosphere that fosters productivity and innovation.",
-  "whyTitle": "Why Choose Our Co-Working Spaces?",
-  "point1": "Flexible workspaces tailored to your needs.",
-  "point2": "High-speed internet and 24/7 access.",
-  "point3": "Fully furnished with ergonomic seating and modern interiors.",
-  "point4": "Networking opportunities with like-minded professionals.",
-  "point5": "Access to conference rooms, breakout areas, and cafeteria.",
-  "point6": "Prime locations with excellent connectivity.",
-  "plugTitle": "Plug-and-Play Facilities",
-  "plugPara": "Our plug-and-play co-working spaces come fully equipped with office essentials, enabling you to set up and start working immediately. No hassle, no downtime—just walk in, plug in, and get to work!",
-  "closing": "Experience seamless workspaces with Enosh Infra."
-},
-"trending": {
-  "seo": {
-    "title": "Trending Warehouse Locations - Enosh Infra",
-    "description": "Explore the most sought-after warehouse locations in Bengaluru with Enosh Infra."
-  },
-  "title": "Trending Warehouse Locations",
-  "zoneSouth": "Bangalore South",
-  "zoneWest": "Bangalore West",
-  "zoneNorth": "Bangalore North",
-  "zoneEast": "Bangalore East",
-  "bommasandra": "Offers excellent connectivity to Hosur Road and Electronic City, making it a prime hub for industrial and warehousing operations.",
-  "nelamangala": "Ideal for large-scale logistics with proximity to major highways like NH-75 and NH-48, enhancing distribution efficiency.",
-  "peenya": "One of Asia's largest industrial hubs, perfect for warehousing with seamless access to major transport networks.",
-  "jigani": "A key industrial belt with close connectivity to Bannerghatta Road and Electronics City.",
-  "hoskote": "A strategic industrial and logistics corridor with access to NH-75, making transportation seamless.",
-  "kumbalgodu": "Strategically located on Mysore Road, ideal for logistics and warehousing operations with excellent highway access.",
-  "doddaballapura": "Offers ample space for industrial development with proximity to the Bangalore International Airport.",
-  "hebbal": "Known for its connectivity to the airport and Outer Ring Road, making it suitable for logistics operations.",
-  "whitefield": "A booming industrial and IT hub with excellent road and rail connectivity."
-},
   "services": {
     "title": "Our Services",
     "description": "Enosh Infra offers a diverse range of real estate solutions tailored to meet the specific needs of businesses seeking premium properties in India. Our services include:",
@@ -196,62 +495,62 @@
     ]
   },
   "contact": {
-  "title": "Contact Us",
-  "description": "Our AI-driven system will match your requirements with the best possible options, and we'll get back to you soon!",
-  "instructions": "Please provide your detailed requirements including:",
-  "message": {
-    "processing": "Your request is being processed...",
-    "success": "Your request has been submitted successfully!",
-    "error": "Something went wrong. Please try again."
-  },
-  "preferredLocationLabel": "Preferred Location",
-  "propertyLocationLabel": "Property Location",
-  "locationLabel": "Preferred Location(s)",
-  "totalSizeLabel": "Total size: {{used}}MB / {{max}}MB",
-  "locationError": "Please add at least one preferred location.",
-  "uploadPhotos": "Upload Photos(Max 5)",
-  "uploadPhotosText": "Select Photos",
-  "photosSelected": "Photo(s) Selected",
-  "noPhotosSelected": "No Photos selected",
-  "locationPlaceholder": "Enter Location", 
-  "requirementPlaceholder": "Please provide size of the property for better match",
-  "companyLabel": "Company (Optional)",
-  "submitButton": "Submit",
-  "submittingButton": "Submitting...",
-  "formTitle": "Perfect Space. \nPerfect Location. \nPerfect Timing.",
-  "formSubtitle": "Our AI-driven system will match your requirements with the best possible options, and we'll get back to you soon!",
-  "listItems": {
-    "location": "Preferred Location",
-    "city": "City",
-    "propertySize": "Property Size",
-    "specificNeeds": "Specific Needs"
-  },
-  "alert": {
-    "message": "We could only include {{count}} photo{{count === 1 ? '' : 's'}} due to size limits."
-  },
-  "services": {
-    "warehousesLogistics": "Warehouses & Logistics",
-    "techParks": "Tech Parks",
-    "commercialRetail": "Commercial & Retail",
-    "coworkingSpaces": "Co-working Spaces"
-  },
-  "purposes": {
-    "findSpace": "Find a Space",
-    "findTenant": "Find a Tenant"
-  },
-  "selectPurpose": "Select Purpose",
-  "selectService": "Select a service",
-  "labels": {
-  "name": "Name",
-  "purpose": "Purpose",
-  "uploadPhotos": "Upload Photos (Max 5)",
-  "service": "Service",
-  "requirement": "Requirement",
-  "email": "Email",
-  "phone": "Phone",
-  "company": "Company (Optional)"
-  },
-  "thankYou": "Thank You!"
+    "title": "Contact Us",
+    "description": "Our AI-driven system will match your requirements with the best possible options, and we'll get back to you soon!",
+    "instructions": "Please provide your detailed requirements including:",
+    "message": {
+      "processing": "Your request is being processed...",
+      "success": "Your request has been submitted successfully!",
+      "error": "Something went wrong. Please try again."
+    },
+    "preferredLocationLabel": "Preferred Location",
+    "propertyLocationLabel": "Property Location",
+    "locationLabel": "Preferred Location(s)",
+    "totalSizeLabel": "Total size: {{used}}MB / {{max}}MB",
+    "locationError": "Please add at least one preferred location.",
+    "uploadPhotos": "Upload Photos(Max 5)",
+    "uploadPhotosText": "Select Photos",
+    "photosSelected": "Photo(s) Selected",
+    "noPhotosSelected": "No Photos selected",
+    "locationPlaceholder": "Enter Location",
+    "requirementPlaceholder": "Please provide size of the property for better match",
+    "companyLabel": "Company (Optional)",
+    "submitButton": "Submit",
+    "submittingButton": "Submitting...",
+    "formTitle": "Perfect Space. \nPerfect Location. \nPerfect Timing.",
+    "formSubtitle": "Our AI-driven system will match your requirements with the best possible options, and we'll get back to you soon!",
+    "listItems": {
+      "location": "Preferred Location",
+      "city": "City",
+      "propertySize": "Property Size",
+      "specificNeeds": "Specific Needs"
+    },
+    "alert": {
+      "message": "We could only include {{count}} photo{{count === 1 ? '' : 's'}} due to size limits."
+    },
+    "services": {
+      "warehousesLogistics": "Warehouses & Logistics",
+      "techParks": "Tech Parks",
+      "commercialRetail": "Commercial & Retail",
+      "coworkingSpaces": "Co-working Spaces"
+    },
+    "purposes": {
+      "findSpace": "Find a Space",
+      "findTenant": "Find a Tenant"
+    },
+    "selectPurpose": "Select Purpose",
+    "selectService": "Select a service",
+    "labels": {
+      "name": "Name",
+      "purpose": "Purpose",
+      "uploadPhotos": "Upload Photos (Max 5)",
+      "service": "Service",
+      "requirement": "Requirement",
+      "email": "Email",
+      "phone": "Phone",
+      "company": "Company (Optional)"
+    },
+    "thankYou": "Thank You!"
   },
   "footer": {
     "home": "Home",
@@ -264,4 +563,3 @@
     "cta": "Get in Touch"
   }
 }
-

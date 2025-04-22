@@ -1,29 +1,56 @@
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
 import SEO from '../../components/seo';
 
 export default function OptimizingWarehouseEfficiency() {
+  const { t, i18n } = useTranslation('common'); // Accessing the 'common' namespace
+
   return (
     <>
       <SEO
-        title="Optimizing Warehouse Efficiency - Enosh Infra"
-        description="Learn how to maximize the efficiency of your warehouse space with strategic planning, modern infrastructure, and location advantages."
+        title={t('optimizingWarehouse.seo.title')}
+        description={t('optimizingWarehouse.seo.description')}
         url="https://enoshinfra.com/blogs/optimizing-warehouse-efficiency"
+        keywords={t('optimizingWarehouse.seo.keywords')}
       />
       <section className="w-full h-auto p-6 pt-12 text-white bg-gray-900">
         <div className="container mx-auto px-6">
-          <h1 className="text-4xl font-bold mb-6">Optimizing Warehouse Space for Maximum Efficiency</h1>
+          <h1 className="text-4xl font-bold mb-6">{t('optimizingWarehouse.title')}</h1>
           <p className="text-lg mb-6">
-            In today's fast-paced industrial landscape, optimizing warehouse space is crucial for maximizing efficiency and reducing operational costs. Here's how you can ensure your warehouse operates at its peak:
+            {t('optimizingWarehouse.intro.text1')}
+            <strong>{t('optimizingWarehouse.intro.highlight1')}</strong>
+            {t('optimizingWarehouse.intro.text2')}
           </p>
           <ul className="list-disc list-inside mb-6">
-            <li><strong>Strategic Layout Planning:</strong> Arrange your warehouse layout to facilitate easy movement and quick access to goods.</li>
-            <li><strong>Utilize Vertical Space:</strong> Invest in high-rack storage solutions to maximize vertical space usage.</li>
-            <li><strong>Modern Infrastructure:</strong> Equip your warehouse with advanced shelving and inventory management systems.</li>
-            <li><strong>Perfect Location:</strong> Choose a warehouse located near national highways for seamless logistics and reduced transportation costs.</li>
-            <li><strong>Cost Efficiency:</strong> Evaluate lease options that provide the best value without compromising on essential features.</li>
-            <li><strong>Timely Operations:</strong> Implement streamlined processes to ensure efficient handling and dispatching of goods.</li>
+            <li>
+              <strong>{t('optimizingWarehouse.list.item1.title')}</strong>
+              {t('optimizingWarehouse.list.item1.description')}
+            </li>
+            <li>
+              <strong>{t('optimizingWarehouse.list.item2.title')}</strong>
+              {t('optimizingWarehouse.list.item2.description')}
+            </li>
+            <li>
+              <strong>{t('optimizingWarehouse.list.item3.title')}</strong>
+              {t('optimizingWarehouse.list.item3.description')}
+            </li>
+            <li>
+              <strong>{t('optimizingWarehouse.list.item4.title')}</strong>
+              {t('optimizingWarehouse.list.item4.description')}
+            </li>
+            <li>
+              <strong>{t('optimizingWarehouse.list.item5.title')}</strong>
+              {t('optimizingWarehouse.list.item5.description')}
+            </li>
+            <li>
+              <strong>{t('optimizingWarehouse.list.item6.title')}</strong>
+              {t('optimizingWarehouse.list.item6.description')}
+            </li>
           </ul>
           <p className="text-lg">
-            At Enosh Infra, we guide businesses in selecting the right warehouse spaces that align with their operational goals and growth plans. Explore our listings to find your perfect space.
+            {t('optimizingWarehouse.closing.text1')}
+            <strong>{t('optimizingWarehouse.closing.highlight1')}</strong>
+            {t('optimizingWarehouse.closing.text2')}
           </p>
         </div>
       </section>
@@ -31,4 +58,10 @@ export default function OptimizingWarehouseEfficiency() {
   );
 }
 
-
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+    },
+  };
+}

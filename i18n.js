@@ -9,7 +9,7 @@ import fr from './locales/fr/common.json';
 import de from './locales/de/common.json';
 import te from './locales/te/common.json';
 import ja from './locales/ja/common.json';
-
+import ar from './locales/ar/common.json';
 // Initialize i18next
 i18next
   .use(initReactI18next) // Pass i18next instance to react-i18next
@@ -20,7 +20,8 @@ i18next
       kn: { common: kn },
       te: { common: te },
       zh: { common: zh },
-      jp: { common: ja },
+      ja: { common: ja },
+      ar: { common: ar },
       ru: { common: ru },
       fr: { common: fr },
       ge: { common: de }
