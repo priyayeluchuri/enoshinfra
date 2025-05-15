@@ -401,7 +401,11 @@ const handleMapClick = async (event) => {
               <label className="block text-gray-300 text-sm font-medium">{t("contact.labels.requirement")}</label>
               <textarea
                 name="requirement"
-                placeholder={t("contact.requirementPlaceholder")}
+                placeholder={
+    formData.purpose === "findTenant"
+      ? t("contact.requirementPlacetenant")
+      : t("contact.requirementPlaceholder")
+  }
                 value={formData.requirement}
                 onChange={handleChange}
                 required
