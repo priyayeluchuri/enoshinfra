@@ -211,7 +211,8 @@
         "item2": "Bengaluru IT-Startup Einrichtungsleitfaden: Vom Konzept zum Büro",
         "item3": "Industriegeschäftseinrichtung Bengaluru: Schritt-für-Schritt-Anleitung",
         "item4": "Einblicke in Lageroptimierung Bengaluru: Effizienz maximieren",
-        "item5": "Top Industriegebiete Bengaluru Blog: Wachstumszentren für 2025"
+        "item5": "Top Industriegebiete Bengaluru Blog: Wachstumszentren für 2025",
+	"item6": "Finden Sie Lager oder Büro ab 50.000 Quadratfuß in Bengaluru: Leitfaden 2025"
       }
     },
     "partnerships": {
@@ -560,5 +561,74 @@
   },
   "whatsapp": {
     "cta": "In Kontakt treten"
+  },
+    "largeWarehouseOfficeBengaluru": {
+    "seo": {
+      "title": "Finden Sie Lager- oder Büroflächen ab 50.000 Quadratfuß zur Miete in Bengaluru 2025",
+      "description": "Erfahren Sie, wie Sie ein erstklassiges Lager oder Büro mit über 50.000 Quadratfuß in den Top-Industriezentren von Bengaluru wie Nelamangala und Bommasandra mieten können. Holen Sie sich Expertentipps für 2025!",
+      "keywords": "50.000 Quadratfuß Lager zur Miete Bengaluru 2025, erstklassiges Lager Bengaluru, große Bürofläche zur Miete Bengaluru, beste Standorte für große Lagerhäuser Bengaluru"
+    },
+    "title": "Wie Sie das perfekte Lager oder Büro ab 50.000 Quadratfuß zur Miete in den Top-Industriezentren von Bengaluru finden (Leitfaden 2025)",
+    "intro": {
+      "text1": "Der Markt für Gewerbeimmobilien in Bengaluru boomt, mit steigender Nachfrage nach großflächigen Lagern und Büros über 50.000 Quadratfuß. ",
+      "highlight1": "E-Commerce-, Logistik- und Technologieunternehmen",
+      "text2": " treiben dieses Wachstum voran und suchen nach erstklassigen Flächen an strategischen Standorten. Dieser Leitfaden hilft Mietern und Eigentümern, die wichtigsten Überlegungen für die Anmietung oder den Kauf im Jahr 2025 zu berücksichtigen."
+    },
+    "location": {
+      "title": "Den richtigen Standort wählen",
+      "text1": "Der Standort ist entscheidend bei der Auswahl einer Immobilie mit über 50.000 Quadratfuß. Die Industriezentren von Bengaluru bieten hervorragende Anbindung und Infrastruktur. ",
+      "highlight1": "Nelamangala, Bommasandra und Hoskote",
+      "text2": " sind die besten Optionen aufgrund ihrer Nähe zu Autobahnen und Flughäfen.",
+      "area1": {
+        "title": "Nelamangala",
+        "text": "Entlang der NH-48 gelegen, ideal für Logistik mit Zugang zu den Häfen von Mumbai und Chennai."
+      },
+      "area2": {
+        "title": "Bommasandra",
+        "text": "In der Nähe von Electronic City, perfekt für Technologieunternehmen, die große Büros oder Lager benötigen."
+      },
+      "area3": {
+        "title": "Hoskote",
+        "text": "Aufstrebendes Zentrum nahe der NH-44, bevorzugt von E-Commerce-Unternehmen für große Verteilzentren."
+      }
+    },
+    "features": {
+      "title": "Must-Have-Eigenschaften für erstklassige Flächen",
+      "text1": "Großflächige Immobilien erfordern eine fortschrittliche Infrastruktur, um moderne Geschäftsanforderungen zu erfüllen. ",
+      "highlight1": "Erstklassige Lager und Büros",
+      "text2": " bieten Funktionen, die die Effizienz und die Einhaltung von Vorschriften verbessern.",
+      "bullet1": "Vorgefertigte Gebäude (PEB) mit hohen Decken und G+5-Regalen.",
+      "bullet2": "Hohe Verhältnisse von Laderampen zur Fläche für effizientes Be- und Entladen.",
+      "bullet3": "Brandschutzsysteme und Umweltkonformität."
+    },
+    "cost": {
+      "title": "Kosten verstehen",
+      "text1": "Die Anmietung einer Immobilie mit über 50.000 Quadratfuß erfordert eine erhebliche Investition. ",
+      "highlight1": "Mietpreise in Nelamangala liegen zwischen ₹16–24/Quadratfuß",
+      "text2": ", während Bommasandra höhere Preise verlangen kann. Der Kauf bietet langfristige Renditen, erfordert jedoch sorgfältige finanzielle Planung."
+    },
+    "scalability": {
+      "title": "Skalierbarkeit und maßgeschneiderte Optionen",
+      "text1": "Unternehmen benötigen Flächen, die mit ihnen wachsen. ",
+      "highlight1": "Maßgeschneiderte Lager",
+      "text2": " ermöglichen Anpassungen an spezifische betriebliche Anforderungen.",
+      "bullet1": "Modulare Designs für einfache Erweiterungen.",
+      "bullet2": "Intelligente Lagertechnologien für Automatisierung."
+    },
+    "enoshInfra": {
+      "title": "Warum Enosh Infra wählen?",
+      "text1": "Enosh Infra ist spezialisiert darauf, Mieter und Eigentümer mit erstklassigen Immobilien ab 50.000 Quadratfuß zu verbinden. ",
+      "highlight1": "Unsere Expertise im Markt von Bengaluru",
+      "text2": " gewährleistet maßgeschneiderte Lösungen. Erfahren Sie mehr über ",
+      "linkText": "warum Bengaluru ein Industriezentrum ist",
+      "text3": " und arbeiten Sie mit uns für Ihren nächsten großen Schritt zusammen."
+    },
+    "conclusion": {
+      "title": "Fazit",
+      "text1": "Das perfekte Lager oder Büro mit über 50.000 Quadratfuß in Bengaluru zu finden, erfordert strategische Planung. ",
+      "highlight1": "Enosh Infra ist Ihr vertrauenswürdiger Partner",
+      "text2": " beim Navigieren in diesem dynamischen Markt für 2025 und darüber hinaus."
+    },
+    "cta": "Kontaktieren Sie Enosh Infra heute"
   }
 }

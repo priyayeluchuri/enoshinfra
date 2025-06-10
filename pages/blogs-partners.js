@@ -26,6 +26,15 @@ export default function BlogsPartners() {
               {t('blogsPartners.blogs.text2')}
             </p>
             <ul className="space-y-4">
+	      <li>
+                <Link
+                  href="/blogs/large-warehouse-office-lease-bengaluru-2025"
+                  locale={i18n.language}
+                  className="text-blue-500 hover:underline"
+                >
+                  {t('blogsPartners.blogs.list.item6')}
+                </Link>
+              </li>
               <li>
                 <Link
                   href="/blogs/why-bengaluru-industrial-hub-2025"

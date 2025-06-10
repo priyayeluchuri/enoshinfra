@@ -480,7 +480,8 @@
       "item2": "Guide de création de startup IT Bengaluru : De l'idée au bureau",
       "item3": "Création d'entreprise industrielle Bengaluru : Guide étape par étape",
       "item4": "Insights sur l'optimisation des entrepôts Bengaluru : Maximiser l'efficacité",
-      "item5": "Blog sur les meilleures zones industrielles Bengaluru : Hubs de croissance pour 2025"
+      "item5": "Blog sur les meilleures zones industrielles Bengaluru : Hubs de croissance pour 2025",
+      "item6": "Trouvez un entrepôt ou un bureau de plus de 50 000 pieds carrés à Bengaluru : Guide 2025"
     }
   },
   "partnerships": {
@@ -562,5 +563,75 @@
   },
   "whatsapp": {
     "cta": "Prenez contact"
+  },
+    "largeWarehouseOfficeBengaluru": {
+    "seo": {
+      "title": "Trouvez un entrepôt ou un bureau de plus de 50 000 pieds carrés à louer à Bengaluru en 2025",
+      "description": "Découvrez comment louer un entrepôt ou un bureau de première qualité de plus de 50 000 pieds carrés dans les principaux centres industriels de Bengaluru comme Nelamangala et Bommasandra. Obtenez des conseils d’experts pour 2025 !",
+      "keywords": "entrepôt 50 000 pieds carrés à louer Bengaluru 2025, entrepôt de première qualité Bengaluru, grand espace de bureau à louer Bengaluru, meilleurs emplacements pour grands entrepôts Bengaluru"
+    },
+    "title": "Comment trouver l’entrepôt ou le bureau idéal de plus de 50 000 pieds carrés à louer dans les principaux centres industriels de Bengaluru (Guide 2025)",
+    "intro": {
+      "text1": "Le marché immobilier commercial de Bengaluru est en plein essor, avec une demande croissante pour des entrepôts et des bureaux de grande échelle dépassant 50 000 pieds carrés. ",
+      "highlight1": "Les géants du commerce électronique, de la logistique et de la technologie",
+      "text2": " alimentent cette croissance, recherchant des espaces de première qualité dans des emplacements stratégiques. Ce guide aide les locataires et les propriétaires à naviguer parmi les considérations clés pour la location ou l’achat en 2025."
+    },
+    "location": {
+      "title": "Choisir le bon emplacement",
+      "text1": "L’emplacement est crucial lors de la sélection d’une propriété de plus de 50 000 pieds carrés. Les centres industriels de Bengaluru offrent une excellente connectivité et infrastructure. ",
+      "highlight1": "Nelamangala, Bommasandra et Hoskote",
+      "text2": " sont les choix privilégiés en raison de leur proximité avec les autoroutes et les aéroports.",
+      "area1": {
+        "title": "Nelamangala",
+        "text": "Situé le long de la NH-48, idéal pour la logistique avec un accès aux ports de Mumbai et Chennai."
+      },
+      "area2": {
+        "title": "Bommasandra",
+        "text": "Proche d’Electronic City, parfait pour les entreprises technologiques nécessitant de grands bureaux ou entrepôts."
+      },
+      "area3": {
+        "title": "Hoskote",
+        "text": "Centre émergent près de la NH-44, prisé par le commerce électronique pour les grands centres de distribution."
+      }
+    },
+    "features": {
+      "title": "Caractéristiques indispensables pour les espaces de première qualité",
+      "text1": "Les propriétés de grande échelle nécessitent une infrastructure avancée pour répondre aux besoins des entreprises modernes. ",
+      "highlight1": "Les entrepôts et bureaux de première qualité",
+      "text2": " offrent des fonctionnalités qui améliorent l’efficacité et la conformité.",
+      "bullet1": "Bâtiments préfabriqués (PEB) avec hauts plafonds et rayonnages G+5.",
+      "bullet2": "Rapports élevés de quais à la surface pour un chargement/déchargement efficace.",
+      "bullet3": "Systèmes de sécurité incendie et conformité environnementale."
+    },
+    "cost": {
+      "title": "Comprendre les coûts",
+      "text1": "La location d’une propriété de plus de 50 000 pieds carrés représente un investissement important. ",
+      "highlight1": "Les tarifs de location à Nelamangala varient entre ₹16–24/pied carré",
+      "text2": ", tandis que Bommasandra peut exiger des tarifs plus élevés. L’achat offre un retour sur investissement à long terme, mais nécessite une planification financière minutieuse."
+    },
+    "scalability": {
+      "title": "Évolutivité et options sur mesure",
+      "text1": "Les entreprises ont besoin d’espaces qui évoluent avec elles. ",
+      "highlight1": "Les entrepôts sur mesure",
+      "text2": " permettent une personnalisation pour des besoins opérationnels spécifiques.",
+      "bullet1": "Conceptions modulaires pour une expansion facile.",
+      "bullet2": "Technologies d’entrepôt intelligentes pour l’automatisation."
+    },
+    "enoshInfra": {
+      "title": "Pourquoi choisir Enosh Infra ?",
+      "text1": "Enosh Infra se spécialise dans la mise en relation de locataires et de propriétaires avec des propriétés haut de gamme de plus de 50 000 pieds carrés. ",
+      "highlight1": "Notre expertise du marché de Bengaluru",
+      "text2": " garantit des solutions sur mesure. Découvrez pourquoi ",
+      "linkText": "Bengaluru est un centre industriel",
+      "text3": " et collaborez avec nous pour votre prochain grand projet."
+    },
+    "conclusion": {
+      "title": "Conclusion",
+      "text1": "Trouver l’entrepôt ou le bureau parfait de plus de 50 000 pieds carrés à Bengaluru nécessite une planification stratégique. ",
+      "highlight1": "Enosh Infra est votre partenaire de confiance",
+      "text2": " pour naviguer dans ce marché dynamique en 2025 et au-delà."
+    },
+    "cta": "Contactez Enosh Infra aujourd’hui"
   }
 }
+
