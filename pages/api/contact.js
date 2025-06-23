@@ -113,8 +113,8 @@ export default async function handler(req, res) {
     await transporter.sendMail({
       from: process.env.EMAIL_USER,
       to: email,
-      subject: 'Thank You for Contacting Enosh Infra',
-      text: `Dear ${name},\n\nThank you for choosing Enosh Infra as your property consultant.\n\nWe specialize in industrial and commercial property consultancy and management across Bangalore, offering end-to-end solutions with a focus on quality and efficiency.\n\nOur service charge is one month’s rent plus GST. Kindly confirm your acceptance of the same so we can move ahead accordingly.\n\nBest Regards,\nEnosh Infra Team\n📞 +91-8073582033\n🌐 www.enoshinfra.com\n✉️ info@EnoshInfra.com`,
+      subject: 'Service Charge Details and Confirmation Required',
+      text: `Dear ${name},\n\nThank you for choosing Enosh Infra as your property consultant.\n\nWe specialize in industrial and commercial property consultancy and management across Bangalore, providing end-to-end solutions with a focus on quality and efficiency. By leveraging advanced AI technology, we ensure the most efficient and premium solutions tailored to your needs.\n\nOur service charge is one month’s rent plus GST. Kindly reply to this Email and confirm your acceptance of the same so we can proceed further. This amount is payable upon signing the rental agreement or finalizing the property.\n\nBest Regards,\nEnosh Infra Team\n📞 +91-8073582033\n🌐 www.enoshinfra.com\n✉️ info@EnoshInfra.com`,
     });
 
     const auth = new google.auth.GoogleAuth({
