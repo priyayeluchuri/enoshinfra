@@ -114,7 +114,7 @@ export default async function handler(req, res) {
       from: process.env.EMAIL_USER,
       to: email,
       subject: 'Thank You for Contacting Enosh Infra',
-      text: `Dear ${name},\n\nThank you for reaching out. We will review your requirement and get back to you soon.\n\nBest Regards,\nEnosh Infra Team`,
+      text: `Dear ${name},\n\nThank you for choosing Enosh Infra as your property consultant.\n\nWe specialize in industrial and commercial property consultancy and management across Bangalore, offering end-to-end solutions with a focus on quality and efficiency.\n\nOur service charge is one month’s rent plus GST. Kindly confirm your acceptance of the same so we can move ahead accordingly.\n\nBest Regards,\nEnosh Infra Team\n📞 +91-8073582033\n🌐 www.enoshinfra.com\n✉️ info@EnoshInfra.com`,
     });
 
     const auth = new google.auth.GoogleAuth({
