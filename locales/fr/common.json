@@ -579,20 +579,28 @@
     "location": {
       "title": "Choisir le bon emplacement",
       "text1": "L’emplacement est crucial lors de la sélection d’une propriété de plus de 50 000 pieds carrés. Les centres industriels de Bengaluru offrent une excellente connectivité et infrastructure. ",
-      "highlight1": "Nelamangala, Bommasandra et Hoskote",
-      "text2": " sont les choix privilégiés en raison de leur proximité avec les autoroutes et les aéroports.",
-      "area1": {
-        "title": "Nelamangala",
-        "text": "Situé le long de la NH-48, idéal pour la logistique avec un accès aux ports de Mumbai et Chennai."
-      },
-      "area2": {
-        "title": "Bommasandra",
-        "text": "Proche d’Electronic City, parfait pour les entreprises technologiques nécessitant de grands bureaux ou entrepôts."
-      },
-      "area3": {
-        "title": "Hoskote",
-        "text": "Centre émergent près de la NH-44, prisé par le commerce électronique pour les grands centres de distribution."
-      }
+        "highlight1": "Nelamangala, Bommasandra, Hoskote, Doddaballapura et Devanahalli",
+        "text2": "sont les meilleurs choix en raison de leur proximité avec les autoroutes et les aéroports.",
+        "area1": {
+          "title": "Nelamangala",
+          "text": "Situé le long de la NH-48, idéal pour la logistique avec un accès aux ports de Mumbai et Chennai."
+        },
+        "area2": {
+          "title": "Bommasandra",
+          "text": "Proche d'Electronic City, parfait pour les entreprises technologiques ayant besoin de grands bureaux ou entrepôts."
+        },
+        "area3": {
+          "title": "Hoskote",
+          "text": "Pôle émergent près de la NH-44, privilégié par le commerce électronique pour les grands centres de distribution."
+        },
+        "area4": {
+          "title": "Doddaballapura",
+          "text": "Situé le long de la NH-207, connu pour ses industries textiles et manufacturières, offrant des terrains économiques pour des installations industrielles à grande échelle."
+        },
+        "area5": {
+          "title": "Devanahalli",
+          "text": "À proximité de l'aéroport international de Kempegowda et de la NH-44, un emplacement privilégié pour l'aérospatiale, la logistique et les industries de haute technologie avec une excellente connectivité mondiale."
+        }
     },
     "features": {
       "title": "Caractéristiques indispensables pour les espaces de première qualité",

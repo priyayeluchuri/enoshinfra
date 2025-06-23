@@ -577,20 +577,28 @@
     "location": {
       "title": "Den richtigen Standort wählen",
       "text1": "Der Standort ist entscheidend bei der Auswahl einer Immobilie mit über 50.000 Quadratfuß. Die Industriezentren von Bengaluru bieten hervorragende Anbindung und Infrastruktur. ",
-      "highlight1": "Nelamangala, Bommasandra und Hoskote",
-      "text2": " sind die besten Optionen aufgrund ihrer Nähe zu Autobahnen und Flughäfen.",
-      "area1": {
-        "title": "Nelamangala",
-        "text": "Entlang der NH-48 gelegen, ideal für Logistik mit Zugang zu den Häfen von Mumbai und Chennai."
-      },
-      "area2": {
-        "title": "Bommasandra",
-        "text": "In der Nähe von Electronic City, perfekt für Technologieunternehmen, die große Büros oder Lager benötigen."
-      },
-      "area3": {
-        "title": "Hoskote",
-        "text": "Aufstrebendes Zentrum nahe der NH-44, bevorzugt von E-Commerce-Unternehmen für große Verteilzentren."
-      }
+        "highlight1": "Nelamangala, Bommasandra, Hoskote, Doddaballapura und Devanahalli",
+        "text2": "sind die besten Optionen aufgrund ihrer Nähe zu Autobahnen und Flughäfen.",
+        "area1": {
+          "title": "Nelamangala",
+          "text": "Entlang der NH-48 gelegen, ideal für Logistik mit Zugang zu den Häfen von Mumbai und Chennai."
+        },
+        "area2": {
+          "title": "Bommasandra",
+          "text": "In der Nähe von Electronic City, perfekt für Technologieunternehmen, die große Büros oder Lagerhäuser benötigen."
+        },
+        "area3": {
+          "title": "Hoskote",
+          "text": "Aufstrebendes Zentrum in der Nähe der NH-44, bevorzugt von E-Commerce-Unternehmen für große Verteilzentren."
+        },
+        "area4": {
+          "title": "Doddaballapura",
+          "text": "Entlang der NH-207 gelegen, bekannt für seine Textil- und Fertigungsindustrie, bietet kostengünstiges Land für großflächige Industrieanlagen."
+        },
+        "area5": {
+          "title": "Devanahalli",
+          "text": "In der Nähe des internationalen Flughafens Kempegowda und der NH-44, ein erstklassiger Standort für Luftfahrt, Logistik und Hochtechnologie-Industrien mit hervorragender globaler Anbindung."
+        } 
     },
     "features": {
       "title": "Must-Have-Eigenschaften für erstklassige Flächen",

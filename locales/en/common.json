@@ -579,7 +579,7 @@
     "location": {
       "title": "Choosing the Right Location",
       "text1": "Location is critical when selecting a 50,000+ sq ft property. Bengaluru’s industrial hubs offer excellent connectivity and infrastructure. ",
-      "highlight1": "Nelamangala, Bommasandra, and Hoskote",
+      "highlight1": "Nelamangala, Bommasandra, Hoskote, Doddaballapura, and Devanahalli",
       "text2": " are top choices due to their proximity to highways and airports.",
       "area1": {
         "title": "Nelamangala",
@@ -592,7 +592,15 @@
       "area3": {
         "title": "Hoskote",
         "text": "Emerging hub near NH-44, favored by e-commerce for large distribution centers."
-      }
+      },
+      "area4": {
+	"title": "Doddaballapura",
+	"text": "Situated along NH-207, known for its textile and manufacturing industries, offering cost-effective land for large-scale industrial setups."
+     },
+     "area5": {
+       "title": "Devanahalli",
+       "text": "Near Kempegowda International Airport and NH-44, a prime location for aerospace, logistics, and high-tech industries with excellent global connectivity."
+     }
     },
     "features": {
       "title": "Must-Have Features for Grade A Spaces",
