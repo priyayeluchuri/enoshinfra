@@ -1,7 +1,7 @@
 import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebook, faTwitter, faInstagram, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import { faFacebook, faTwitter, faInstagram, faWhatsapp, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 
 export default function Footer() {
@@ -21,11 +21,8 @@ export default function Footer() {
 
         {/* Social Media Links */}
         <div className="flex space-x-4 mt-4 md:mt-0">
-          <a href="https://www.facebook.com/enoshinfra" target="_blank" rel="noopener noreferrer">
-            <FontAwesomeIcon icon={faFacebook} className="w-6 h-6 hover:text-blue-400" style={{ color: "#1877F2" }} />
-          </a>
-          <a href="https://www.twitter.com/enoshinfra" target="_blank" rel="noopener noreferrer">
-           <FontAwesomeIcon icon={faTwitter} className="w-6 h-6 hover:text-blue-400" style={{ color: "#1DA1F2" }} />
+          <a href="https://www.linkedin.com/company/enoshinfra" target="_blank" rel="noopener noreferrer">
+           <FontAwesomeIcon icon={faLinkedin} className="w-6 h-6 hover:text-blue-400" style={{ color: "#1DA1F2" }} />
 	  </a>
           <a href="https://www.instagram.com/enoshinfra" target="_blank" rel="noopener noreferrer">
            <FontAwesomeIcon icon={faInstagram} className="w-6 h-6 hover:text-pink-500" style={{ color: "#E1306C" }} />
