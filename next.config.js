@@ -1,8 +1,21 @@
-// next.config.js
-const { i18n } = require('./next-i18next.config'); // Import the i18n config
+const { i18n } = require('./next-i18next.config');
 
 module.exports = {
-  i18n, // Add this line to include i18n config
-  // other options can stay here
+  i18n,
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: '/en/',
+        permanent: true,
+        locale: false, // Apply before locale routing
+      },
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'enoshinfra.com' }],
+        destination: 'https://www.enoshinfra.com/:path*',
+        permanent: true,
+      },
+    ];
+  },
 };
-

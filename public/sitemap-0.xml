@@ -1,11 +1,147 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>https://www.enoshinfra.com</loc><lastmod>2025-03-11T06:12:11.150Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.enoshinfra.com/about</loc><lastmod>2025-03-11T06:12:11.150Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.enoshinfra.com/contact</loc><lastmod>2025-03-11T06:12:11.150Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.enoshinfra.com/services</loc><lastmod>2025-03-11T06:12:11.150Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.enoshinfra.com/services/co-working</loc><lastmod>2025-03-11T06:12:11.150Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.enoshinfra.com/services/commercial-retail</loc><lastmod>2025-03-11T06:12:11.150Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.enoshinfra.com/services/tech-parks</loc><lastmod>2025-03-11T06:12:11.150Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.enoshinfra.com/services/warehouses</loc><lastmod>2025-03-11T06:12:11.150Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- Homepage -->
+  <url>
+    <loc>https://www.enoshinfra.com/en/</loc>
+    <lastmod>2025-07-10T17:29:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.enoshinfra.com/en/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.enoshinfra.com/hi/" />
+    <xhtml:link rel="alternate" hreflang="kn" href="https://www.enoshinfra.com/kn/" />
+    <xhtml:link rel="alternate" hreflang="te" href="https://www.enoshinfra.com/te/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.enoshinfra.com/zh/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.enoshinfra.com/ja/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.enoshinfra.com/ru/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.enoshinfra.com/fr/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.enoshinfra.com/de/" />
+  </url>
+  <!-- About -->
+  <url>
+    <loc>https://www.enoshinfra.com/en/about</loc>
+    <lastmod>2025-07-10T17:29:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.enoshinfra.com/en/about" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.enoshinfra.com/hi/about" />
+    <xhtml:link rel="alternate" hreflang="kn" href="https://www.enoshinfra.com/kn/about" />
+    <xhtml:link rel="alternate" hreflang="te" href="https://www.enoshinfra.com/te/about" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.enoshinfra.com/zh/about" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.enoshinfra.com/ja/about" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.enoshinfra.com/ru/about" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.enoshinfra.com/fr/about" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.enoshinfra.com/de/about" />
+  </url>
+  <!-- Contact -->
+  <url>
+    <loc>https://www.enoshinfra.com/en/contact</loc>
+    <lastmod>2025-07-10T17:29:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.enoshinfra.com/en/contact" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.enoshinfra.com/hi/contact" />
+    <xhtml:link rel="alternate" hreflang="kn" href="https://www.enoshinfra.com/kn/contact" />
+    <xhtml:link rel="alternate" hreflang="te" href="https://www.enoshinfra.com/te/contact" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.enoshinfra.com/zh/contact" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.enoshinfra.com/ja/contact" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.enoshinfra.com/ru/contact" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.enoshinfra.com/fr/contact" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.enoshinfra.com/de/contact" />
+  </url>
+  <!-- Services -->
+  <url>
+    <loc>https://www.enoshinfra.com/en/services</loc>
+    <lastmod>2025-07-10T17:29:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.enoshinfra.com/en/services" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.enoshinfra.com/hi/services" />
+    <xhtml:link rel="alternate" hreflang="kn" href="https://www.enoshinfra.com/kn/services" />
+    <xhtml:link rel="alternate" hreflang="te" href="https://www.enoshinfra.com/te/services" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.enoshinfra.com/zh/services" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.enoshinfra.com/ja/services" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.enoshinfra.com/ru/services" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.enoshinfra.com/fr/services" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.enoshinfra.com/de/services" />
+  </url>
+  <!-- Services: Co-working -->
+  <url>
+    <loc>https://www.enoshinfra.com/en/services/co-working</loc>
+    <lastmod>2025-07-10T17:29:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.enoshinfra.com/en/services/co-working" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.enoshinfra.com/hi/services/co-working" />
+    <xhtml:link rel="alternate" hreflang="kn" href="https://www.enoshinfra.com/kn/services/co-working" />
+    <xhtml:link rel="alternate" hreflang="te" href="https://www.enoshinfra.com/te/services/co-working" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.enoshinfra.com/zh/services/co-working" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.enoshinfra.com/ja/services/co-working" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.enoshinfra.com/ru/services/co-working" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.enoshinfra.com/fr/services/co-working" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.enoshinfra.com/de/services/co-working" />
+  </url>
+  <!-- Services: Commercial Retail -->
+  <url>
+    <loc>https://www.enoshinfra.com/en/services/commercial-retail</loc>
+    <lastmod>2025-07-10T17:29:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.enoshinfra.com/en/services/commercial-retail" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.enoshinfra.com/hi/services/commercial-retail" />
+    <xhtml:link rel="alternate" hreflang="kn" href="https://www.enoshinfra.com/kn/services/commercial-retail" />
+    <xhtml:link rel="alternate" hreflang="te" href="https://www.enoshinfra.com/te/services/commercial-retail" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.enoshinfra.com/zh/services/commercial-retail" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.enoshinfra.com/ja/services/commercial-retail" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.enoshinfra.com/ru/services/commercial-retail" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.enoshinfra.com/fr/services/commercial-retail" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.enoshinfra.com/de/services/commercial-retail" />
+  </url>
+  <!-- Services: Tech Parks -->
+  <url>
+    <loc>https://www.enoshinfra.com/en/services/tech-parks</loc>
+    <lastmod>2025-07-10T17:29:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.enoshinfra.com/en/services/tech-parks" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.enoshinfra.com/hi/services/tech-parks" />
+    <xhtml:link rel="alternate" hreflang="kn" href="https://www.enoshinfra.com/kn/services/tech-parks" />
+    <xhtml:link rel="alternate" hreflang="te" href="https://www.enoshinfra.com/te/services/tech-parks" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.enoshinfra.com/zh/services/tech-parks" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.enoshinfra.com/ja/services/tech-parks" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.enoshinfra.com/ru/services/tech-parks" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.enoshinfra.com/fr/services/tech-parks" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.enoshinfra.com/de/services/tech-parks" />
+  </url>
+  <!-- Services: Warehouses -->
+  <url>
+    <loc>https://www.enoshinfra.com/en/services/warehouses</loc>
+    <lastmod>2025-07-10T17:29:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.enoshinfra.com/en/services/warehouses" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.enoshinfra.com/hi/services/warehouses" />
+    <xhtml:link rel="alternate" hreflang="kn" href="https://www.enoshinfra.com/kn/services/warehouses" />
+    <xhtml:link rel="alternate" hreflang="te" href="https://www.enoshinfra.com/te/services/warehouses" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.enoshinfra.com/zh/services/warehouses" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.enoshinfra.com/ja/services/warehouses" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.enoshinfra.com/ru/services/warehouses" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.enoshinfra.com/fr/services/warehouses" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.enoshinfra.com/de/services/warehouses" />
+  </url>
+  <!-- Services: Trending Warehouse -->
+  <url>
+    <loc>https://www.enoshinfra.com/en/services/trending-warehouse</loc>
+    <lastmod>2025-07-10T17:29:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.enoshinfra.com/en/services/trending-warehouse" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.enoshinfra.com/hi/services/trending-warehouse" />
+    <xhtml:link rel="alternate" hreflang="kn" href="https://www.enoshinfra.com/kn/services/trending-warehouse" />
+    <xhtml:link rel="alternate" hreflang="te" href="https://www.enoshinfra.com/te/services/trending-warehouse" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.enoshinfra.com/zh/services/trending-warehouse" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.enoshinfra.com/ja/services/trending-warehouse" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.enoshinfra.com/ru/services/trending-warehouse" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.enoshinfra.com/fr/services/trending-warehouse" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.enoshinfra.com/de/services/trending-warehouse" />
+  </url>
 </urlset>

@@ -8,7 +8,7 @@
   "warehouses": "Warehouses & Logistics Solutions",
   "tech_parks": "Tech Parks for Innovative Enterprises",
   "commercial_retail": "Commercial & Retail Spaces for Growing Businesses",
-  "co_working": "Modern Co-Working Spaces",
+  "co_working": "Modern Office/Co-Working Spaces",
   "navbar": {
     "cta": "Need a space or looking for tenants? Let's Talk!",
     "home": "Home",
@@ -17,7 +17,7 @@
     "warehouses": "Warehouses & Logistics",
     "techParks": "Tech Parks",
     "commercialRetail": "Commercial & Retail",
-    "coworking": "Co-working Spaces",
+    "coworking": "Office/Co-working Spaces",
     "contact": "Contact",
     "blogsPartners": "Blogs & Partners"
   },
@@ -32,8 +32,8 @@
       "Lease Your Tech Park – Attract MNC Tenants Fast",
       "Industrial Sheds – Robust Spaces for Manufacturing",
       "Land for Factories – Strategic Plots in Bengaluru",
-      "Co-Working Spaces – Flexible, Affordable & Ready to Move In",
-      "List Your Co-Working Space – Get Tenants Fast with Zero Hassle",
+      "Office/Co-Working Spaces – Flexible, Affordable & Ready to Move In",
+      "List Your Office/Co-Working Space – Get Tenants Fast with Zero Hassle",
       "Commercial Spaces – Prime Locations for Businesses",
       "Lease Your Commercial Space – Connect with Verified Tenants"
     ]
@@ -444,12 +444,12 @@
   },
   "coworking": {
     "seo": {
-      "title": "Co-Working Spaces - Enosh Infra",
-      "description": "Discover premium co-working spaces with plug-and-play facilities tailored for startups, freelancers, and enterprises."
+      "title": "Office/Co-Working Spaces - Enosh Infra",
+      "description": "Discover premium office spaces with plug-and-play facilities tailored for startups, freelancers, and enterprises."
     },
-    "title": "Co-Working Spaces",
-    "para1": "Enosh Infra provides top-tier co-working spaces designed for startups, freelancers, and enterprises looking for a flexible and dynamic work environment. Our spaces offer state-of-the-art infrastructure, high-speed internet, and a collaborative atmosphere that fosters productivity and innovation.",
-    "whyTitle": "Why Choose Our Co-Working Spaces?",
+    "title": "Office/Co-Working Spaces",
+    "para1": "Enosh Infra provides top-tier offices designed for startups, freelancers, and enterprises looking for a flexible and dynamic work environment. Our spaces offer state-of-the-art infrastructure, high-speed internet, and a collaborative atmosphere that fosters productivity and innovation.",
+    "whyTitle": "Why Choose Our Office spaces?",
     "point1": "Flexible workspaces tailored to your needs.",
     "point2": "High-speed internet and 24/7 access.",
     "point3": "Fully furnished with ergonomic seating and modern interiors.",
@@ -514,8 +514,8 @@
         ]
       },
       {
-        "title": "Modern Co-Working Spaces",
-        "description": "Providing contemporary co-working spaces designed to foster collaboration and productivity.",
+        "title": "Modern Office/Co-Working Spaces",
+        "description": "Providing contemporary office spaces designed to foster collaboration and productivity.",
         "features": [
           "Fully equipped workspaces with high-speed internet",
           "Flexible membership plans",
@@ -564,7 +564,7 @@
       "warehousesLogistics": "Warehouses & Logistics",
       "techParks": "Tech Parks",
       "commercialRetail": "Commercial & Retail",
-      "coworkingSpaces": "Co-working Spaces"
+      "coworkingSpaces": "Office/Co-working Spaces"
     },
     "purposes": {
       "findSpace": "Find a Space",
