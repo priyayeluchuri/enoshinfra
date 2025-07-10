@@ -22,22 +22,28 @@ export default function Footer() {
         <div className="flex space-x-4 mt-4 md:mt-0">
           <a href="https://www.linkedin.com/company/enoshinfra" target="_blank" rel="noopener noreferrer">
             <FontAwesomeIcon icon={faLinkedin} className="w-6 h-6 hover:text-blue-400" style={{ color: '#1DA1F2' }} />
-          </a>
+	    <span className="sr-only">LinkedIn</span>
+	  </a>
           <a href="https://www.instagram.com/enoshinfra" target="_blank" rel="noopener noreferrer">
             <FontAwesomeIcon icon={faInstagram} className="w-6 h-6 hover:text-pink-500" style={{ color: '#E1306C' }} />
-          </a>
-          <a href="https://x.com/enoshinfra" target="_blank" rel="noopener noreferrer">
+            <span className="sr-only">Instagram</span>
+	  </a>
+	  <a href="https://x.com/enoshinfra" target="_blank" rel="noopener noreferrer">
             <FontAwesomeIcon icon={faXTwitter} className="w-6 h-6 hover:text-blue-500" style={{ color: '#1DA1F2' }} />
+            <span className="sr-only">X (Twitter)</span>
           </a>
           <a href="mailto:info@enoshinfra.com">
             <FontAwesomeIcon icon={faEnvelope} className="w-6 h-6 hover:text-gray-400" style={{ color: '#FFFFFF' }} />
-          </a>
+            <span className="sr-only">Email</span>
+	  </a>
           <a href="tel:+918073582033">
             <FontAwesomeIcon icon={faPhone} className="w-6 h-6 hover:text-gray-400" style={{ color: '#25D366' }} />
-          </a>
+            <span className="sr-only">Call Us</span>
+	  </a>
           <a href="https://wa.me/918073582033" target="_blank" rel="noopener noreferrer">
             <FontAwesomeIcon icon={faWhatsapp} className="w-6 h-6 hover:text-green-400" style={{ color: '#25D366' }} />
-          </a>
+            <span className="sr-only">WhatsApp</span>
+	  </a>
         </div>
       </div>
 
