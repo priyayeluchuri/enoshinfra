@@ -1,10 +1,11 @@
 import SEO from '../components/seo';
 import HeroSection from '../components/HeroSection';
-import { useTranslation } from 'next-i18next'; // correct import
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations'; // for SSR/SSG i18n
+import PropertyOverview from '../components/PropertyOverview';
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 export default function Home() {
-  const { t } = useTranslation('common'); // specify the namespace
+  const { t } = useTranslation('common');
 
   return (
     <>
@@ -14,12 +15,11 @@ export default function Home() {
         url="https://enoshinfra.com"
       />
       <HeroSection />
-      {/* <PropertyList /> */}
+      <PropertyOverview />
     </>
   );
 }
 
-// 👇 Add this at the bottom of the file
 export async function getStaticProps({ locale }) {
   return {
     props: {
@@ -27,4 +27,3 @@ export async function getStaticProps({ locale }) {
     },
   };
 }
-

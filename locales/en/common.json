@@ -1,8 +1,7 @@
 {
   "seo": {
-    "title": "Enosh Infra - Rent or Lease Industrial, Commercial & Office Spaces in Bengaluru",
-    "description": "Discover premium industrial, commercial, and co-working spaces for rent or lease in Bengaluru. Explore prime hubs like Nelamangala, Peenya, Bommasandra, Jigani, Hoskote, Kumbalgodu, Doddaballapura, Hebbal, Whitefield, HSR, and KIADB industrial areas with Enosh Infra.",
-    "url": "https://enoshinfra.com"
+    "title": "Enosh Infra - Commercial, Warehouse & Tech Spaces",
+    "description": "Lease commercial, warehouse, and tech park spaces for tenants in Bengaluru’s top hubs: Nelamangala, Peenya, Whitefield, Devanahalli, Bommasandra, Jigani."
   },
   "our_services": "Our Services",
   "services_description": "Enosh Infra offers a diverse range of real estate solutions tailored to meet the specific needs of businesses seeking premium properties in India. Our services include:",
@@ -24,17 +23,48 @@
   },
   "hero": {
     "headline": "Premium & Affordable Commercial Spaces in Namma Bengaluru",
-    "subheadline": "Enosh Infra is your trusted partner in securing high-quality commercial, industrial, and warehouse properties in Bangalore. Elevate your business with strategic locations and seamless transactions.",
+    "subheadline": "Enosh Infra connects businesses with high-quality commercial spaces, warehouses, industrial sheds, land for factories, and IT tech parks across Bangalore’s strategic hubs.",
     "cta": "Get Started",
     "options": [
       "Premium Warehouses in Bengaluru – Affordable & Hassle-Free",
       "Find a Tenant for Your Warehouse – Quick & Easy Listings",
+      "Tech Parks for MNCs – Premium IT Spaces in North Bengaluru",
+      "Lease Your Tech Park – Attract MNC Tenants Fast",
+      "Industrial Sheds – Robust Spaces for Manufacturing",
+      "Land for Factories – Strategic Plots in Bengaluru",
       "Co-Working Spaces – Flexible, Affordable & Ready to Move In",
       "List Your Co-Working Space – Get Tenants Fast with Zero Hassle",
-      "Industrial Spaces – High-Quality, Budget-Friendly & Strategic Locations",
-      "Lease Your Industrial Space – Connect with Verified Tenants",
-      "Commercial Spaces – Prime Locations at Competitive Prices",
-      "Rent Out Your Commercial Space – Get Instant Inquiries"
+      "Commercial Spaces – Prime Locations for Businesses",
+      "Lease Your Commercial Space – Connect with Verified Tenants"
+    ]
+  },
+  "propertyOverview": {
+    "title": "Explore Our Industrial and Commercial Spaces in Bengaluru",
+    "servicesHeading": "Our Property Solutions",
+    "services": [
+      "Leasing premium commercial spaces, warehouses, industrial sheds, and land for factories.",
+      "Providing IT tech parks tailored for multinational corporations in North Bengaluru.",
+      "Designing commercial spaces for businesses seeking high-visibility locations to drive growth.",
+      "Offering state-of-the-art warehouses for logistics, e-commerce, and storage.",
+      "Supplying durable, spacious industrial sheds for manufacturing industries.",
+      "Strategically locating land for custom industrial development.",
+      "Ensuring advanced infrastructure, fiber-optic connectivity, and proximity to innovation hubs.",
+      "Plug-and-play office spaces fully equipped with office essentials, No hassle, no downtime—just walk in, plug in, and get to work!",
+      "Retail spaces that align with your needs and brand image. Procure a prime storefront, a shopping complex, or a high-visibility commercial unit"
+    ],
+    "locationsHeading": "Bengaluru’s Premier Hubs",
+    "locations": "Our properties span Bengaluru’s top industrial and commercial hubs, ensuring accessibility and strategic advantages for tenants. North Bengaluru’s Devanahalli and Dabaspet stand out for tech parks, offering premium IT spaces for MNCs. Nelamangala is a logistics powerhouse with extensive warehouse facilities, while Peenya is renowned for its industrial sheds and manufacturing excellence. Whitefield combines tech and commercial opportunities, and Bommasandra and Jigani provide robust infrastructure for manufacturing, warehousing, and commercial tenants seeking scalable spaces.",
+    "locationList": [
+      "Nelamangala: Warehouse and logistics hub with highway connectivity.",
+      "Devanahalli: Aerospace and tech park hub near the airport.",
+      "Dabaspet: Emerging industrial zone for cost-effective spaces.",
+      "Peenya: Premier industrial area for manufacturing and sheds.",
+      "Whitefield: Tech and commercial hub for IT and business.",
+      "Bommasandra: Prime area for commercial and industrial tenants.",
+      "Jigani: Warehouse and manufacturing hub with robust infrastructure.",
+      "Doddaballapura: Industrial development with proximity to the Bangalore International Airport.",
+      "Kumbalgodu: Strategically located on Mysore Road, ideal for logistics and warehousing operations with excellent highway access.",
+      "Hoskote: A strategic industrial and logistics corridor with access to NH-75, making transportation seamless."
     ]
   },
   "about": {
