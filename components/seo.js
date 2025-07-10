@@ -1,24 +1,48 @@
 import Head from 'next/head';
 import { useTranslation } from 'next-i18next';
+import { useRouter } from 'next/router'; // Import useRouter to get the current path
+import { i18n } from '../next-i18next.config'; // Import your i18n config
 
 const SEO = ({
   pageKey = 'seo', // Key in common.json (e.g., 'warehouse.seo', 'about.seo')
   locale, // Pass locale explicitly to construct URL
   image = 'https://www.enoshinfra.com/fullfav.png', // Updated to www
 }) => {
-  const { t } = useTranslation('common'); // Access common.json translations
+  const { t } = useTranslation('common');
+  const router = useRouter(); // Initialize router
+  const { locales, defaultLocale } = i18n; // Get locales and defaultLocale from your config
 
-  // Get title and description from common.json based on pageKey
   const title = t(`${pageKey}.title`, 'Enosh Infra - Real Estate Consultancy');
   const description = t(
     `${pageKey}.description`,
     'Your trusted real estate consultancy for industrial, commercial, and residential properties.'
   );
 
-  // Construct locale-specific canonical URL
   const baseUrl = 'https://www.enoshinfra.com';
-  const path = pageKey === 'seo' ? '' : pageKey.replace('.seo', '').replace('.', '/');
-  const canonicalUrl = `${baseUrl}/${locale}/${path}`.replace(/\/$/, '');
+
+  // Determine the base path of the page *without* the locale prefix.
+  // For example, if current path is '/en/about', this should be '/about'.
+  // If current path is '/en', this should be '/'.
+  let pagePath = router.pathname;
+  if (pagePath === '/') {
+      pagePath = '/'; // Ensure homepage is just '/'
+  } else {
+      // Remove the locale prefix from the router.pathname
+      // Example: /en/about -> /about
+      // This is safer than relying on pageKey for more complex routes.
+      const localePrefix = `/${locale}`;
+      if (pagePath.startsWith(localePrefix)) {
+          pagePath = pagePath.substring(localePrefix.length);
+          if (pagePath === '') { // If it was just '/en', make it '/'
+              pagePath = '/';
+          }
+      }
+  }
+
+  // Construct the canonical URL for the *current* locale
+  // Handle the root path specifically to avoid double slashes like /en//
+  const canonicalUrl = `${baseUrl}/${locale}${pagePath === '/' ? '' : pagePath}`;
+
 
   return (
     <Head>
@@ -47,8 +71,31 @@ const SEO = ({
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
 
-      {/* Canonical URL */}
+      {/* Canonical URL for the current page and locale */}
       <link rel="canonical" href={canonicalUrl} />
+
+      {/* Hreflang Tags (NEW ADDITION) */}
+      {locales.map((lang) => {
+        // Construct the URL for each locale
+        const hreflangUrl = `${baseUrl}/${lang}${pagePath === '/' ? '' : pagePath}`;
+        return (
+          <link
+            key={lang}
+            rel="alternate"
+            hrefLang={lang}
+            href={hreflangUrl}
+          />
+        );
+      })}
+
+      {/* x-default Hreflang Tag (NEW ADDITION) */}
+      {defaultLocale && ( // Ensure defaultLocale is defined
+        <link
+          rel="alternate"
+          hrefLang="x-default"
+          href={`${baseUrl}/${defaultLocale}${pagePath === '/' ? '' : pagePath}`}
+        />
+      )}
 
       {/* Schema Markup */}
       <script type="application/ld+json">
