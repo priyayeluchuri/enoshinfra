@@ -1,40 +1,70 @@
 {
   "seo": {
-    "title": "Enosh Infra - Location ou bail d'espaces industriels, commerciaux et de bureaux à Bengaluru",
-    "description": "Découvrez des espaces industriels, commerciaux et de coworking haut de gamme à louer ou à prendre en bail à Bengaluru. Explorez des hubs stratégiques comme Nelamangala, Peenya, Bommasandra, Jigani, Hoskote, Kumbalgodu, Doddaballapura, Hebbal, Whitefield, HSR et les zones industrielles KIADB avec Enosh Infra.",
-    "url": "https://enoshinfra.com"
+    "title": "Enosh Infra - Espaces Commerciaux, Entrepôts & Technologiques",
+    "description": "Louez des espaces commerciaux, des entrepôts et des parcs technologiques pour les locataires dans les principaux pôles de Bengaluru : Nelamangala, Peenya, Whitefield, Devanahalli, Bommasandra, Jigani."
   },
-  "our_services": "Nos services",
-  "services_description": "Enosh Infra propose une gamme variée de solutions immobilières adaptées aux besoins spécifiques des entreprises à la recherche de propriétés haut de gamme en Inde. Nos services incluent :",
-  "warehouses": "Entrepôts et solutions logistiques",
-  "tech_parks": "Parcs technologiques pour entreprises innovantes",
-  "commercial_retail": "Espaces commerciaux et de vente au détail pour entreprises en croissance",
-  "co_working": "Espaces de coworking modernes",
+  "our_services": "Nos Services",
+  "services_description": "Enosh Infra offre une gamme diversifiée de solutions immobilières adaptées aux besoins spécifiques des entreprises à la recherche de propriétés premium en Inde. Nos services incluent :",
+  "warehouses": "Solutions d'Entrepôts & Logistique",
+  "tech_parks": "Parcs Technologiques pour Entreprises Innovantes",
+  "commercial_retail": "Espaces Commerciaux & de Vente au Détail pour Entreprises en Croissance",
+  "co_working": "Bureaux Modernes/Espaces de Co-Working",
   "navbar": {
     "cta": "Besoin d'un espace ou à la recherche de locataires ? Parlons-en !",
     "home": "Accueil",
-    "about": "À propos",
+    "about": "À Propos",
     "services": "Services",
-    "warehouses": "Entrepôts et logistique",
-    "techParks": "Parcs technologiques",
-    "commercialRetail": "Commercial et vente au détail",
-    "coworking": "Espaces de coworking",
+    "warehouses": "Entrepôts & Logistique",
+    "techParks": "Parcs Technologiques",
+    "commercialRetail": "Commerces & Vente au Détail",
+    "coworking": "Bureaux/Co-working",
     "contact": "Contact",
-    "blogsPartners": "Blogs et partenaires"
+    "blogsPartners": "Blogs & Partenaires"
   },
   "hero": {
-    "headline": "Espaces commerciaux premium et abordables à Namma Bengaluru",
-    "subheadline": "Enosh Infra est votre partenaire de confiance pour sécuriser des propriétés commerciales, industrielles et d'entrepôts de haute qualité à Bangalore. Élevez votre entreprise avec des emplacements stratégiques et des transactions fluides.",
+    "headline": "Espaces Commerciaux Premium & Abordables à Namma Bengaluru",
+    "subheadline": "Enosh Infra connecte les entreprises avec des espaces commerciaux de haute qualité, des entrepôts, des hangars industriels, des terrains pour usines et des parcs technologiques informatiques à travers les pôles stratégiques de Bangalore.",
     "cta": "Commencer",
     "options": [
-      "Entrepôts premium à Bengaluru – Abordables et sans tracas",
-      "Trouvez un locataire pour votre entrepôt – Inscriptions rapides et faciles",
-      "Espaces de coworking – Flexibles, abordables et prêts à l’emploi",
-      "Listez votre espace de coworking – Trouvez des locataires rapidement sans complications",
-      "Espaces industriels – Haute qualité, économiques et emplacements stratégiques",
-      "Louez votre espace industriel – Connectez-vous avec des locataires vérifiés",
-      "Espaces commerciaux – Emplacements de choix à des prix compétitifs",
-      "Louez votre espace commercial – Obtenez des demandes instantanées"
+      "Entrepôts Premium à Bengaluru – Abordables & Sans Tracas",
+      "Trouvez un Locataire pour Votre Entrepôt – Annonces Rapides & Faciles",
+      "Parcs Technologiques pour MNC – Espaces Informatiques Premium au Nord de Bengaluru",
+      "Louez Votre Parc Technologique – Attirez des Locataires MNC Rapidement",
+      "Hangar Industriels – Espaces Robustes pour la Fabrication",
+      "Terrains pour Usines – Parcelles Stratégiques à Bengaluru",
+      "Bureaux/Espaces de Co-Working – Flexibles, Abordables & Prêts à Emménager",
+      "Listez Votre Bureau/Espace de Co-Working – Obtenez des Locataires Rapidement et Sans Problème",
+      "Espaces Commerciaux – Emplacements de Choix pour les Entreprises",
+      "Louez Votre Espace Commercial – Connectez-vous avec des Locataires Vérifiés"
+    ]
+  },
+  "propertyOverview": {
+    "title": "Explorez Nos Espaces Industriels et Commerciaux à Bengaluru",
+    "servicesHeading": "Nos Solutions Immobilières",
+    "services": [
+      "Location d'espaces commerciaux premium, d'entrepôts, de hangars industriels et de terrains pour usines.",
+      "Fourniture de parcs technologiques informatiques adaptés aux multinationales dans le nord de Bengaluru.",
+      "Conception d'espaces commerciaux pour les entreprises recherchant des emplacements très visibles pour stimuler la croissance.",
+      "Offrir des entrepôts à la pointe de la technologie pour la logistique, le commerce électronique et le stockage.",
+      "Fournir des hangars industriels durables et spacieux pour les industries manufacturières.",
+      "Localisation stratégique de terrains pour le développement industriel sur mesure.",
+      "Assurer une infrastructure avancée, une connectivité par fibre optique et la proximité des pôles d'innovation.",
+      "Des espaces de bureau \"plug-and-play\" entièrement équipés avec l'essentiel du bureau. Pas de tracas, pas d'interruption – il suffit d'entrer, de brancher et de se mettre au travail !",
+      "Des espaces de vente au détail qui correspondent à vos besoins et à l'image de votre marque. Procurez-vous une vitrine de premier ordre, un complexe commercial ou une unité commerciale très visible."
+    ],
+    "locationsHeading": "Nos principales zones de service",
+    "locations": "Nos propriétés s'étendent sur les principaux pôles industriels et commerciaux de Bengaluru, assurant accessibilité et avantages stratégiques aux locataires. Devanahalli et Dabaspet, au nord de Bengaluru, se distinguent par leurs parcs technologiques, offrant des espaces informatiques premium aux multinationales. Nelamangala est une puissance logistique avec de vastes installations d'entrepôts, tandis que Peenya est réputée pour ses hangars industriels et son excellence manufacturière. Whitefield combine des opportunités technologiques et commerciales, et Bommasandra et Jigani offrent une infrastructure robuste pour la fabrication, l'entreposage et les locataires commerciaux recherchant des espaces évolutifs.",
+    "locationList": [
+      "Nelamangala : Pôle d'entrepôt et de logistique avec connectivité autoroutière.",
+      "Devanahalli : Pôle aérospatial et de parcs technologiques près de l'aéroport.",
+      "Dabaspet : Zone industrielle émergente pour des espaces rentables.",
+      "Peenya : Principale zone industrielle pour la fabrication et les hangars.",
+      "Whitefield : Pôle technologique et commercial pour l'informatique et les affaires.",
+      "Bommasandra : Zone privilégiée pour les locataires commerciaux et industriels.",
+      "Jigani : Pôle d'entrepôt et de fabrication avec une infrastructure robuste.",
+      "Doddaballapura : Développement industriel à proximité de l'aéroport international de Bangalore.",
+      "Kumbalgodu : Stratégiquement situé sur Mysore Road, idéal pour les opérations logistiques et d'entreposage avec un excellent accès à l'autoroute.",
+      "Hoskote : Un corridor industriel et logistique stratégique avec accès à la NH-75, rendant le transport fluide."
     ]
   },
   "about": {

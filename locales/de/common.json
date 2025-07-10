@@ -1,40 +1,70 @@
 {
-  "seo": {
-    "title": "Enosh Infra - Miete oder Leasing von Industrie-, Gewerbe- und Büroräumen in Bengaluru",
-    "description": "Entdecken Sie hochwertige Industrie-, Gewerbe- und Coworking-Räume zur Miete oder zum Leasing in Bengaluru. Erkunden Sie erstklassige Standorte wie Nelamangala, Peenya, Bommasandra, Jigani, Hoskote, Kumbalgodu, Doddaballapura, Hebbal, Whitefield, HSR und KIADB-Industriegebiete mit Enosh Infra.",
-    "url": "https://enoshinfra.com"
+    "seo": {
+    "title": "Enosh Infra - Gewerbe-, Lager- und Tech-Flächen",
+    "description": "Mieten Sie Gewerbe-, Lager- und Tech-Park-Flächen für Mieter in den Top-Zentren von Bengaluru: Nelamangala, Peenya, Whitefield, Devanahalli, Bommasandra, Jigani."
   },
   "our_services": "Unsere Dienstleistungen",
-  "services_description": "Enosh Infra bietet eine vielfältige Palette an Immobilienlösungen, die auf die spezifischen Bedürfnisse von Unternehmen zugeschnitten sind, die erstklassige Immobilien in Indien suchen. Unsere Dienstleistungen umfassen:",
-  "warehouses": "Lagerhallen und Logistiklösungen",
-  "tech_parks": "Technologieparks für innovative Unternehmen",
-  "commercial_retail": "Gewerbe- und Einzelhandelsflächen für wachsende Unternehmen",
-  "co_working": "Moderne Coworking-Räume",
+  "services_description": "Enosh Infra bietet eine vielfältige Palette an Immobilienlösungen, die auf die spezifischen Bedürfnisse von Unternehmen zugeschnitten sind, die Premium-Immobilien in Indien suchen. Unsere Dienstleistungen umfassen:",
+  "warehouses": "Lager- & Logistiklösungen",
+  "tech_parks": "Tech-Parks für Innovative Unternehmen",
+  "commercial_retail": "Gewerbe- & Einzelhandelsflächen für wachsende Unternehmen",
+  "co_working": "Moderne Büro-/Co-Working-Spaces",
   "navbar": {
-    "cta": "Benötigen Sie einen Raum oder suchen Sie Mieter? Lassen Sie uns sprechen!",
+    "cta": "Brauchen Sie Platz oder suchen Sie Mieter? Sprechen wir uns!",
     "home": "Startseite",
     "about": "Über uns",
     "services": "Dienstleistungen",
-    "warehouses": "Lagerhallen & Logistik",
-    "techParks": "Technologieparks",
+    "warehouses": "Lager & Logistik",
+    "techParks": "Tech Parks",
     "commercialRetail": "Gewerbe & Einzelhandel",
-    "coworking": "Coworking-Räume",
+    "coworking": "Büro/Co-working",
     "contact": "Kontakt",
     "blogsPartners": "Blogs & Partner"
   },
   "hero": {
-    "headline": "Erstklassige & erschwingliche Gewerberäume in Namma Bengaluru",
-    "subheadline": "Enosh Infra ist Ihr vertrauenswürdiger Partner, um hochwertige Gewerbe-, Industrie- und Lagerimmobilien in Bangalore zu sichern. Heben Sie Ihr Unternehmen mit strategischen Standorten und reibungslosen Transaktionen auf ein neues Niveau.",
-    "cta": "Loslegen",
+    "headline": "Premium & Erschwingliche Gewerbeflächen in Namma Bengaluru",
+    "subheadline": "Enosh Infra verbindet Unternehmen mit hochwertigen Gewerbeflächen, Lagerhallen, Industriehallen, Grundstücken für Fabriken und IT-Tech-Parks in den strategischen Zentren von Bangalore.",
+    "cta": "Jetzt starten",
     "options": [
-      "Erstklassige Lagerhallen in Bengaluru – erschwinglich & unkompliziert",
-      "Finden Sie einen Mieter für Ihre Lagerhalle – schnelle & einfache Listings",
-      "Coworking-Räume – flexibel, erschwinglich & bezugsfertig",
-      "Listen Sie Ihren Coworking-Raum – finden Sie schnell Mieter ohne Aufwand",
-      "Industrieflächen – hochwertig, budgetfreundlich & strategische Standorte",
-      "Vermieten Sie Ihre Industriefläche – verbinden Sie sich mit verifizierten Mietern",
-      "Gewerberäume – erstklassige Standorte zu wettbewerbsfähigen Preisen",
-      "Vermieten Sie Ihren Gewerberaum – erhalten Sie sofortige Anfragen"
+      "Premium-Lagerhallen in Bengaluru – Erschwinglich & Problemlos",
+      "Finden Sie einen Mieter für Ihr Lager – Schnelle & einfache Angebote",
+      "Tech Parks für multinationale Konzerne – Premium-IT-Flächen in Nord-Bengaluru",
+      "Mieten Sie Ihren Tech Park – Ziehen Sie schnell multinationale Mieter an",
+      "Industriehallen – Robuste Flächen für die Fertigung",
+      "Grundstücke für Fabriken – Strategische Parzellen in Bengaluru",
+      "Büro-/Co-Working-Spaces – Flexibel, Erschwinglich & Bezugsfertig",
+      "Listen Sie Ihr Büro-/Co-Working-Space auf – Finden Sie schnell Mieter ohne Aufwand",
+      "Gewerbeflächen – Beste Standorte für Unternehmen",
+      "Mieten Sie Ihre Gewerbefläche – Verbinden Sie sich mit verifizierten Mietern"
+    ]
+  },
+  "propertyOverview": {
+    "title": "Entdecken Sie unsere Industrie- und Gewerbeflächen in Bengaluru",
+    "servicesHeading": "Unsere Immobilienlösungen",
+    "services": [
+      "Vermietung von Premium-Gewerbeflächen, Lagerhallen, Industriehallen und Grundstücken für Fabriken.",
+      "Bereitstellung von IT-Tech-Parks, die auf multinationale Konzerne in Nord-Bengaluru zugeschnitten sind.",
+      "Gestaltung von Gewerbeflächen für Unternehmen, die gut sichtbare Standorte zur Förderung des Wachstums suchen.",
+      "Angebot modernster Lagerhallen für Logistik, E-Commerce und Lagerung.",
+      "Lieferung robuster, geräumiger Industriehallen für produzierende Industrien.",
+      "Strategische Lokalisierung von Grundstücken für die kundenspezifische Industrieentwicklung.",
+      "Sicherstellung fortschrittlicher Infrastruktur, Glasfaseranbindung und Nähe zu Innovationszentren.",
+      "Plug-and-Play-Büroflächen, vollständig ausgestattet mit Büro-Essentials. Kein Aufwand, keine Ausfallzeiten – einfach einziehen, einstecken und mit der Arbeit beginnen!",
+      "Einzelhandelsflächen, die Ihren Bedürfnissen und Ihrem Markenimage entsprechen. Beschaffen Sie sich eine erstklassige Ladenfront, einen Einkaufszentrum oder eine gut sichtbare Geschäftseinheit."
+    ],
+    "locationsHeading": "Unsere wichtigsten Servicebereiche",
+    "locations": "Unsere Immobilien erstrecken sich über die wichtigsten Industrie- und Gewerbezentren von Bengaluru und gewährleisten Zugänglichkeit und strategische Vorteile für Mieter. Devanahalli und Dabaspet in Nord-Bengaluru stechen für Tech-Parks hervor und bieten Premium-IT-Flächen für multinationale Konzerne. Nelamangala ist ein Logistik-Kraftpaket mit umfangreichen Lagerhäusern, während Peenya für seine Industriehallen und Fertigungsexzellenz bekannt ist. Whitefield kombiniert Technologie- und Geschäftsmöglichkeiten, und Bommasandra und Jigani bieten eine robuste Infrastruktur für Fertigungs-, Lager- und Gewerbemieter, die skalierbare Flächen suchen.",
+    "locationList": [
+      "Nelamangala: Lager- und Logistikzentrum mit Autobahnanbindung.",
+      "Devanahalli: Luft- und Raumfahrt- und Tech-Park-Zentrum in der Nähe des Flughafens.",
+      "Dabaspet: Aufstrebendes Industriegebiet für kostengünstige Flächen.",
+      "Peenya: Erstklassiges Industriegebiet für Fertigung und Hallen.",
+      "Whitefield: Technologie- und Geschäftszentrum für IT und Unternehmen.",
+      "Bommasandra: Prime-Gebiet für gewerbliche und industrielle Mieter.",
+      "Jigani: Lager- und Fertigungszentrum mit robuster Infrastruktur.",
+      "Doddaballapura: Industrielle Entwicklung in der Nähe des Bangalore International Airport.",
+      "Kumbalgodu: Strategisch an der Mysore Road gelegen, ideal für Logistik- und Lagerbetriebe mit ausgezeichnetem Autobahnanschluss.",
+      "Hoskote: Ein strategischer Industrie- und Logistikkorridor mit Zugang zur NH-75, der den Transport nahtlos macht."
     ]
   },
   "about": {
