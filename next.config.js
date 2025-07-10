@@ -11,12 +11,6 @@ module.exports = {
         permanent: true,
         locale: false,
       },
-      {
-        source: '/:path*',
-        has: [{ type: 'host', value: 'enoshinfra.com' }],
-        destination: 'https://www.enoshinfra.com/:path*',
-        permanent: true,
-      },
     ];
   },
 };
