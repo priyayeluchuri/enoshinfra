@@ -3,14 +3,14 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 
 export default function CoWorkingSpaces() {
-  const { t } = useTranslation('common');
+  const { t, i18n } = useTranslation('common');
 
   return (
     <>
       <SEO
         title={t('coworking.seo.title')}
         description={t('coworking.seo.description')}
-        url="https://www.enoshinfra.com/services/co-working"
+        url={`https://www.enoshinfra.com/${i18n.language}/services/co-working`}
       />
       <section className="container mx-auto py-12 px-6 text-white bg-gray-900">
         <h1 className="text-5xl font-extrabold text-center mb-8">{t('coworking.title')}</h1>

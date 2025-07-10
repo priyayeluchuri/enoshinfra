@@ -11,7 +11,7 @@ export default function LargeWarehouseOfficeLeaseBengaluru() {
       <SEO
         title={t('largeWarehouseOfficeBengaluru.seo.title')}
         description={t('largeWarehouseOfficeBengaluru.seo.description')}
-        url="https://enoshinfra.com/blogs/large-warehouse-office-lease-bengaluru-2025"
+        url={`https://www.enoshinfra.com/${i18n.language}/blogs/large-warehouse-office-lease-bengaluru-2025`}
         keywords={t('largeWarehouseOfficeBengaluru.seo.keywords')}
       />
       <section className="w-full h-auto p-6 pt-12 text-white bg-gray-900">

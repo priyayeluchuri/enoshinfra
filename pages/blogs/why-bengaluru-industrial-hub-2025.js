@@ -11,7 +11,7 @@ export default function WhyBengaluruIndustrialHub() {
       <SEO
         title={t('bengaluruIndustrialHub.seo.title')}
         description={t('bengaluruIndustrialHub.seo.description')}
-        url="https://enoshinfra.com/blogs/why-bengaluru-industrial-hub-2025"
+        url={`https://www.enoshinfra.com/${i18n.language}/blogs/why-bengaluru-industrial-hub-2025`}
         keywords={t('bengaluruIndustrialHub.seo.keywords')}
       />
       <section className="w-full h-auto p-6 pt-12 text-white bg-gray-900">

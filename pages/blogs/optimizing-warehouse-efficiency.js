@@ -10,7 +10,7 @@ export default function OptimizingWarehouseEfficiency() {
       <SEO
         title={t('optimizingWarehouse.seo.title')}
         description={t('optimizingWarehouse.seo.description')}
-        url="https://enoshinfra.com/blogs/optimizing-warehouse-efficiency"
+        url={`https://www.enoshinfra.com/${i18n.language}/blogs/optimizing-warehouse-efficiency`}
         keywords={t('optimizingWarehouse.seo.keywords')}
       />
       <section className="w-full h-auto p-6 pt-12 text-white bg-gray-900">

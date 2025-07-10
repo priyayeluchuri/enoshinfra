@@ -4,14 +4,14 @@ import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 export default function Services() {
-  const { t } = useTranslation('common');
+  const { t, i18n } = useTranslation('common');
 
   return (
     <>
       <SEO
         title={`${t('our_services')} - Enosh Infra`}
         description={t('services_description')}
-        url="https://www.enoshinfra.com/services"
+        url={`https://www.enoshinfra.com/${i18n.language}/services`}
       />
 
       <main className="w-full min-h-screen p-6 pt-12 text-white bg-gray-900">

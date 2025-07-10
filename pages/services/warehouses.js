@@ -11,7 +11,7 @@ export default function Warehouses() {
       <SEO
         title={t('warehouse.seo.title')}
         description={t('warehouse.seo.description')}
-        url="https://www.enoshinfra.com/services/warehouses"
+        url={`https://www.enoshinfra.com/${i18n.language}/services/warehouses`}
       />
 
       <section className="container mx-auto py-12 px-6 text-white bg-gray-900">

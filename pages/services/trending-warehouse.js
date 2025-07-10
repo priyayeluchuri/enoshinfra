@@ -3,7 +3,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 
 export default function TrendingWarehouses() {
-  const { t } = useTranslation('common');
+  const { t, i18n } = useTranslation('common');
 
   const locations = [
     {
@@ -58,7 +58,7 @@ export default function TrendingWarehouses() {
       <SEO
         title={t('trending.seo.title')}
         description={t('trending.seo.description')}
-        url="https://www.enoshinfra.com/services/warehouses/trending"
+        url={`https://www.enoshinfra.com/${i18n.language}/services/warehouses/trending`}
       />
       <section className="py-12 bg-gray-900 text-white">
         <div className="container mx-auto px-6">

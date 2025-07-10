@@ -3,14 +3,14 @@ import { useTranslation } from 'next-i18next';
 import SEO from '../components/seo';
 
 export default function About() {
-  const { t } = useTranslation('common'); // Import translations from 'common.json'
+  const { t, i18n } = useTranslation('common'); // Import translations from 'common.json'
 
   return (
     <>
       <SEO
         title={t('about.title')} // Title from the translations
         description={t('about.description')} // Description from the translations
-        url="https://www.enoshinfra.com/about"
+        url={`https://www.enoshinfra.com/${i18n.language}/about`}
       />
 
       <main className="w-full h-[85vh] p-6 pt-12 text-white bg-gray-900">

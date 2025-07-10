@@ -11,7 +11,7 @@ export default function GuideSetupITStartupBengaluru() {
       <SEO
         title={t('guideSetupITStartup.seo.title')}
         description={t('guideSetupITStartup.seo.description')}
-        url="https://enoshinfra.com/blogs/guide-setup-it-startup-bengaluru"
+	url={`https://www.enoshinfra.com/${i18n.language}/blogs/guide-setup-it-startup-bengaluru`}
         keywords={t('guideSetupITStartup.seo.keywords')}
       />
       <section className="w-full h-auto p-6 pt-12 text-white bg-gray-900">

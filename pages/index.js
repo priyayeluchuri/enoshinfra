@@ -5,14 +5,14 @@ import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 export default function Home() {
-  const { t } = useTranslation('common');
+  const { t, i18n } = useTranslation('common');
 
   return (
     <>
       <SEO
         title={t('seo.title')}
         description={t('seo.description')}
-        url="https://enoshinfra.com"
+        url={`https://www.enoshinfra.com/${i18n.language}`}
       />
       <HeroSection />
       <PropertyOverview />
