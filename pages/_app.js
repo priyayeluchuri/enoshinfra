@@ -6,12 +6,28 @@ import Script from 'next/script';
 import '../styles/globals.css';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import CookieConsent from 'react-cookie-consent';
 
 const supportedLocales = ['en', 'hi', 'kn', 'te', 'zh', 'ja', 'ru', 'fr', 'de'];
 
 function MyApp({ Component, pageProps }) {
   const { locale, asPath, events } = useRouter();
   const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID;
+  <CookieConsent
+  location="bottom"
+  buttonText="Accept"
+  cookieName="userConsent"
+  style={{ background: "#1f2937", color: "#ffffff" }}
+  buttonStyle={{ background: "#3b82f6", color: "#ffffff", borderRadius: "4px" }}
+  onAccept={() => {
+    // Load GA scripts or enable tracking
+    if (GA_MEASUREMENT_ID && typeof window !== 'undefined') {
+      window.gtag('consent', 'update', { analytics_storage: 'granted' });
+    }
+  }}
+>
+  This website uses cookies to enhance the user experience.
+</CookieConsent>
 
   // Google Analytics page view tracking
   useEffect(() => {
