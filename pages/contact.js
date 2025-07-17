@@ -45,6 +45,17 @@ export default function Contact({ locale }) {
     'coworkingSpaces',
   ];
 
+  // Track page view on mount
+  useEffect(() => {
+    if (typeof window !== 'undefined' && window.gtag && process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID) {
+      window.gtag('event', 'page_view', {
+        page_path: '/contact',
+        page_title: 'Contact Page',
+        page_language: locale,
+      });
+    }
+  }, [locale]);
+
   // Google Places Autocomplete Selection
   const handlePlaceSelect = () => {
     const place = autocompleteRef.current?.getPlace();
@@ -56,6 +67,15 @@ export default function Contact({ locale }) {
         }));
         setLocationError(false);
         setMapCenter({ lat: place.geometry.location.lat(), lng: place.geometry.location.lng() });
+
+        // Track location selection
+        if (typeof window !== 'undefined' && window.gtag) {
+          window.gtag('event', 'select_location', {
+            event_category: 'Contact Form',
+            event_label: place.formatted_address,
+            page_language: locale,
+          });
+        }
       }
       if (inputRef.current) inputRef.current.value = ''; // Clear input
     }
@@ -79,6 +99,15 @@ export default function Contact({ locale }) {
           preferredLocation: [...prev.preferredLocation, formattedAddress],
         }));
         setLocationError(false);
+
+        // Track map click location selection
+        if (typeof window !== 'undefined' && window.gtag) {
+          window.gtag('event', 'map_click_location', {
+            event_category: 'Contact Form',
+            event_label: formattedAddress,
+            page_language: locale,
+          });
+        }
       } else {
         console.error('Geocoder failed:', status);
       }
@@ -105,6 +134,24 @@ export default function Contact({ locale }) {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+
+    // Track purpose selection
+    if (name === 'purpose' && value && typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'select_purpose', {
+        event_category: 'Contact Form',
+        event_label: value,
+        page_language: locale,
+      });
+    }
+
+    // Track service selection
+    if (name === 'service' && value && typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'select_service', {
+        event_category: 'Contact Form',
+        event_label: value,
+        page_language: locale,
+      });
+    }
   };
 
   // Handle Image Upload & Resize
@@ -149,6 +196,16 @@ export default function Contact({ locale }) {
       alert(t('contact.alert.message', { count: validImages.length }));
     }
     setFormData((prev) => ({ ...prev, images: validImages }));
+
+    // Track image upload
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'upload_image', {
+        event_category: 'Contact Form',
+        event_label: `Images Uploaded: ${validImages.length}`,
+        page_language: locale,
+      });
+    }
+
     e.target.value = '';
   };
 
@@ -158,6 +215,15 @@ export default function Contact({ locale }) {
       ...prev,
       images: prev.images.filter((_, i) => i !== index),
     }));
+
+    // Track image removal
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'remove_image', {
+        event_category: 'Contact Form',
+        event_label: `Image Removed: ${index}`,
+        page_language: locale,
+      });
+    }
   };
 
   const handleClick = () => {
@@ -195,6 +261,18 @@ export default function Contact({ locale }) {
 
       if (response.ok) {
         setMessage(t('contact.message.success'));
+
+        // Track successful form submission
+        if (typeof window !== 'undefined' && window.gtag) {
+          window.gtag('event', 'form_submission', {
+            event_category: 'Contact Form',
+            event_label: 'Contact Form Submitted',
+            page_language: locale,
+            purpose: formData.purpose,
+            service: formData.service,
+          });
+        }
+
         setFormData({
           name: '',
           purpose: '',
@@ -208,9 +286,27 @@ export default function Contact({ locale }) {
         });
       } else {
         setMessage(t('contact.message.error'));
+
+        // Track failed form submission
+        if (typeof window !== 'undefined' && window.gtag) {
+          window.gtag('event', 'form_submission_failed', {
+            event_category: 'Contact Form',
+            event_label: 'Contact Form Submission Failed',
+            page_language: locale,
+          });
+        }
       }
     } catch (error) {
       setMessage(t('contact.message.error'));
+
+      // Track failed form submission
+      if (typeof window !== 'undefined' && window.gtag) {
+        window.gtag('event', 'form_submission_failed', {
+          event_category: 'Contact Form',
+          event_label: 'Contact Form Submission Error',
+          page_language: locale,
+        });
+      }
     } finally {
       setIsSubmitting(false);
     }
