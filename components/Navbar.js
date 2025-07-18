@@ -107,7 +107,8 @@ export default function Navbar() {
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="p-2 bg-gray-800 rounded-lg hover:bg-blue-500 transition"
-          >
+            aria-label="Toggle navigation menu"
+	  >
             <Menu size={24} />
           </button>
 

@@ -19,11 +19,15 @@ export default function LanguageSwitcher() {
   };
 
   return (
-    <select
+    <div>
+      <label htmlFor="language-select" className="sr-only">
+        Select Language:
+      </label> 
+      <select
       value={router.locale}
       onChange={changeLanguage}
       className="bg-gray-800 text-white border border-gray-600 rounded px-2 py-1 text-sm"
-    >
+      >
       <option value="en">English</option>
       <option value="hi">हिन्दी</option>
       <option value="kn">ಕನ್ನಡ</option>
@@ -35,6 +39,7 @@ export default function LanguageSwitcher() {
       <option value="fr">Français</option>
       <option value="de">Deutsch</option>
     </select>
+   </div>
   );
 }
 
