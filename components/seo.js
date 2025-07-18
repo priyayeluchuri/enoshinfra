@@ -1,15 +1,15 @@
 import Head from 'next/head';
 import { useTranslation } from 'next-i18next';
-import { useRouter } from 'next/router'; // Import useRouter to get the current path
+import { useRouter } from 'next/router';
 import { i18n } from '../next-i18next.config'; // Import your i18n config
 
 const SEO = ({
-  pageKey = 'seo', // Key in common.json (e.g., 'warehouse.seo', 'about.seo')
-  locale, // Pass locale explicitly to construct URL
-  image = 'https://www.enoshinfra.com/fullfav.png', // Updated to www
+  pageKey = 'seo', // Key in your common.json (e.g., 'warehouse.seo', 'about.seo')
+  // No need to pass 'locale' as a prop, useRouter provides it
+  image = 'https://www.enoshinfra.com/fullfav.png', // Default image, updated to www
 }) => {
   const { t } = useTranslation('common');
-  const router = useRouter(); // Initialize router
+  const router = useRouter();
   const { locales, defaultLocale } = i18n; // Get locales and defaultLocale from your config
 
   const title = t(`${pageKey}.title`, 'Enosh Infra - Real Estate Consultancy');
@@ -18,31 +18,65 @@ const SEO = ({
     'Your trusted real estate consultancy for industrial, commercial, and residential properties.'
   );
 
-  const baseUrl = 'https://www.enoshinfra.com';
+  const baseUrl = 'https://www.enoshinfra.com'; // Your primary canonical domain with www and https
 
-  // Determine the base path of the page *without* the locale prefix.
-  // For example, if current path is '/en/about', this should be '/about'.
-  // If current path is '/en', this should be '/'.
-  let pagePath = router.pathname;
-  if (pagePath === '/') {
-      pagePath = '/'; // Ensure homepage is just '/'
+  // router.asPath gives the full URL path including locale prefix (e.g., '/', '/en', '/hi/about')
+  const currentAsPath = router.asPath;
+
+  // --- Canonical URL Construction ---
+  // The canonical URL should always include the locale prefix, even for the default language.
+  // Example:
+  // - If currentAsPath is '/', and locale is 'en', canonicalUrl should be 'https://www.enoshinfra.com/en/'
+  // - If currentAsPath is '/en/about', canonicalUrl should be 'https://www.enoshinfra.com/en/about'
+  // - If currentAsPath is '/hi/contact', canonicalUrl should be 'https://www.enoshinfra.com/hi/contact'
+  const canonicalUrl = `${baseUrl}${currentAsPath === '/' ? `/${router.locale}` : currentAsPath}`;
+
+  // --- Hreflang Tags Construction ---
+  const hreflangTags = locales.map((lang) => {
+    // For each language, construct the path using its locale.
+    // We need to transform the currentAsPath from the current locale to the target locale.
+    let specificHreflangPath;
+
+    if (currentAsPath === '/') {
+      // If the current path is just '/', the hreflang path is simply '/{lang}'
+      specificHreflangPath = `/${lang}`;
+    } else {
+      // For other paths, replace the current locale prefix with the target locale prefix.
+      // E.g., if currentAsPath is '/en/about', for 'hi' it becomes '/hi/about'.
+      // Note: router.locale will be the locale of the currently rendered page.
+      specificHreflangPath = currentAsPath.replace(`/${router.locale}`, `/${lang}`);
+    }
+
+    return (
+      <link
+        key={lang}
+        rel="alternate"
+        hrefLang={lang}
+        href={`${baseUrl}${specificHreflangPath}`}
+      />
+    );
+  });
+
+  // --- x-default Hreflang Tag Construction ---
+  // The x-default tag should point to the default language version of the *current content*.
+  // This is the URL that Google should show if no other specific language version is more appropriate.
+  let xDefaultHreflangPath;
+  if (currentAsPath === '/') {
+    // If the current path is '/', the x-default points to the default locale's root (e.g., /en)
+    xDefaultHreflangPath = `/${defaultLocale}`;
   } else {
-      // Remove the locale prefix from the router.pathname
-      // Example: /en/about -> /about
-      // This is safer than relying on pageKey for more complex routes.
-      const localePrefix = `/${locale}`;
-      if (pagePath.startsWith(localePrefix)) {
-          pagePath = pagePath.substring(localePrefix.length);
-          if (pagePath === '') { // If it was just '/en', make it '/'
-              pagePath = '/';
-          }
-      }
+    // For other paths, it points to the default locale's version of that path.
+    // E.g., if currentAsPath is '/hi/contact', x-default points to '/en/contact'.
+    xDefaultHreflangPath = currentAsPath.replace(`/${router.locale}`, `/${defaultLocale}`);
   }
 
-  // Construct the canonical URL for the *current* locale
-  // Handle the root path specifically to avoid double slashes like /en//
-  const canonicalUrl = `${baseUrl}/${locale}${pagePath === '/' ? '' : pagePath}`;
-
+  const xDefaultHreflang = (
+    <link
+      rel="alternate"
+      hrefLang="x-default"
+      href={`${baseUrl}${xDefaultHreflangPath}`}
+    />
+  );
 
   return (
     <Head>
@@ -74,30 +108,13 @@ const SEO = ({
       {/* Canonical URL for the current page and locale */}
       <link rel="canonical" href={canonicalUrl} />
 
-      {/* Hreflang Tags (NEW ADDITION) */}
-      {locales.map((lang) => {
-        // Construct the URL for each locale
-        const hreflangUrl = `${baseUrl}/${lang}${pagePath === '/' ? '' : pagePath}`;
-        return (
-          <link
-            key={lang}
-            rel="alternate"
-            hrefLang={lang}
-            href={hreflangUrl}
-          />
-        );
-      })}
+      {/* Hreflang Tags for all alternate languages */}
+      {hreflangTags}
 
-      {/* x-default Hreflang Tag (NEW ADDITION) */}
-      {defaultLocale && ( // Ensure defaultLocale is defined
-        <link
-          rel="alternate"
-          hrefLang="x-default"
-          href={`${baseUrl}/${defaultLocale}${pagePath === '/' ? '' : pagePath}`}
-        />
-      )}
+      {/* x-default Hreflang Tag */}
+      {xDefaultHreflang}
 
-      {/* Schema Markup */}
+      {/* Schema Markup: Organization */}
       <script type="application/ld+json">
         {`
           {
@@ -121,6 +138,7 @@ const SEO = ({
         `}
       </script>
 
+      {/* Schema Markup: LocalBusiness */}
       <script type="application/ld+json">
         {`
           {
