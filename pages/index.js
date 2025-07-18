@@ -10,7 +10,7 @@ export default function Home({ locale }) {
     <>
       <SEO pageKey="seo" locale={locale} />
       <main className="bg-gray-900 text-white">
-        <h1 className="sr-only">{t('home.title')}</h1>
+        <span className="sr-only">{t('seo.title')}</span>
         <HeroSection />
         <PropertyOverview />
       </main>
