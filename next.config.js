@@ -1,34 +1,78 @@
 // next.config.js
-const { i18n } = require('./next-i18next.config'); // Ensure this path is correct
+const { i18n } = require('./next-i18next.config');
 
 module.exports = {
-  i18n, // Essential for Next.js i18n routing
-  reactStrictMode: true, // Recommended for Next.js apps
-  // Add other Next.js config options here if you have them
+  i18n,
+  reactStrictMode: true,
+
+  async headers() {
+    return [
+      {
+        // Apply to all non-API routes, including localized ones (e.g., /en, /hi)
+        source: '/((?!api).*)',
+        headers: [
+          {
+            key: 'X-Frame-Options',
+            value: 'DENY', // Block all iframe embedding
+          },
+          {
+            key: 'Content-Security-Policy',
+            value: [
+              "frame-ancestors 'none';", // Block all iframe embedding
+              "default-src 'self';", // Default to same-origin resources
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.google-analytics.com https://www.googletagmanager.com https://maps.googleapis.com;", // Allow GA, GTM, and Maps scripts
+              "style-src 'self' 'unsafe-inline';", // Allow inline styles for Next.js
+              "img-src 'self' data: https://*.googleapis.com https://*.gstatic.com;", // Allow images for Maps
+              "font-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com;", // Allow Google Fonts if used
+              "connect-src 'self' https://www.enoshinfra.com https://www.google-analytics.com https://www.googletagmanager.com https://maps.googleapis.com https://*.googleapis.com;", // Allow form submissions and API calls
+              "form-action 'self';", // Restrict form submissions to same origin
+            ].join(' '),
+          },
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff', // Prevent MIME-type sniffing
+          },
+          {
+            key: 'X-XSS-Protection',
+            value: '1; mode=block', // Enable XSS filtering for older browsers
+          },
+          {
+            key: 'Referrer-Policy',
+            value: 'strict-origin-when-cross-origin', // Control referrer information
+          },
+          {
+            key: 'Strict-Transport-Security',
+            value: 'max-age=31536000; includeSubDomains', // Enforce HTTPS
+          },
+        ],
+      },
+      {
+        // Apply to API routes (e.g., /api/properties)
+        source: '/api/:path*',
+        headers: [
+          {
+            key: 'X-Frame-Options',
+            value: 'DENY', // Protect API routes from iframe embedding
+          },
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff',
+          },
+          {
+            key: 'Strict-Transport-Security',
+            value: 'max-age=31536000; includeSubDomains',
+          },
+          {
+            key: 'Access-Control-Allow-Origin',
+            value: 'https://www.enoshinfra.com', // Restrict API access to your domain
+          },
+        ],
+      },
+    ];
+  },
 
   async redirects() {
-    console.log('Applying redirects in next.config.js'); // Debug log will still show if function runs
-    return [
-      // IMPORTANT: The redirect for source: '/' to destination: '/en' is REMOVED.
-      // Next.js's built-in i18n routing will now serve the defaultLocale's content ('en')
-      // directly at the root URL (e.g., http://localhost:3000/ or https://www.enoshinfra.com/).
-      // Your SEO component will then set the canonical tag to https://www.enoshinfra.com/en/.
-
-      // You can keep other redirects here if you have them,
-      // for example, to enforce locale prefixes for non-locale-prefixed paths:
-      // {
-      //   // This redirect will catch any path that does NOT start with a valid locale
-      //   // and redirect it to the default locale's version (e.g., /about -> /en/about)
-      //   // Be careful with this regex, ensure it accurately excludes _next, static, api, etc.
-      //   source: '/:path((?!_next|static|public|api|en|hi|kn|te|zh|ja|ar|ru|fr|de).*)/', // Paths that don't start with known locales
-      //   destination: '/en/:path', // Redirect to the English version
-      //   permanent: true,
-      // },
-      // {
-      //   source: '/:path((?!_next|static|public|api|en|hi|kn|te|zh|ja|ar|ru|fr|de).*)*', // Catch all other non-locale paths
-      //   destination: '/en/:path*', // Redirect to the English version
-      //   permanent: true,
-      // },
-    ];
+    console.log('Applying redirects in next.config.js');
+    return [];
   },
 };
