@@ -8,6 +8,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import CookieConsent from 'react-cookie-consent';
 import { i18n } from '../next-i18next.config'; // Import i18n config for defaultLocale
+import StructuredData from '../components/StructuredData';
 
 function MyApp({ Component, pageProps }) {
   const { locale, asPath, events } = useRouter();
@@ -132,7 +133,7 @@ function MyApp({ Component, pageProps }) {
       <Script id="set-lang" strategy="afterInteractive">
         {`document.documentElement.lang = "${locale}";`}
       </Script>
-
+      <StructuredData locale={locale} />
       <div className="flex flex-col min-h-screen">
         <Navbar />
         <main className="flex-grow mt-16">
