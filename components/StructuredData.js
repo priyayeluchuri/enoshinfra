@@ -58,7 +58,7 @@ const StructuredData = ({ locale }) => {
                 "@type": "Offer",
                 "itemOffered": {
                   "@type": "Product",
-                  "name": "Industrial Shed & Warehouse Leasing",
+                  "name": "Warehouses, Godowns, Industrial Shed and Building, Manufacturing Units.",
                   "description": "Spacious industrial sheds and warehouses (10,000+ sqft to 2,00,000+ Sqft) across Bengaluru in prime industrial zones including Nelamangala, Peenya, Bommasandra, Jigani, Hoskote, Devanahalli, and Whitefield, optimized with AI-driven tenant matching for logistics and manufacturing.",
                   "url": getLocalizedUrl('/warehouses-for-rent'),
                   "areaServed": {

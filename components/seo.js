@@ -25,7 +25,7 @@ import Head from 'next/head';
     });
     const description = t(`${effectivePageKey}.description`, {
       default: 'Discover large warehouses (>10,000 sqft) for rent in Bangalore with Enosh Infra’s AI-driven matching.',
-      en: 'Discover large warehouses (>10,000 sqft) for rent in Bangalore with Enosh Infra’s AI-driven matching.',
+      en: 'Discover large warehouses (>10,000 sqft), Godowns, Industrial Shed and Building, Manufacturing Units for rent/lease/sale in Bangalore with Enosh Infra’s AI-driven matching.',
       hi: 'एनोश इंफ्रा के AI-संचालित मिलान के साथ बेंगलुरु में बड़े गोदाम (>10,000 वर्ग फीट) किराए पर लें।',
     });
 
