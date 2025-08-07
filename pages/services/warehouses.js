@@ -48,6 +48,13 @@ export default function Warehouses() {
         >
           {t('warehouse.exploreTrending')}
         </Link>
+        <Link
+          href="/warehouses-for-rent"
+          locale={i18n.language}
+          className="block text-blue-400 underline text-xl text-center mt-2 mx-auto"
+        >
+          {t('warehouse.linkToRentals', 'Explore Warehouse Rentals Now')}
+        </Link>
       </section>
     </>
   );
@@ -60,4 +67,3 @@ export async function getStaticProps({ locale }) {
     },
   };
 }
-
