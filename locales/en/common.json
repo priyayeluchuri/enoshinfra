@@ -1,12 +1,12 @@
 {
   "seo": {
-    "title": "Enosh Infra | Real Estate: Industrial, Commercial, Tech",
-    "description": "Lease Industrial, commercial, warehouse, and tech park spaces for tenants in Bengaluru’s top hubs: Nelamangala, Peenya, Whitefield, Devanahalli, Bommasandra, Jigani."
+    "title": "Enosh Infra | Realtors: Industrial, Commercial, Tech",
+    "description": "Rent, Lease, Buy, Sell Industrial, commercial, warehouse, and tech park spaces in Bengaluru’s top hubs."
   },
   "our_services": "Our Services",
-  "services_description": "Enosh Infra offers a diverse range of real estate solutions tailored to meet the specific needs of businesses seeking premium properties in India. Our services include:",
-  "warehouses": "Warehouses & Logistics Solutions",
-  "tech_parks": "Tech Parks for Innovative Enterprises",
+  "services_description": "Enosh Infra offers a diverse range of real estate solutions tailored to meet the specific needs of businesses seeking suitable and affordable properties in India. Our services include:",
+  "warehouses": "Warehouses/Godowns & Logistics Solutions",
+  "tech_parks": "IT/Tech Parks for Innovative Enterprises",
   "commercial_retail": "Commercial & Retail Spaces for Growing Businesses",
   "co_working": "Modern Office/Co-Working Spaces",
   "navbar": {
@@ -26,7 +26,7 @@
     "subheadline": "Enosh Infra connects businesses with high-quality commercial spaces, warehouses, industrial sheds, land for factories, and IT tech parks across Bangalore’s strategic hubs.",
     "cta": "Get Started",
     "options": [
-      "Premium Warehouses in Bengaluru – Affordable & Hassle-Free",
+      "Suitable Warehouses/Godowns in Bengaluru – Affordable & Hassle-Free",
       "Find a Tenant for Your Warehouse – Quick & Easy Listings",
       "Tech Parks for MNCs – Premium IT Spaces in North Bengaluru",
       "Lease Your Tech Park – Attract MNC Tenants Fast",
@@ -42,7 +42,7 @@
     "title": "Explore Our Industrial and Commercial Spaces in Bengaluru",
     "servicesHeading": "Our Property Solutions",
     "services": [
-      "Leasing premium commercial spaces, warehouses, industrial sheds, and land for factories.",
+      "Leasing affordable commercial spaces, warehouses, industrial sheds, and land for factories.",
       "Providing IT tech parks tailored for multinational corporations in North Bengaluru.",
       "Designing commercial spaces for businesses seeking high-visibility locations to drive growth.",
       "Offering state-of-the-art warehouses for logistics, e-commerce, and storage.",
@@ -92,12 +92,12 @@
     "linkToRentals": "Explore Warehouse Rentals Now",
     "seo": {
       "title": "Warehouse & Logistics Spaces for Rent in Bengaluru - Enosh Infra",
-      "description": "Discover premium warehouse and logistics spaces for rent in Bengaluru, including prime locations like Nelamangala, Peenya, Bommasandra, Jigani, Hoskote, Kumbalgodu, Doddaballapura, Hebbal, Whitefield, HSR, and KIADB industrial areas. Enosh Infra connects property owners with businesses seeking top industrial spaces."
+      "description": "Discover affordable warehouse and logistics spaces for rent in Bengaluru, including prime locations like Nelamangala, Peenya, Bommasandra, Jigani, Hoskote, Kumbalgodu, Doddaballapura, Hebbal, Whitefield, HSR, and KIADB industrial areas. Enosh Infra connects property owners with businesses seeking top industrial spaces."
     },
     "title": "Warehouses & Logistics Spaces in Bengaluru",
     "intro": {
       "1": "Enosh Infra specializes in helping businesses find",
-      "highlight1": " premium warehouse and logistics spaces for rent in Bengaluru",
+      "highlight1": " affordable warehouse and logistics spaces for rent in Bengaluru",
       "2": ". Our extensive network ensures you secure the best locations for seamless supply chain operations, from",
       "highlight2": " Bommasandra to Peenya, Jigani to Whitefield"
     },
@@ -157,7 +157,7 @@
     },
     "step5": {
       "title": "5. Partner with Enosh Infra for Expert Solutions",
-      "text1": "Collaborate with Enosh Infra to access premium ",
+      "text1": "Collaborate with Enosh Infra to access affordable ",
       "highlight1": "industrial real estate in Bengaluru",
       "text2": ". Our expertise helps you secure professional warehouse solutions in Bengaluru with top-tier infrastructure, highway connectivity, and cost-effective options. We tailor our services to your industrial needs, ensuring a strategic and efficient setup for your business."
     },
@@ -211,7 +211,7 @@
       "title": "5. Partner with Enosh Infra for Expert Solutions",
       "text1": "Work with Enosh Infra to access ",
       "highlight1": "professional coworking spaces Bengaluru",
-      "text2": " and premium office spaces in tech parks or business hubs. Our expertise ensures your IT startup finds the ideal space for growth and innovation."
+      "text2": " and suitable office spaces in tech parks or business hubs. Our expertise ensures your IT startup finds the ideal space for growth and innovation."
     },
     "cta": "Contact Us for Office Space Consultation"
   },
@@ -431,7 +431,7 @@
   "commercial": {
     "seo": {
       "title": "Commercial & Retail Spaces - Enosh Infra",
-      "description": "Explore premium commercial and retail spaces with Enosh Infra, your trusted real estate consultancy in Bengaluru."
+      "description": "Explore affordable commercial and retail spaces with Enosh Infra, your trusted real estate consultancy in Bengaluru."
     },
     "title": "Commercial & Retail Spaces",
     "para1": "Enosh Infra specializes in helping businesses find the perfect commercial and retail spaces that align with their needs and brand image. Whether you are looking for a prime storefront, a shopping complex, or a high-visibility commercial unit, we provide expert guidance to secure the best locations in Bengaluru.",
@@ -447,7 +447,7 @@
   "coworking": {
     "seo": {
       "title": "Office/Co-Working Spaces - Enosh Infra",
-      "description": "Discover premium office spaces with plug-and-play facilities tailored for startups, freelancers, and enterprises."
+      "description": "Discover affordable office spaces with plug-and-play facilities tailored for startups, freelancers, and enterprises."
     },
     "title": "Office/Co-Working Spaces",
     "para1": "Enosh Infra provides top-tier offices designed for startups, freelancers, and enterprises looking for a flexible and dynamic work environment. Our spaces offer state-of-the-art infrastructure, high-speed internet, and a collaborative atmosphere that fosters productivity and innovation.",
@@ -484,11 +484,11 @@
   },
   "services": {
     "title": "Our Services",
-    "description": "Enosh Infra offers a diverse range of real estate solutions tailored to meet the specific needs of businesses seeking premium properties in India. Our services include:",
+    "description": "Enosh Infra offers a diverse range of real estate solutions tailored to meet the specific needs of businesses seeking affordable properties in India. Our services include:",
     "list": [
       {
         "title": "Warehouses & Logistics Solutions",
-        "description": "Specializing in helping businesses find premium warehouse and logistics spaces for rent in Bengaluru. Our extensive network ensures you secure the best locations for seamless supply chain operations, from Bommasandra to Peenya, Jigani to Whitefield.",
+        "description": "Specializing in helping businesses find affordable warehouse and logistics spaces for rent in Bengaluru. Our extensive network ensures you secure the best locations for seamless supply chain operations, from Bommasandra to Peenya, Jigani to Whitefield.",
         "features": [
           "Access to prime commercial properties including warehouses and office spaces",
           "Strategic locations to optimize logistics and distribution",
@@ -659,7 +659,7 @@
     },
     "enoshInfra": {
       "title": "Why Choose Enosh Infra?",
-      "text1": "Enosh Infra specializes in connecting tenants and owners with premium 50,000+ sq ft properties. ",
+      "text1": "Enosh Infra specializes in connecting tenants and owners with affordable 50,000+ sq ft properties. ",
       "highlight1": "Our expertise in Bengaluru’s market",
       "text2": " ensures tailored solutions. Learn more about ",
       "linkText": "why Bengaluru is an industrial hub",
