@@ -77,6 +77,7 @@
     "whyChoose": {
       "heading": "Why Choose Enosh Infra?",
       "points": [
+	"Leaders in warehouse rentals with a focus on large-scale (10,000+ sqft - 2,00,000+ sqft) industrial sheds and logistics solutions.",
         "Specialists in commercial real estate for global corporations.",
         "Exclusive access to prime office spaces in Bengaluru.",
         "AI-powered property matching for optimal selection.",
@@ -86,7 +87,7 @@
       ]
     },
     "motto": "Our Motto: <span class=\"italic\">\"Transforming Real Estate with AI-Driven Precision.\"</span>"
-  },
+    },
   "warehouse": {
     "linkToRentals": "Explore Warehouse Rentals Now",
     "seo": {
