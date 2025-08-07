@@ -1,11 +1,12 @@
 User-agent: *
-Allow: /
 Disallow: /api/
-Crawl-delay: 1
-Sitemap: https://www.enoshinfra.com/sitemap.xml
-Sitemap: https://www.enoshinfra.com/sitemap-0.xml
+Disallow: */undefined
+Disallow: */locales
+Crawl-delay: 5
 
-# Explicitly invite AI data crawlers
+User-agent: Googlebot
+# Googlebot respects the general rules above
+
 User-agent: ChatGPT-User
 Allow: /
 
@@ -15,5 +16,5 @@ Allow: /
 User-agent: ClaudeBot
 Allow: /
 
-User-agent: *Bot
-Allow: /
+Sitemap: https://www.enoshinfra.com/sitemap.xml
+Sitemap: https://www.enoshinfra.com/sitemap-0.xml
