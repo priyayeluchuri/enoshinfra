@@ -58,25 +58,17 @@ const StructuredData = ({ locale }) => {
                 "@type": "Offer",
                 "itemOffered": {
                   "@type": "Product",
-                  "name": "Mid-size Industrial Warehouses (10,000–50,000 sq ft)",
-                  "description": "AI-powered space matching for mid-sized warehouses and industrial sheds in prime industrial areas such as Peenya, Bommasandra, Jigani, Attibele, Harohalli, Kumbalagodu, Whitefield, Electronic City, Rajajinagar, and Hoskote, supporting industries like manufacturing and logistics.",
-                  "url": getLocalizedUrl('/services/warehouses'),
+                  "name": "Industrial Shed & Warehouse Leasing",
+                  "description": "Spacious industrial sheds and warehouses (10,000+ sqft to 2,00,000+ Sqft) across Bengaluru in prime industrial zones including Nelamangala, Peenya, Bommasandra, Jigani, Hoskote, Devanahalli, and Whitefield, optimized with AI-driven tenant matching for logistics and manufacturing.",
+                  "url": getLocalizedUrl('/warehouses-for-rent'),
                   "areaServed": {
                     "@type": "Place",
-                    "name": "Peenya, Bommasandra, Jigani, Attibele, Harohalli, Kumbalagodu, Whitefield, Electronic City, Rajajinagar, Hoskote, Bengaluru, Karnataka, India"
-                  }
-                }
-              },
-              {
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Product",
-                  "name": "Large Industrial Warehouses (50,000+ sq ft)",
-                  "description": "AI-powered matching for large-scale industrial sheds and warehouses above 50,000 sq ft in Bengaluru's industrial areas including Peenya, Bommasandra, Jigani, Attibele, Harohalli, Kumbalagodu, Whitefield, Electronic City, Rajajinagar, and Hoskote, catering to manufacturing and logistics industries.",
-                  "url": getLocalizedUrl('/services/warehouses'),
-                  "areaServed": {
-                    "@type": "Place",
-                    "name": "Peenya, Bommasandra, Jigani, Attibele, Harohalli, Kumbalagodu, Whitefield, Electronic City, Rajajinagar, Hoskote, Bengaluru, Karnataka, India"
+                    "name": "Vemagal, Doddaballapura, Soukya Road, Mysore Road,  Attibelle, Bidadi, Hoskote, Harohalli, Kanakpura, Dabaspet, Sompura, Nelamangala, Peenya, Bommasandra, Jigani, Devanahalli, Whitefield, Bengaluru, Karnataka, India"
+                  },
+                  "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "4.9",
+                    "reviewCount": "50"
                   }
                 }
               },
@@ -90,6 +82,11 @@ const StructuredData = ({ locale }) => {
                   "areaServed": {
                     "@type": "Place",
                     "name": "Whitefield, Electronic City, Outer Ring Road, Marathahalli, Bellandur, Hebbal, Koramangala, North Bangalore, Bengaluru, Karnataka, India"
+                  },
+                  "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "4.7",
+                    "reviewCount": "40"
                   }
                 }
               },
@@ -103,6 +100,11 @@ const StructuredData = ({ locale }) => {
                   "areaServed": {
                     "@type": "Place",
                     "name": "HSR Layout, Koramangala, Electronic City, Jayanagar, Bengaluru, Karnataka, India"
+                  },
+                  "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "4.3",
+                    "reviewCount": "30"
                   }
                 }
               },
@@ -116,6 +118,11 @@ const StructuredData = ({ locale }) => {
                   "areaServed": {
                     "@type": "Place",
                     "name": "Bengaluru, Karnataka, India"
+                  },
+                  "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "4.6",
+                    "reviewCount": "35"
                   }
                 }
               }
