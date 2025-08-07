@@ -4,13 +4,17 @@ import SEO from '../../components/seo';
 
 export default function OptimizingWarehouseEfficiency() {
   const { t, i18n } = useTranslation('common'); // Accessing the 'common' namespace
+  const canonicalUrl = i18n.language === 'en'
+  ? `https://www.enoshinfra.com/blogs/optimizing-warehouse-efficiency`  // Clean URL for English
+  : `https://www.enoshinfra.com/${i18n.language}/blogs/optimizing-warehouse-efficiency`; // Prefixed for other languages
+
 
   return (
     <>
       <SEO
         title={t('optimizingWarehouse.seo.title')}
         description={t('optimizingWarehouse.seo.description')}
-        url={`https://www.enoshinfra.com/${i18n.language}/blogs/optimizing-warehouse-efficiency`}
+        url={canonicalUrl}
         keywords={t('optimizingWarehouse.seo.keywords')}
       />
       <section className="w-full h-auto p-6 pt-12 text-white bg-gray-900">

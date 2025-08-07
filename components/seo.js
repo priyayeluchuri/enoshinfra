@@ -32,30 +32,48 @@ import Head from 'next/head';
     const baseUrl = 'https://www.enoshinfra.com';
     const currentAsPath = router.asPath;
 
-    // Fix canonical URL to handle root and locale correctly
-    const canonicalUrl = `${baseUrl}${currentAsPath === '/' ? `/${router.locale}` : currentAsPath.startsWith('/' + router.locale) ? currentAsPath : `/${router.locale}${currentAsPath}`}`;
-
+    // Fixed canonical URL logic
+    const canonicalUrl = router.locale === 'en' 
+      ? `${baseUrl}${currentAsPath}` 
+      : `${baseUrl}${currentAsPath.startsWith('/' + router.locale) ? currentAsPath : `/${router.locale}${currentAsPath}`}`;
+    // Fixed hreflang logic
     const hreflangTags = locales.map((lang) => {
-      let specificHreflangPath = currentAsPath === '/' 
-        ? `/${lang}` 
-        : currentAsPath.replace(new RegExp(`^\/${router.locale}`), `/${lang}`);
-      return (
-        <link
-          key={lang}
-          rel="alternate"
-          hrefLang={lang}
-          href={`${baseUrl}${specificHreflangPath}`}
-        />
-      );
-    });
+  let specificHreflangPath;
+  
+  if (lang === 'en') {
+    // For English, use clean URLs (remove any locale prefix)
+    if (currentAsPath === '/') {
+      specificHreflangPath = '';
+    } else if (currentAsPath.startsWith('/en/')) {
+      // Remove /en/ prefix if it exists
+      specificHreflangPath = currentAsPath.replace('/en', '') || '/';
+    } else {
+      // Already clean URL
+      specificHreflangPath = currentAsPath;
+    }
+  } else {
+    // For other languages, add the language prefix
+    if (currentAsPath === '/') {
+      specificHreflangPath = `/${lang}`;
+    } else if (currentAsPath.startsWith(`/${router.locale}/`)) {
+      // Replace current locale with target locale
+      specificHreflangPath = currentAsPath.replace(`/${router.locale}`, `/${lang}`);
+    } else {
+      // Add language prefix to clean URL
+      specificHreflangPath = `/${lang}${currentAsPath}`;
+    }
+  }
+  
+  return (
+    <link
+      key={lang}
+      rel="alternate"
+      hrefLang={lang}
+      href={`${baseUrl}${specificHreflangPath}`}
+    />
+  );
+});
 
-    const xDefaultHreflang = (
-      <link
-        rel="alternate"
-        hrefLang="x-default"
-        href={`${baseUrl}/${defaultLocale}${currentAsPath === '/' ? '' : currentAsPath}`}
-      />
-    );
 
     return (
       <Head>
@@ -85,10 +103,17 @@ import Head from 'next/head';
         <meta name="twitter:image" content={image} />
 
         <link rel="canonical" href={canonicalUrl} />
+    
+        {/* Hreflang tags */}
         {hreflangTags}
-        {xDefaultHreflang}
-
-        {/* Schema Markup: Organization */}
+    
+        {/* x-default hreflang */}
+        <link
+          rel="alternate"
+          hrefLang="x-default"
+          href={`${baseUrl}${currentAsPath === '/' ? '' : currentAsPath.replace(new RegExp(`^\/${router.locale}`), '')}`}
+        />
+	{/* Schema Markup: Organization */}
         <script type="application/ld+json">
           {`
             {

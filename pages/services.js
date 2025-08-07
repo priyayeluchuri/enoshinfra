@@ -5,13 +5,16 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 export default function Services() {
   const { t, i18n } = useTranslation('common');
+   const canonicalUrl = i18n.language === 'en'
+  ? `https://www.enoshinfra.com/services`  // Clean URL for English
+  : `https://www.enoshinfra.com/${i18n.language}/services`; // Prefixed for other languages
 
   return (
     <>
       <SEO
         title={`${t('our_services')} - Enosh Infra`}
         description={t('services_description')}
-        url={`https://www.enoshinfra.com/${i18n.language}/services`}
+        url={canonicalUrl}
       />
 
       <main className="w-full min-h-screen p-6 pt-12 text-white bg-gray-900">

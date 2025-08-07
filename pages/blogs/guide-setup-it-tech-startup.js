@@ -5,13 +5,16 @@ import Link from 'next/link';
 
 export default function GuideSetupITStartupBengaluru() {
   const { t, i18n } = useTranslation('common'); // Accessing the 'common' namespace
+  const canonicalUrl = i18n.language === 'en'
+  ? `https://www.enoshinfra.com/blogs/guide-setup-it-startup-bengaluru`  // Clean URL for English
+  : `https://www.enoshinfra.com/${i18n.language}/blogs/guide-setup-it-startup-bengaluru`; // Prefixed for other languages
 
   return (
     <>
       <SEO
         title={t('guideSetupITStartup.seo.title')}
         description={t('guideSetupITStartup.seo.description')}
-	url={`https://www.enoshinfra.com/${i18n.language}/blogs/guide-setup-it-startup-bengaluru`}
+	url={canonicalUrl}
         keywords={t('guideSetupITStartup.seo.keywords')}
       />
       <section className="w-full h-auto p-6 pt-12 text-white bg-gray-900">

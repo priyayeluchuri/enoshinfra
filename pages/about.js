@@ -4,13 +4,16 @@ import SEO from '../components/seo';
 
 export default function About() {
   const { t, i18n } = useTranslation('common'); // Import translations from 'common.json'
+  const canonicalUrl = i18n.language === 'en' 
+  ? `https://www.enoshinfra.com/about`  // Clean URL for English
+  : `https://www.enoshinfra.com/${i18n.language}/about`; // Prefixed for other languages
 
   return (
     <>
       <SEO
         title={t('about.title')} // Title from the translations
         description={t('about.description')} // Description from the translations
-        url={`https://www.enoshinfra.com/${i18n.language}/about`}
+        url={canonicalUrl}
       />
 
       <main className="w-full h-[85vh] p-6 pt-12 text-white bg-gray-900">

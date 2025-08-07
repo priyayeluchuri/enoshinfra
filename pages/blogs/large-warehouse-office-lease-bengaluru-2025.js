@@ -5,13 +5,15 @@ import Link from 'next/link';
 
 export default function LargeWarehouseOfficeLeaseBengaluru() {
   const { t, i18n } = useTranslation('common');
-
+  const canonicalUrl = i18n.language === 'en'
+  ? `https://www.enoshinfra.com/blogs/large-warehouse-office-lease-bengaluru-2025`  // Clean URL for English
+  : `https://www.enoshinfra.com/${i18n.language}/blogs/large-warehouse-office-lease-bengaluru-2025`; // Prefixed for other languages
   return (
     <>
       <SEO
         title={t('largeWarehouseOfficeBengaluru.seo.title')}
         description={t('largeWarehouseOfficeBengaluru.seo.description')}
-        url={`https://www.enoshinfra.com/${i18n.language}/blogs/large-warehouse-office-lease-bengaluru-2025`}
+        url={canonicalUrl}
         keywords={t('largeWarehouseOfficeBengaluru.seo.keywords')}
       />
       <section className="w-full h-auto p-6 pt-12 text-white bg-gray-900">

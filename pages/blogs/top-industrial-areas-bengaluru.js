@@ -5,13 +5,16 @@ import Link from 'next/link';
 
 export default function TopIndustrialAreasBengaluru() {
   const { t, i18n } = useTranslation('common'); // Accessing the 'common' namespace
+  const canonicalUrl = i18n.language === 'en'
+  ? `https://www.enoshinfra.com/blogs/top-industrial-areas-bengaluru-2025`  // Clean URL for English
+  : `https://www.enoshinfra.com/${i18n.language}/blogs/top-industrial-areas-bengaluru-2025`; // Prefixed for other languages
 
   return (
     <>
       <SEO
         title={t('topIndustrialAreas.seo.title')}
         description={t('topIndustrialAreas.seo.description')}
-        url={`https://www.enoshinfra.com/${i18n.language}/blogs/top-industrial-areas-bengaluru-2025`}
+        url={canonicalUrl}
         keywords={t('topIndustrialAreas.seo.keywords')}
       />
       <section className="w-full h-auto p-6 pt-12 text-white bg-gray-900">

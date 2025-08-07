@@ -4,13 +4,16 @@ import { useTranslation } from 'next-i18next';
 
 export default function CommercialRetail() {
   const { t, i18n } = useTranslation('common');
+  const canonicalUrl = i18n.language === 'en'
+  ? `https://www.enoshinfra.com/services/commercial-retail`  // Clean URL for English
+  : `https://www.enoshinfra.com/${i18n.language}/services/commercial-retail`; // Prefixed for other languages
 
   return (
     <>
       <SEO
         title={t('commercial.seo.title')}
         description={t('commercial.seo.description')}
-        url={`https://www.enoshinfra.com/${i18n.language}/services/commercial-retail`}
+        url={canonicalUrl}
       />
       <section className="container mx-auto py-12 px-6 text-white bg-gray-900">
         <h1 className="text-5xl font-extrabold text-center mb-8">{t('commercial.title')}</h1>

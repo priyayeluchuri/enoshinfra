@@ -5,13 +5,16 @@ import Link from 'next/link';
 
 export default function WhyBengaluruIndustrialHub() {
   const { t, i18n } = useTranslation('common');
+  const canonicalUrl = i18n.language === 'en'
+  ? `https://www.enoshinfra.com/blogs/why-bengaluru-industrial-hub-2025`  // Clean URL for English
+  : `https://www.enoshinfra.com/${i18n.language}/blogs/why-bengaluru-industrial-hub-2025`; // Prefixed for other languages
 
   return (
     <>
       <SEO
         title={t('bengaluruIndustrialHub.seo.title')}
         description={t('bengaluruIndustrialHub.seo.description')}
-        url={`https://www.enoshinfra.com/${i18n.language}/blogs/why-bengaluru-industrial-hub-2025`}
+        url={canonicalUrl}
         keywords={t('bengaluruIndustrialHub.seo.keywords')}
       />
       <section className="w-full h-auto p-6 pt-12 text-white bg-gray-900">

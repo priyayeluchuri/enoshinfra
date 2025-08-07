@@ -73,6 +73,13 @@ module.exports = {
 
   async redirects() {
     console.log('Applying redirects in next.config.js');
-    return [];
+    return [
+    // Redirect explicit /en/ URLs to clean URLs (for default locale)
+    {
+      source: '/en/:path*',
+      destination: '/:path*',
+      permanent: true,
+    },
+    ]; 
   },
 };

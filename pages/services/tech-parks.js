@@ -4,13 +4,16 @@ import { useTranslation } from 'next-i18next';
 
 export default function TechParks() {
   const { t, i18n } = useTranslation('common');
+  const canonicalUrl = i18n.language === 'en'
+  ? `https://www.enoshinfra.com/services/tech-parks`  // Clean URL for English
+  : `https://www.enoshinfra.com/${i18n.language}/services/tech-parks`; // Prefixed for other languages
 
   return (
     <>
       <SEO
         title={t('techParks.seo.title')}
         description={t('techParks.seo.description')}
-        url={`https://www.enoshinfra.com/${i18n.language}/services/tech-parks`}
+        url={canonicalUrl}
       />
       <section className="container mx-auto py-12 px-6 text-white bg-gray-900">
         <h1 className="text-5xl font-extrabold text-center mb-8">{t('techParks.title')}</h1>

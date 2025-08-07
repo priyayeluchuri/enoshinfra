@@ -5,13 +5,16 @@ import Link from 'next/link';
 
 export default function BlogsPartners() {
   const { t, i18n } = useTranslation('common');
+  const canonicalUrl = i18n.language === 'en'
+  ? `https://www.enoshinfra.com/blogs-partners`  // Clean URL for English
+  : `https://www.enoshinfra.com/${i18n.language}/blogs-partners`; // Prefixed for other languages
 
   return (
     <>
       <SEO
         title={t('blogsPartners.seo.title')}
         description={t('blogsPartners.seo.description')}
-        url={`https://www.enoshinfra.com/${i18n.language}/blogs-partners`}
+        url={canonicalUrl}
         keywords={t('blogsPartners.seo.keywords')}
       />
       <section className="w-full h-auto p-6 pt-12 text-white bg-gray-900">

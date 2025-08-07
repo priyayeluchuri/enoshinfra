@@ -52,13 +52,17 @@ export default function TrendingWarehouses() {
       description: t('trending.whitefield'),
     },
   ];
+   const canonicalUrl = i18n.language === 'en'
+  ? `https://www.enoshinfra.com/services/warehouses/trending`  // Clean URL for English
+  : `https://www.enoshinfra.com/${i18n.language}/services/warehouses/trending`; // Prefixed for other languages
+
 
   return (
     <>
       <SEO
         title={t('trending.seo.title')}
         description={t('trending.seo.description')}
-        url={`https://www.enoshinfra.com/${i18n.language}/services/warehouses/trending`}
+        url={canonicalUrl}
       />
       <section className="py-12 bg-gray-900 text-white">
         <div className="container mx-auto px-6">
