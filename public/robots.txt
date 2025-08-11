@@ -1,20 +1,95 @@
+# *
 User-agent: *
 Disallow: /api/
 Disallow: */undefined
 Disallow: */locales
 Crawl-delay: 5
 
+# Googlebot
 User-agent: Googlebot
-# Googlebot respects the general rules above
 
+# ChatGPT-User
 User-agent: ChatGPT-User
 Allow: /
 
+# PerplexityBot
 User-agent: PerplexityBot
 Allow: /
 
+# ClaudeBot
 User-agent: ClaudeBot
 Allow: /
 
+# Claude-Web
+User-agent: Claude-Web
+Allow: /
+
+# Applebot
+User-agent: Applebot
+Allow: /
+
+# Bingbot
+User-agent: Bingbot
+Allow: /
+
+# Gemini
+User-agent: Gemini
+Allow: /
+
+# GoogleOther
+User-agent: GoogleOther
+Allow: /
+
+# GPTBot
+User-agent: GPTBot
+Allow: /
+
+# You-bot
+User-agent: You-bot
+Allow: /
+
+# PhindBot
+User-agent: PhindBot
+Allow: /
+
+# Meta-ExternalAgent
+User-agent: Meta-ExternalAgent
+Allow: /
+
+# FacebookBot
+User-agent: FacebookBot
+Allow: /
+
+# Twitterbot
+User-agent: Twitterbot
+Allow: /
+
+# LinkedInBot
+User-agent: LinkedInBot
+Allow: /
+
+# facebookexternalhit
+User-agent: facebookexternalhit
+Allow: /
+
+# YandexBot
+User-agent: YandexBot
+Allow: /
+
+# DuckDuckBot
+User-agent: DuckDuckBot
+Allow: /
+
+# anthropic-ai
+User-agent: anthropic-ai
+Allow: /
+
+# openai-crawler
+User-agent: openai-crawler
+Allow: /
+
+# Host
+Host: https://www.enoshinfra.com
+
+# Sitemaps
 Sitemap: https://www.enoshinfra.com/sitemap.xml
-Sitemap: https://www.enoshinfra.com/sitemap-0.xml

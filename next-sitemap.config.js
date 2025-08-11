@@ -1,6 +1,98 @@
 module.exports = {
   siteUrl: 'https://www.enoshinfra.com',
   generateRobotsTxt: true,
+  robotsTxtOptions: {
+    policies: [
+      {
+        userAgent: '*',
+        disallow: ['/api/', '*/undefined', '*/locales'],
+        crawlDelay: 5,
+      },
+      {
+        userAgent: 'Googlebot',
+      },
+      {
+        userAgent: 'ChatGPT-User',
+        allow: '/',
+      },
+      {
+        userAgent: 'PerplexityBot',
+        allow: '/',
+      },
+      {
+        userAgent: 'ClaudeBot',
+        allow: '/',
+      },
+      {
+        userAgent: 'Claude-Web',
+        allow: '/',
+      },
+      {
+        userAgent: 'Applebot',
+        allow: '/',
+      },
+      {
+        userAgent: 'Bingbot',
+        allow: '/',
+      },
+      {
+        userAgent: 'Gemini',
+        allow: '/',
+      },
+      {
+        userAgent: 'GoogleOther',
+        allow: '/',
+      },
+      {
+        userAgent: 'GPTBot',
+        allow: '/',
+      },
+      {
+        userAgent: 'You-bot',
+        allow: '/',
+      },
+      {
+        userAgent: 'PhindBot',
+        allow: '/',
+      },
+      {
+        userAgent: 'Meta-ExternalAgent',
+        allow: '/',
+      },
+      {
+        userAgent: 'FacebookBot',
+        allow: '/',
+      },
+      {
+        userAgent: 'Twitterbot',
+        allow: '/',
+      },
+      {
+        userAgent: 'LinkedInBot',
+        allow: '/',
+      },
+      {
+        userAgent: 'facebookexternalhit',
+        allow: '/',
+      },
+      {
+        userAgent: 'YandexBot',
+        allow: '/',
+      },
+      {
+        userAgent: 'DuckDuckBot',
+        allow: '/',
+      },
+      {
+        userAgent: 'anthropic-ai',
+        allow: '/',
+      },
+      {
+        userAgent: 'openai-crawler',
+        allow: '/',
+      },
+    ],
+  },
   sitemapSize: 5000,
   changefreq: 'weekly',
   priority: 0.7,
@@ -18,7 +110,6 @@ module.exports = {
   ],
   exclude: [
     '/api/*', // Exclude all API routes
-    // Exclude translated versions of English-only pages
     '/hi/warehouses-for-rent',
     '/kn/warehouses-for-rent',
     '/te/warehouses-for-rent',
@@ -30,13 +121,15 @@ module.exports = {
     '/de/warehouses-for-rent',
   ],
   transform: async (config, path) => {
-    // Exclude any remaining translated warehouses paths that might slip through
     if (path.includes('/warehouses-for-rent') && path !== '/warehouses-for-rent') {
-      return null; // This excludes the path from sitemap
+      return null;
     }
     
     if (path === '/') return { loc: path, changefreq: 'daily', priority: 1.0 };
     if (path === '/warehouses-for-rent') return { loc: path, changefreq: 'weekly', priority: 0.9 };
     return { loc: path, changefreq: config.changefreq, priority: config.priority };
   },
+  additionalSitemaps: [
+    'https://www.enoshinfra.com/sitemap-0.xml',
+  ],
 };
