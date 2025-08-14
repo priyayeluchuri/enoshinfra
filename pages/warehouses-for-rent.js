@@ -58,6 +58,7 @@ export default function WarehousesForRent({ forceEnglish }) {
         </tbody>
       </table>
     </div>
+    <p className="mt-4 text-sm">{t('warehouses.costNote', 'Costs vary based on amenities and accessibility. Contact us for tailored options.')}</p>
    </div>
           {/* Compliance Section */}
           <div className="mb-8">
