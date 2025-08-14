@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import SEO from '../components/seo';
 import Link from 'next/link';
+import common from '../locales/en/common.json'; 
 
 export default function WarehousesForRent({ forceEnglish }) {
   const { t } = useTranslation('common');
@@ -11,6 +12,18 @@ export default function WarehousesForRent({ forceEnglish }) {
 
   // Remove the redirect logic since we want to show content for all locales
   // The page will always show English content regardless of the URL locale
+  // Convert the location object into an array of objects with name, size, cost
+  const locations = Object.entries(common.warehouses.location).map(([key, value]) => {
+    // Example value: "Vemagal: 50,000–150,000+ sqft, Rs. 15–25/sq.ft"
+    const colonIndex = value.indexOf(':');
+    const name = value.slice(0, colonIndex).trim();
+    const rest = value.slice(colonIndex + 1).trim();
+    const [sizeRaw, costRaw] = rest.split(', Rs.');
+    const size = sizeRaw.replace('sqft', '').trim();
+    const cost = costRaw.replace('/sq.ft', '').trim();
+
+    return { key, name, size, cost };
+  });
 
   return (
     <>
@@ -20,35 +33,32 @@ export default function WarehousesForRent({ forceEnglish }) {
           <h1 className="text-4xl font-bold mb-6">{t('warehouses.title', 'Warehouses for Rent in Bangalore')}</h1>
           <p className="text-lg mb-6">{t('warehouses.description', 'Explore large warehouses (>10,000 sqft) with AI-driven matching.')}</p>
           
-          {/* Locations Section */}
-          <div className="mb-8">
-            <h2 className="text-2xl font-semibold mb-4">{t('warehouses.locations', 'Available Locations')}</h2>
-            <ul className="list-disc list-inside space-y-2">
-              <li>{t('warehouses.location.vemagal', 'Vemagal: 50,000–150,000+ sqft, Rs. 15–25/sq.ft')}</li>
-              <li>{t('warehouses.location.doddaballapura', 'Doddaballapura: 10,000–300,000+ sqft, Rs. 15–25/sq.ft')}</li>
-              <li>{t('warehouses.location.attibelle', 'Attibelle: 20,000–100,000+ sqft, Rs. 18–30/sq.ft')}</li>
-              <li>{t('warehouses.location.hoskote', 'Hoskote: 8,000–400,000+ sqft, Rs. 18–30/sq.ft')}</li>
-              <li>{t('warehouses.location.soukyaRoad', 'Soukya Road: 8,000–200,000+ sqft, Rs. 18–30/sq.ft')}</li>
-              <li>{t('warehouses.location.mysoreRoad', 'Mysore Road: 10,000–60,000+ sqft, Rs. 20–35/sq.ft')}</li>
-              <li>{t('warehouses.location.bidadi', 'Bidadi: 10,000–60,000+ sqft, Rs. 15–25/sq.ft')}</li>
-              <li>{t('warehouses.location.harohalli', 'Harohalli: 5,000–65,000+ sqft, Rs. 15–25/sq.ft')}</li>
-              <li>{t('warehouses.location.kanakapuraRoad', 'Kanakapura Road: 5,000–60,000+ sqft, Rs. 20–35/sq.ft')}</li>
-              <li>{t('warehouses.location.hosurRoad', 'Hosur Road: 20,000–100,000+ sqft, Rs. 18–30/sq.ft')}</li>
-              <li>{t('warehouses.location.devanahalli', 'Devanahalli: 40,000–100,000+ sqft, Rs. 20–35/sq.ft')}</li>
-              <li>{t('warehouses.location.whitefield', 'Whitefield: 10,000–50,000+ sqft, Rs. 25–40/sq.ft')}</li>
-              <li>{t('warehouses.location.malur', 'Malur: 10,000–300,000+ sqft, Rs. 18–30/sq.ft')}</li>
-              <li>{t('warehouses.location.bommasandra', 'Bommasandra: 5,000–100,000+ sqft, Rs. 18–30/sq.ft')}</li>
-              <li>{t('warehouses.location.jigani', 'Jigani: 5,000–200,000+ sqft, Rs. 25–40/sq.ft')}</li>
-              <li>{t('warehouses.location.tumkurRoad', 'Tumkur Road: 10,000–110,000+ sqft, Rs. 20–35/sq.ft')}</li>
-              <li>{t('warehouses.location.nelamangala', 'Nelamangala: 10,000–150,000+ sqft, Rs. 15–25/sq.ft')}</li>
-              <li>{t('warehouses.location.peenya', 'Peenya: 7,000–80,000+ sqft, Rs. 25–40/sq.ft')}</li>
-              <li>{t('warehouses.location.yeshwantpur', 'Yeshwantpur: 7,000–20,000+ sqft, Rs. 30–45/sq.ft')}</li>
-              <li>{t('warehouses.location.bannerghattaRoad', 'Bannerghatta Road: 5,000–50,000+ sqft, Rs. 25–40/sq.ft')}</li>
-              <li>{t('warehouses.location.narsapura', 'Narsapura: 9,000–100,000+ sqft, Rs. 18–30/sq.ft')}</li>
-            </ul>
-            <p className="mt-4 text-sm">{t('warehouses.costNote', 'Costs vary based on amenities and accessibility. Contact us for tailored options.')}</p>
-          </div>
-          
+	  {/* Locations Section */}
+    <div className="mb-8">
+      <h2 className="text-2xl font-semibold mb-4">
+       {t('warehouses.locations', 'Available Locations')}
+      </h2>
+    <div className="overflow-x-auto">
+      <table className="min-w-full border border-gray-300">
+        <thead>
+          <tr>
+            <th className="border px-4 py-2 text-left">Location</th>
+            <th className="border px-4 py-2 text-left">Size Range (sqft)</th>
+            <th className="border px-4 py-2 text-left">Rent (₹/sq.ft)</th>
+          </tr>
+        </thead>
+        <tbody>
+          {locations.map(({ key, name, size, cost }) => (
+            <tr key={key}>
+              <td className="border px-4 py-2">{name}</td>
+              <td className="border px-4 py-2">{size}</td>
+              <td className="border px-4 py-2">{cost}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+   </div>
           {/* Compliance Section */}
           <div className="mb-8">
             <h2 className="text-2xl font-semibold mb-4">{t('warehouses.compliance.title', 'Compliance Requirements')}</h2>
