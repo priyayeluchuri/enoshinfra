@@ -1,3 +1,7 @@
 http://enoshinfra.com/* https://www.enoshinfra.com/:splat 301!
 http://www.enoshinfra.com/* https://www.enoshinfra.com/:splat 301!
 https://enoshinfra.com/* https://www.enoshinfra.com/:splat 301!
+
+
+# Force trailing slash on all URLs (including www)
+https://www.enoshinfra.com/*    https://www.enoshinfra.com/:splat/  301!
