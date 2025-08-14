@@ -26,7 +26,7 @@ export default function Services() {
           <ul className="list-disc pl-6 text-lg leading-relaxed mb-4">
             <li>
               <Link href="/services/warehouses" className="text-blue-400 hover:underline">
-                {t('warehouses')}
+                {t('warehouses2')}
               </Link>
             </li>
             <li>

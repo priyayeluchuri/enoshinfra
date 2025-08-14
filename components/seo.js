@@ -19,8 +19,10 @@ const SEO = ({
   const effectivePageKey = router.pathname.includes('/warehouses') || router.pathname.includes('/services/warehouses') 
     ? 'warehouses.seo' 
     : router.pathname.includes('/blogs') 
-      ? 'blogs.seo' 
-      : pageKey;
+      ? 'blogsPartners.seo' 
+       : router.pathname.includes('/contact')
+        ? 'seo'
+        : pageKey;
 
   const title = t(`${effectivePageKey}.title`, {
     default: 'Enosh Infra - Warehouses for Rent in Bangalore',
