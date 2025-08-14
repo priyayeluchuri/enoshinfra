@@ -677,6 +677,10 @@
     "select_language": "Select Language"
   },
   "warehouses": {
+    "seo": {
+      "title": "Warehouse & Logistics Spaces for Rent in Bengaluru - Enosh Infra",
+      "description": "Discover affordable warehouses and godowns for rent in Bengaluru from 10,000 sqft to 2,00,000 sqft anywhere between 15-40Rs/Sqft"
+    },
     "title": "Warehouses for Rent in Bangalore",
     "description": "Explore large warehouses (>10,000 sqft) with AI-driven matching.",
     "locations": "Available Locations",
