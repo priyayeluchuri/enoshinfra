@@ -719,5 +719,17 @@
       "description": "At Enosh Infra, we guide you through a seamless and transparent process with expertise in compliance assistance, approvals, legal opinions, property inspections, property evaluations, and building contracts. Our AI-driven approach ensures tailored solutions for your warehouse needs.",
       "note": "Trust our experts for a hassle-free experience from start to finish."
     }
-  }
+  },
+"industrial-zones": {
+"seo": {
+"title": "KIADB Industrial Zones in Bengaluru | Warehouse Leasing Guide - Enosh Infra",
+"description": "Comprehensive guide to KIADB industrial zones (Red, Orange, Green) in Bengaluru and Karnataka. Explore zone meanings, suitable sectors (manufacturing, logistics, e-commerce), key areas like Peenya, Devanahalli, Whitefield, and compliance requirements for warehouse leasing and industrial property matching."
+ }
+},
+"warehouse-listings": {
+"seo": {
+"title": "Warehouse Listings in Bengaluru | Industrial Sheds & Godowns for Rent - Enosh Infra",
+"description": "Explore detailed warehouse listings in Bengaluru's prime industrial hubs like Whitefield, Electronic City, Devanahalli, Nelamangala, Bommasandra, and more. Sorted by location, type (e-commerce fulfillment, 3PL logistics, cold storage, manufacturing), sector, KIADB zones (Red/Orange/Green), with images, size ranges (5,000–200,000+ sqft), costs (₹15–40/sqft), and end-to-end AI-powered procurement support."
+}
+}
 }
