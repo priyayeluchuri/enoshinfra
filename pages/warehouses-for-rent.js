@@ -31,6 +31,11 @@ export default function WarehousesForRent({ forceEnglish }) {
       <section className="w-full h-auto p-6 pt-12 text-white bg-gray-900">
         <div className="container mx-auto px-6">
           <h1 className="text-4xl font-bold mb-6">{t('warehouses.title', 'Warehouses for Rent in Bangalore')}</h1>
+          <div className="mb-4">
+            <Link href="/warehouse-listings" className="text-blue-500 hover:text-blue-300 font-semibold">
+              View Detailed Warehouse Listings
+            </Link>
+          </div>
           <p className="text-lg mb-6">{t('warehouses.description', 'Explore large warehouses (>10,000 sqft) with AI-driven matching.')}</p>
           
 	  {/* Locations Section */}
@@ -71,7 +76,7 @@ export default function WarehousesForRent({ forceEnglish }) {
           {/* Services Section */}
           <div className="mb-8">
             <h2 className="text-2xl font-semibold mb-4">{t('warehouses.services.title', 'Expert Services by Enosh Infra')}</h2>
-            <p>{t('warehouses.services.description', 'At Enosh Infra, we guide you through a seamless and transparent process with expertise in compliance assistance, approvals, legal opinions, property inspections, property evaluations, and building contracts. Our AI-driven approach ensures tailored solutions for your warehouse needs.')}</p>
+            <p>{t('warehouses.services.description', 'At Enosh Infra, we guide you through a seamless and transparent process with expertise in compliance assistance, approvals, legal opinions, property inspections, property evaluations, and property contracts. Our AI-driven approach ensures tailored solutions for your warehouse needs.')}</p>
             <p className="mt-4 text-sm">{t('warehouses.services.note', 'Trust our experts for a hassle-free experience from start to finish.')}</p>
           </div>
           

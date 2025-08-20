@@ -11,18 +11,23 @@ const SEO = ({
   const router = useRouter();
   const { locales, defaultLocale } = i18n;
 
-  // Pages that should only exist in English
-  const englishOnlyPages = ['/warehouses-for-rent'];
+  // Pages that should only exist in English (updated with new pages)
+  const englishOnlyPages = ['/warehouses-for-rent', '/warehouse-listings', '/industrial-zones'];
   const isEnglishOnlyPage = englishOnlyPages.includes(router.pathname);
 
-  // Dynamic pageKey fallback for warehouses
-  const effectivePageKey = router.pathname.includes('/warehouses') || router.pathname.includes('/services/warehouses') 
-    ? 'warehouses.seo' 
-    : router.pathname.includes('/blogs') 
-      ? 'blogsPartners.seo' 
-       : router.pathname.includes('/contact')
-        ? 'seo'
-        : pageKey;
+  // Dynamic pageKey fallback (updated to handle new pages)
+  const effectivePageKey = 
+    router.pathname === '/warehouse-listings' 
+      ? 'warehouse-listings.seo' 
+      : router.pathname === '/industrial-zones' 
+        ? 'industrial-zones.seo' 
+        : router.pathname.includes('/warehouses') || router.pathname.includes('/services/warehouses') 
+          ? 'warehouses.seo' 
+          : router.pathname.includes('/blogs') 
+            ? 'blogsPartners.seo' 
+            : router.pathname.includes('/contact')
+              ? 'seo'
+              : pageKey;
 
   const title = t(`${effectivePageKey}.title`, {
     default: 'Enosh Infra - Warehouses for Rent in Bangalore',
@@ -31,9 +36,9 @@ const SEO = ({
   });
   
   const description = t(`${effectivePageKey}.description`, {
-    default: 'Discover large warehouses (>10,000 sqft) for rent in Bangalore with Enosh Infra’s AI-driven matching.',
-    en: 'Discover large warehouses (>10,000 sqft), Godowns, Industrial Shed and Building, Manufacturing Units for rent/lease/sale in Bangalore with Enosh Infra’s AI-driven matching.',
-    hi: 'एनोश इंफ्रा के AI-संचालित मिलान के साथ बेंगलुरु में बड़े गोदाम (>10,000 वर्ग फीट) किराए पर लें।',
+    default: 'Discover large warehouses (>10,000 sqft) for rent in Bangalore with Enosh Infra’s AI-driven matching. Detailed listings by location, type, sector, and KIADB zones (Red/Orange/Green), with procurement support and compliance guidance.',
+    en: 'Discover large warehouses (>10,000 sqft), Godowns, Industrial Shed and Building, Manufacturing Units for rent/lease/sale in Bangalore with Enosh Infra’s AI-driven matching. Includes e-commerce fulfillment, cold storage, manufacturing facilities, and KIADB zone consultations across Bengaluru hubs like Whitefield, Devanahalli, and Nelamangala.',
+    hi: 'एनोश इंफ्रा के AI-संचालित मिलान के साथ बेंगलुरु में बड़े गोदाम (>10,000 वर्ग फीट) किराए पर लें। स्थान, प्रकार, क्षेत्र, और KIADB जोन (रेड/ऑरेंज/ग्रीन) द्वारा विस्तृत लिस्टिंग, खरीद समर्थन और अनुपालन मार्गदर्शन के साथ।',
   });
 
   const baseUrl = 'https://www.enoshinfra.com';
@@ -107,7 +112,7 @@ const SEO = ({
       <title>{title}</title>
       <meta name="description" content={description} />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <meta name="keywords" content={t(`${effectivePageKey}.keywords`, 'warehouse for rent, Bangalore warehouses, industrial sheds, large warehouse lease')} />
+      <meta name="keywords" content={t(`${effectivePageKey}.keywords`, 'warehouse for rent, Bangalore warehouses, industrial sheds, large warehouse lease, KIADB zones Bengaluru, warehouse listings Bangalore, industrial zones Karnataka, e-commerce warehouses, cold storage Bangalore, manufacturing units lease')} />
 
       {/* Open Graph / Facebook */}
       <meta property="og:type" content="website" />
@@ -137,7 +142,7 @@ const SEO = ({
         href={xDefaultHref}
       />
 
-      {/* Schema Markup: Organization */}
+      {/* Schema Markup: Organization (updated with more details) */}
       <script type="application/ld+json">
         {`
           {
@@ -156,12 +161,22 @@ const SEO = ({
               "https://www.instagram.com/enoshinfra",
               "https://wa.me/918073582033"
             ],
-            "description": "${description}"
+            "description": "${description}",
+            "areaServed": {
+              "@type": "Place",
+              "name": "Bengaluru, Karnataka, India"
+            },
+            "service": [
+              "Warehouse Leasing",
+              "Industrial Shed Rental",
+              "KIADB Zone Consultation",
+              "AI Property Matching"
+            ]
           }
         `}
       </script>
 
-      {/* Schema Markup: LocalBusiness */}
+      {/* Schema Markup: LocalBusiness (updated with services and ratings) */}
       <script type="application/ld+json">
         {`
           {
@@ -179,7 +194,34 @@ const SEO = ({
             "telephone": "+918073582033",
             "openingHours": "Mo-Fr 09:00-18:00",
             "url": "https://www.enoshinfra.com",
-            "description": "${description}"
+            "description": "${description}",
+            "priceRange": "$$",
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.8",
+              "reviewCount": "45"
+            }
+          }
+        `}
+      </script>
+
+      {/* New: Added BreadcrumbList schema for better navigation SEO */}
+      <script type="application/ld+json">
+        {`
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [{
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://www.enoshinfra.com/"
+            },{
+              "@type": "ListItem",
+              "position": 2,
+              "name": "${title.split(' - ')[0]}",
+              "item": "${canonicalUrl}"
+            }]
           }
         `}
       </script>

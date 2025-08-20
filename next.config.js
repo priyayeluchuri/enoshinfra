@@ -26,6 +26,7 @@ module.exports = {
               "font-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com;", // Allow Google Fonts if used
               "connect-src 'self' https://www.enoshinfra.com https://www.google-analytics.com https://www.googletagmanager.com https://maps.googleapis.com https://*.googleapis.com;", // Allow form submissions and API calls
               "form-action 'self';", // Restrict form submissions to same origin
+              "frame-src 'self' https://www.google.com https://*.google.com https://*.googleapis.com;", // Allow Google Maps iframes
             ].join(' '),
           },
           {
@@ -72,7 +73,6 @@ module.exports = {
   },
 
   async redirects() {
-    console.log('Applying redirects in next.config.js');
     return [
       // Redirect explicit /en/ URLs to clean URLs (for default locale)
       {
@@ -83,3 +83,4 @@ module.exports = {
     ]; 
   },
 };
+

@@ -22,6 +22,15 @@ export default function Warehouses() {
           {t('warehouse.title')}
         </h1>
 
+        <div className="text-center mb-8">
+          <Link 
+            href="/warehouse-listings" 
+            className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg text-2xl inline-block shadow-lg transform transition-transform hover:scale-105"
+          >
+            🚀 Explore Exclusive Warehouse Listings Now!
+          </Link>
+        </div>
+
         <p className="text-lg leading-relaxed mb-6">
           {t('warehouse.intro.1')}
           <span className="text-blue-400"> {t('warehouse.intro.highlight1')} </span>
