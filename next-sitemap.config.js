@@ -119,9 +119,33 @@ module.exports = {
     '/ru/warehouses-for-rent',
     '/fr/warehouses-for-rent',
     '/de/warehouses-for-rent',
+    '/hi/warehouse-listings',
+    '/kn/warehouse-listings',
+    '/te/warehouse-listings',
+    '/zh/warehouse-listings',
+    '/ja/warehouse-listings',
+    '/ar/warehouse-listings',
+    '/ru/warehouse-listings',
+    '/fr/warehouse-listings',
+    '/de/warehouse-listings',
+    '/hi/industrial-zones',
+    '/kn/industrial-zones',
+    '/te/industrial-zones',
+    '/zh/industrial-zones',
+    '/ja/industrial-zones',
+    '/ar/industrial-zones',
+    '/ru/industrial-zones',
+    '/fr/industrial-zones',
+    '/de/industrial-zones',
   ],
   transform: async (config, path) => {
     if (path.includes('/warehouses-for-rent') && path !== '/warehouses-for-rent') {
+      return null;
+    }
+    if (path.includes('/warehouse-listings') && path !== '/warehouse-listings') {
+      return null;
+    }
+    if (path.includes('/industrial-zones') && path !== '/industrial-zones') {
       return null;
     }
     
