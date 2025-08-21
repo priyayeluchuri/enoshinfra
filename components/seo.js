@@ -142,7 +142,7 @@ const SEO = ({
         href={xDefaultHref}
       />
 
-      {/* Schema Markup: Organization (updated with more details) */}
+      {/* Schema Markup: Organization (updated with makesOffer instead of service) */}
       <script type="application/ld+json">
         {`
           {
@@ -166,11 +166,35 @@ const SEO = ({
               "@type": "Place",
               "name": "Bengaluru, Karnataka, India"
             },
-            "service": [
-              "Warehouse Leasing",
-              "Industrial Shed Rental",
-              "KIADB Zone Consultation",
-              "AI Property Matching"
+            "makesOffer": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Warehouse Leasing"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Industrial Shed Rental"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "KIADB Zone Consultation"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "AI Property Matching"
+                }
+              }
             ]
           }
         `}

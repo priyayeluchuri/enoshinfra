@@ -225,11 +225,10 @@ const StructuredData = ({ locale }) => {
                     }
                   }
                 },
-                // New: Added Offer for Industrial Zones Consultation based on industrial-zones.js
                 {
                   "@type": "Offer",
                   "itemOffered": {
-                    "@type": "Service",
+                    "@type": "Product",
                     "name": "KIADB Industrial Zones Consultation",
                     "description": "Expert guidance on KIADB zones (Red, Orange, Green) in Bengaluru, including classifications, sector suitability (e.g., manufacturing in Red zones, e-commerce in Green), and key areas like Peenya, Devanahalli. Includes maps, tables, and procurement integration.",
                     "url": getLocalizedUrl('/industrial-zones'),
