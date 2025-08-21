@@ -63,16 +63,16 @@ const StructuredData = ({ locale }) => {
               "itemListElement": [
                 {
                   "@type": "Offer",
+                  "areaServed": {
+                    "@type": "Place",
+                    "name": "Vemagal, Doddaballapura, Soukya Road, Mysore Road, Attibelle, Bidadi, Hoskote, Harohalli, Kanakapura, Dabaspet, Sompura, Nelamangala, Peenya, Bommasandra, Jigani, Devanahalli, Whitefield, Bengaluru, Karnataka, India"
+                  },
                   "itemOffered": {
                     "@type": "Product",
                     "name": "Warehouses, Godowns, Industrial Shed and Building, Manufacturing Units.",
                     "description": "Spacious industrial sheds and warehouses (10,000+ sqft to 2,00,000+ Sqft) across Bengaluru in prime industrial zones including Nelamangala, Peenya, Bommasandra, Jigani, Hoskote, Devanahalli, and Whitefield, optimized with AI-driven tenant matching for logistics and manufacturing. Includes e-commerce fulfillment, 3PL distribution, cold storage, and sector-specific options.",  // Updated: Expanded with types/sectors from warehouse-listings.js
                     "url": getLocalizedUrl('/warehouse-listings'),  // Updated: Point to new warehouse-listings page (assuming it's mounted at /warehouse-listings)
                     "image": getLocalizedUrl('/images/warehouses/whitefield/ecommerce-fulfillment-warehouse.jpg'),  // New: Added image for rich snippets (use a representative from new pages)
-                    "areaServed": {
-                      "@type": "Place",
-                      "name": "Vemagal, Doddaballapura, Soukya Road, Mysore Road, Attibelle, Bidadi, Hoskote, Harohalli, Kanakapura, Dabaspet, Sompura, Nelamangala, Peenya, Bommasandra, Jigani, Devanahalli, Whitefield, Bengaluru, Karnataka, India"  // Updated: Ensured all tractionOrder locations from warehouse-listings.js are included
-                    },
                     "aggregateRating": {
                       "@type": "AggregateRating",
                       "ratingValue": "4.9",
@@ -87,85 +87,85 @@ const StructuredData = ({ locale }) => {
                   "itemListElement": [
                     {
                       "@type": "Offer",
+                      "areaServed": {"@type": "Place", "name": "Whitefield, Electronic City, Hebbal, Bengaluru, Karnataka, India"},
                       "itemOffered": {
                         "@type": "Product",
                         "name": "E-Commerce Fulfillment Centers",
                         "description": "Optimized for quick commerce with automation and urban proximity in areas like Whitefield, Electronic City, Hebbal (5,000–100,000+ sqft, ₹18–40/sqft). Compliance guidance for Fire NOC and BBMP.",
                         "url": getLocalizedUrl('/warehouse-listings#warehouse-types'),
                         "image": getLocalizedUrl('/images/ecommerce-fulfillment-warehouse.jpg'),
-                        "areaServed": {"@type": "Place", "name": "Whitefield, Electronic City, Hebbal, Bengaluru, Karnataka, India"},
                         "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "45"}
                       }
                     },
                     {
                       "@type": "Offer",
+                      "areaServed": {"@type": "Place", "name": "Hoskote, Devanahalli, Nelamangala, Bengaluru, Karnataka, India"},
                       "itemOffered": {
                         "@type": "Product",
                         "name": "3PL/Logistics Distribution Centers",
                         "description": "For supply chain with highway access in Hoskote, Devanahalli, Nelamangala (15,000–80,000+ sqft, ₹16–35/sqft). Multi-temperature zones and KSPCB compliance support.",
                         "url": getLocalizedUrl('/warehouse-listings#warehouse-types'),
                         "image": getLocalizedUrl('/images/logistics-distribution-warehouse.jpg'),
-                        "areaServed": {"@type": "Place", "name": "Hoskote, Devanahalli, Nelamangala, Bengaluru, Karnataka, India"},
                         "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.7", "reviewCount": "40"}
                       }
                     },
                     {
                       "@type": "Offer",
+                      "areaServed": {"@type": "Place", "name": "Bommasandra, Jigani, Peenya, Bengaluru, Karnataka, India"},
                       "itemOffered": {
                         "@type": "Product",
                         "name": "Cold Storage Facilities",
                         "description": "Temperature-controlled for perishables in Bommasandra, Jigani, Peenya (10,000–50,000+ sqft, ₹20–35/sqft). Suitable for food & beverage in Orange/Green zones.",
                         "url": getLocalizedUrl('/warehouse-listings#warehouse-types'),
                         "image": getLocalizedUrl('/images/cold-storage-warehouse.jpg'),
-                        "areaServed": {"@type": "Place", "name": "Bommasandra, Jigani, Peenya, Bengaluru, Karnataka, India"},
                         "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.6", "reviewCount": "35"}
                       }
                     },
                     {
                       "@type": "Offer",
+                      "areaServed": {"@type": "Place", "name": "Peenya, Bommasandra, Jigani, Bengaluru, Karnataka, India"},
                       "itemOffered": {
                         "@type": "Product",
                         "name": "Manufacturing Facilities",
                         "description": "Heavy-duty sheds for automotive and engineering in Peenya, Bommasandra, Jigani (20,000–200,000+ sqft, ₹15–30/sqft). Load-bearing floors and Red/Orange zone compliance.",
                         "url": getLocalizedUrl('/warehouse-listings#sectors'),
                         "image": getLocalizedUrl('/images/manufacturing-warehouse.jpg'),
-                        "areaServed": {"@type": "Place", "name": "Peenya, Bommasandra, Jigani, Bengaluru, Karnataka, India"},
                         "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.7", "reviewCount": "42"}
                       }
                     },
                     {
                       "@type": "Offer",
+                      "areaServed": {"@type": "Place", "name": "Nelamangala, Bommasandra, Harohalli, Bengaluru, Karnataka, India"},
                       "itemOffered": {
                         "@type": "Product",
                         "name": "Food Processing & Cold Chain",
                         "description": "Multi-temp warehouses for F&B in Nelamangala, Bommasandra, Harohalli (10,000–100,000+ sqft, ₹16–28/sqft). Hygiene standards and Orange/Green zones.",
                         "url": getLocalizedUrl('/warehouse-listings#sectors'),
                         "image": getLocalizedUrl('/images/food-processing-warehouse.jpg'),
-                        "areaServed": {"@type": "Place", "name": "Nelamangala, Bommasandra, Harohalli, Bengaluru, Karnataka, India"},
                         "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.5", "reviewCount": "38"}
                       }
                     },
                     {
                       "@type": "Offer",
+                      "areaServed": {"@type": "Place", "name": "Doddaballapura, Ramanagara, Hoskote, Bengaluru, Karnataka, India"},
                       "itemOffered": {
                         "@type": "Product",
                         "name": "Textiles & Apparel Warehouses",
                         "description": "Ventilated spaces for storage/production in Doddaballapura, Ramanagara, Hoskote (5,000–300,000+ sqft, ₹15–30/sqft). Orange zones with BBMP support.",
                         "url": getLocalizedUrl('/warehouse-listings#sectors'),
                         "image": getLocalizedUrl('/images/textiles-warehouse.jpg'),
-                        "areaServed": {"@type": "Place", "name": "Doddaballapura, Ramanagara, Hoskote, Bengaluru, Karnataka, India"},
                         "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.4", "reviewCount": "32"}
                       }
                     },
                     {
                       "@type": "Offer",
+                      "areaServed": {"@type": "Place", "name": "Devanahalli, Bengaluru Aerospace Park, Whitefield, Bengaluru, Karnataka, India"},
                       "itemOffered": {
                         "@type": "Product",
                         "name": "Aerospace & Tech Park Spaces",
                         "description": "High-tech sheds for R&D in Devanahalli, Bengaluru Aerospace Park, Whitefield (10,000–200,000+ sqft, ₹20–40/sqft). Mixed zones with customs guidance.",
                         "url": getLocalizedUrl('/warehouse-listings#sectors'),
                         "image": getLocalizedUrl('/images/aerospace-warehouse.jpg'),
-                        "areaServed": {"@type": "Place", "name": "Devanahalli, Bengaluru Aerospace Park, Whitefield, Bengaluru, Karnataka, India"},
                         "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.6", "reviewCount": "28"}
                       }
                     }
@@ -173,15 +173,15 @@ const StructuredData = ({ locale }) => {
                 },
                 {
                   "@type": "Offer",
+                  "areaServed": {
+                    "@type": "Place",
+                    "name": "Whitefield, Electronic City, Outer Ring Road, Marathahalli, Bellandur, Hebbal, Koramangala, North Bangalore, Bengaluru, Karnataka, India"
+                  },
                   "itemOffered": {
                     "@type": "Product",
                     "name": "Tech Parks",
                     "description": "Modern plug-and-play office spaces designed for startups, R&D units, and enterprise tech teams in major tech areas of Bengaluru including Whitefield, Electronic City, Outer Ring Road, Marathahalli, Bellandur, Hebbal, Koramangala, and North Bangalore, with AI-optimized layouts.",
                     "url": getLocalizedUrl('/services/tech-parks'),
-                    "areaServed": {
-                      "@type": "Place",
-                      "name": "Whitefield, Electronic City, Outer Ring Road, Marathahalli, Bellandur, Hebbal, Koramangala, North Bangalore, Bengaluru, Karnataka, India"
-                    },
                     "aggregateRating": {
                       "@type": "AggregateRating",
                       "ratingValue": "4.7",
@@ -191,15 +191,15 @@ const StructuredData = ({ locale }) => {
                 },
                 {
                   "@type": "Offer",
+                  "areaServed": {
+                    "@type": "Place",
+                    "name": "HSR Layout, Koramangala, Electronic City, Jayanagar, Bengaluru, Karnataka, India"
+                  },
                   "itemOffered": {
                     "@type": "Product",
                     "name": "Commercial Retail Spaces",
                     "description": "Prime retail frontages and showrooms in commercial zones of Bengaluru including HSR Layout, Koramangala, Electronic City, and Jayanagar, enhanced by AI-driven location analysis.",
                     "url": getLocalizedUrl('/services/commercial-retail'),
-                    "areaServed": {
-                      "@type": "Place",
-                      "name": "HSR Layout, Koramangala, Electronic City, Jayanagar, Bengaluru, Karnataka, India"
-                    },
                     "aggregateRating": {
                       "@type": "AggregateRating",
                       "ratingValue": "4.3",
@@ -209,15 +209,15 @@ const StructuredData = ({ locale }) => {
                 },
                 {
                   "@type": "Offer",
+                  "areaServed": {
+                    "@type": "Place",
+                    "name": "Bengaluru, Karnataka, India"
+                  },
                   "itemOffered": {
                     "@type": "Product",
                     "name": "Co-working & Office Spaces",
                     "description": "Flexible co-working solutions and dedicated office spaces for startups and teams in Bengaluru, optimized with AI space planning.",
                     "url": getLocalizedUrl('/services/co-working'),
-                    "areaServed": {
-                      "@type": "Place",
-                      "name": "Bengaluru, Karnataka, India"
-                    },
                     "aggregateRating": {
                       "@type": "AggregateRating",
                       "ratingValue": "4.6",
@@ -225,16 +225,16 @@ const StructuredData = ({ locale }) => {
                     }
                   }
                 },
+                // New: Added Offer for Industrial Zones Consultation based on industrial-zones.js
                 {
                   "@type": "Offer",
+                  "areaServed": {"@type": "Place", "name": "Bengaluru, Karnataka, India"},
                   "itemOffered": {
                     "@type": "Product",
                     "name": "KIADB Industrial Zones Consultation",
                     "description": "Expert guidance on KIADB zones (Red, Orange, Green) in Bengaluru, including classifications, sector suitability (e.g., manufacturing in Red zones, e-commerce in Green), and key areas like Peenya, Devanahalli. Includes maps, tables, and procurement integration.",
                     "url": getLocalizedUrl('/industrial-zones'),
-                    "image": getLocalizedUrl('/images/bengaluru-zone-map.jpg'),
-                    "areaServed": {"@type": "Place", "name": "Bengaluru, Karnataka, India"},
-                    "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "25"}
+                    "image": getLocalizedUrl('/images/bengaluru-zone-map.jpg')
                   }
                 }
               ]
