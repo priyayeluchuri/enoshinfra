@@ -1,4 +1,4 @@
-// Fixed next-sitemap.config.js
+// Solution 1: Custom robots.txt generation in next-sitemap.config.js
 module.exports = {
   siteUrl: 'https://www.enoshinfra.com',
   generateRobotsTxt: true,
@@ -14,7 +14,6 @@ module.exports = {
         userAgent: 'Googlebot',
         allow: '/',
       },
-      // AI Bots with faster access
       {
         userAgent: 'ChatGPT-User',
         allow: '/',
@@ -112,23 +111,105 @@ module.exports = {
         allow: '/',
       },
     ],
-    // REMOVED: additionalSitemaps array - this was causing the duplicate
-    // The main sitemap.xml should handle all sub-sitemaps automatically
+    // Override the robots.txt generation completely
+    transformRobotsTxt: async (_, robotsTxt) => {
+      // Custom robots.txt content without Host directive
+      return `User-agent: *
+Disallow: /api/
+Disallow: */undefined
+Disallow: */locales
+Allow: /llms.txt
+Allow: /sitemap.xml
+Allow: /robots.txt
+Crawl-delay: 5
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+Crawl-delay: 1
+
+User-agent: PerplexityBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: ClaudeBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Claude-Web
+Allow: /
+Crawl-delay: 1
+
+User-agent: GPTBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: GoogleOther
+Allow: /
+Crawl-delay: 1
+
+User-agent: anthropic-ai
+Allow: /
+Crawl-delay: 1
+
+User-agent: openai-crawler
+Allow: /
+Crawl-delay: 1
+
+User-agent: Gemini
+Allow: /
+Crawl-delay: 1
+
+User-agent: BardBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: You-bot
+Allow: /
+Crawl-delay: 1
+
+User-agent: PhindBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# Sitemaps
+Sitemap: https://www.enoshinfra.com/sitemap.xml`;
+    },
   },
   sitemapSize: 5000,
   changefreq: 'weekly',
   priority: 0.7,
   alternateRefs: [
-    'en',
-    'hi',
-    'kn',
-    'te',
-    'zh',
-    'ja',
-    'ar',
-    'ru',
-    'fr',
-    'de',
+    'en', 'hi', 'kn', 'te', 'zh', 'ja', 'ar', 'ru', 'fr', 'de',
   ],
   exclude: [
     '/api/*',
@@ -178,7 +259,6 @@ module.exports = {
       lastmod: new Date().toISOString(),
     };
 
-    // Special handling for key pages
     if (path === '/') {
       entry.changefreq = 'daily';
       entry.priority = 1.0;

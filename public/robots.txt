@@ -1,115 +1,89 @@
-# *
 User-agent: *
-Allow: /llms.txt
-Allow: /sitemap.xml
-Allow: /robots.txt
 Disallow: /api/
 Disallow: */undefined
 Disallow: */locales
+Allow: /llms.txt
+Allow: /sitemap.xml
+Allow: /robots.txt
 Crawl-delay: 5
 
-# Googlebot
 User-agent: Googlebot
 Allow: /
 
-# ChatGPT-User
 User-agent: ChatGPT-User
 Allow: /
 Crawl-delay: 1
 
-# PerplexityBot
 User-agent: PerplexityBot
 Allow: /
 Crawl-delay: 1
 
-# ClaudeBot
 User-agent: ClaudeBot
 Allow: /
 Crawl-delay: 1
 
-# Claude-Web
 User-agent: Claude-Web
 Allow: /
 Crawl-delay: 1
 
-# GPTBot
 User-agent: GPTBot
 Allow: /
 Crawl-delay: 1
 
-# GoogleOther
 User-agent: GoogleOther
 Allow: /
 Crawl-delay: 1
 
-# anthropic-ai
 User-agent: anthropic-ai
 Allow: /
 Crawl-delay: 1
 
-# openai-crawler
 User-agent: openai-crawler
 Allow: /
 Crawl-delay: 1
 
-# Gemini
 User-agent: Gemini
 Allow: /
 Crawl-delay: 1
 
-# BardBot
 User-agent: BardBot
 Allow: /
 Crawl-delay: 1
 
-# You-bot
 User-agent: You-bot
 Allow: /
 Crawl-delay: 1
 
-# PhindBot
 User-agent: PhindBot
 Allow: /
 Crawl-delay: 1
 
-# Applebot
 User-agent: Applebot
 Allow: /
 
-# Bingbot
 User-agent: Bingbot
 Allow: /
 
-# Meta-ExternalAgent
 User-agent: Meta-ExternalAgent
 Allow: /
 
-# FacebookBot
 User-agent: FacebookBot
 Allow: /
 
-# Twitterbot
 User-agent: Twitterbot
 Allow: /
 
-# LinkedInBot
 User-agent: LinkedInBot
 Allow: /
 
-# facebookexternalhit
 User-agent: facebookexternalhit
 Allow: /
 
-# YandexBot
 User-agent: YandexBot
 Allow: /
 
-# DuckDuckBot
 User-agent: DuckDuckBot
 Allow: /
-
-# Host
-Host: https://www.enoshinfra.com
 
 # Sitemaps
 Sitemap: https://www.enoshinfra.com/sitemap.xml
