@@ -1,5 +1,8 @@
 # *
 User-agent: *
+Allow: /llms.txt
+Allow: /sitemap.xml
+Allow: /robots.txt
 Disallow: /api/
 Disallow: */undefined
 Disallow: */locales
@@ -7,22 +10,67 @@ Crawl-delay: 5
 
 # Googlebot
 User-agent: Googlebot
+Allow: /
 
 # ChatGPT-User
 User-agent: ChatGPT-User
 Allow: /
+Crawl-delay: 1
 
 # PerplexityBot
 User-agent: PerplexityBot
 Allow: /
+Crawl-delay: 1
 
 # ClaudeBot
 User-agent: ClaudeBot
 Allow: /
+Crawl-delay: 1
 
 # Claude-Web
 User-agent: Claude-Web
 Allow: /
+Crawl-delay: 1
+
+# GPTBot
+User-agent: GPTBot
+Allow: /
+Crawl-delay: 1
+
+# GoogleOther
+User-agent: GoogleOther
+Allow: /
+Crawl-delay: 1
+
+# anthropic-ai
+User-agent: anthropic-ai
+Allow: /
+Crawl-delay: 1
+
+# openai-crawler
+User-agent: openai-crawler
+Allow: /
+Crawl-delay: 1
+
+# Gemini
+User-agent: Gemini
+Allow: /
+Crawl-delay: 1
+
+# BardBot
+User-agent: BardBot
+Allow: /
+Crawl-delay: 1
+
+# You-bot
+User-agent: You-bot
+Allow: /
+Crawl-delay: 1
+
+# PhindBot
+User-agent: PhindBot
+Allow: /
+Crawl-delay: 1
 
 # Applebot
 User-agent: Applebot
@@ -30,26 +78,6 @@ Allow: /
 
 # Bingbot
 User-agent: Bingbot
-Allow: /
-
-# Gemini
-User-agent: Gemini
-Allow: /
-
-# GoogleOther
-User-agent: GoogleOther
-Allow: /
-
-# GPTBot
-User-agent: GPTBot
-Allow: /
-
-# You-bot
-User-agent: You-bot
-Allow: /
-
-# PhindBot
-User-agent: PhindBot
 Allow: /
 
 # Meta-ExternalAgent
@@ -78,14 +106,6 @@ Allow: /
 
 # DuckDuckBot
 User-agent: DuckDuckBot
-Allow: /
-
-# anthropic-ai
-User-agent: anthropic-ai
-Allow: /
-
-# openai-crawler
-User-agent: openai-crawler
 Allow: /
 
 # Host

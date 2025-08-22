@@ -1,4 +1,3 @@
-// next.config.js
 const { i18n } = require('./next-i18next.config');
 
 module.exports = {
@@ -48,6 +47,38 @@ module.exports = {
         ],
       },
       {
+        // Special headers for llms.txt and AI-friendly files
+        source: '/llms.txt',
+        headers: [
+          {
+            key: 'Content-Type',
+            value: 'text/plain; charset=utf-8',
+          },
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=86400', // Cache for 24 hours
+          },
+          {
+            key: 'X-Robots-Tag',
+            value: 'index, follow', // Ensure AI bots can index
+          },
+        ],
+      },
+      {
+        // Headers for robots.txt
+        source: '/robots.txt',
+        headers: [
+          {
+            key: 'Content-Type',
+            value: 'text/plain; charset=utf-8',
+          },
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=3600', // Cache for 1 hour
+          },
+        ],
+      },
+      {
         // Apply to API routes (e.g., /api/properties)
         source: '/api/:path*',
         headers: [
@@ -67,6 +98,10 @@ module.exports = {
             key: 'Access-Control-Allow-Origin',
             value: 'https://www.enoshinfra.com', // Restrict API access to your domain
           },
+          {
+            key: 'X-Robots-Tag',
+            value: 'noindex, nofollow', // Prevent API routes from being indexed
+          },
         ],
       },
     ];
@@ -80,7 +115,27 @@ module.exports = {
         destination: '/:path*',
         permanent: true,
       },
+      // Add redirect for common AI bot requests
+      {
+        source: '/ai.txt',
+        destination: '/llms.txt',
+        permanent: true,
+      },
+      {
+        source: '/llm.txt', // Common alternative name
+        destination: '/llms.txt',
+        permanent: true,
+      },
     ]; 
   },
-};
 
+  // Additional configuration for better AI bot compatibility
+  async rewrites() {
+    return [
+      {
+        source: '/ai-guidelines',
+        destination: '/llms.txt',
+      },
+    ];
+  },
+};

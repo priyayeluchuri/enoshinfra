@@ -1,3 +1,4 @@
+// Fixed next-sitemap.config.js
 module.exports = {
   siteUrl: 'https://www.enoshinfra.com',
   generateRobotsTxt: true,
@@ -6,26 +7,73 @@ module.exports = {
       {
         userAgent: '*',
         disallow: ['/api/', '*/undefined', '*/locales'],
+        allow: ['/llms.txt', '/sitemap.xml', '/robots.txt'],
         crawlDelay: 5,
       },
       {
         userAgent: 'Googlebot',
+        allow: '/',
       },
+      // AI Bots with faster access
       {
         userAgent: 'ChatGPT-User',
         allow: '/',
+        crawlDelay: 1,
       },
       {
         userAgent: 'PerplexityBot',
         allow: '/',
+        crawlDelay: 1,
       },
       {
         userAgent: 'ClaudeBot',
         allow: '/',
+        crawlDelay: 1,
       },
       {
         userAgent: 'Claude-Web',
         allow: '/',
+        crawlDelay: 1,
+      },
+      {
+        userAgent: 'GPTBot',
+        allow: '/',
+        crawlDelay: 1,
+      },
+      {
+        userAgent: 'GoogleOther',
+        allow: '/',
+        crawlDelay: 1,
+      },
+      {
+        userAgent: 'anthropic-ai',
+        allow: '/',
+        crawlDelay: 1,
+      },
+      {
+        userAgent: 'openai-crawler',
+        allow: '/',
+        crawlDelay: 1,
+      },
+      {
+        userAgent: 'Gemini',
+        allow: '/',
+        crawlDelay: 1,
+      },
+      {
+        userAgent: 'BardBot',
+        allow: '/',
+        crawlDelay: 1,
+      },
+      {
+        userAgent: 'You-bot',
+        allow: '/',
+        crawlDelay: 1,
+      },
+      {
+        userAgent: 'PhindBot',
+        allow: '/',
+        crawlDelay: 1,
       },
       {
         userAgent: 'Applebot',
@@ -33,26 +81,6 @@ module.exports = {
       },
       {
         userAgent: 'Bingbot',
-        allow: '/',
-      },
-      {
-        userAgent: 'Gemini',
-        allow: '/',
-      },
-      {
-        userAgent: 'GoogleOther',
-        allow: '/',
-      },
-      {
-        userAgent: 'GPTBot',
-        allow: '/',
-      },
-      {
-        userAgent: 'You-bot',
-        allow: '/',
-      },
-      {
-        userAgent: 'PhindBot',
         allow: '/',
       },
       {
@@ -83,15 +111,9 @@ module.exports = {
         userAgent: 'DuckDuckBot',
         allow: '/',
       },
-      {
-        userAgent: 'anthropic-ai',
-        allow: '/',
-      },
-      {
-        userAgent: 'openai-crawler',
-        allow: '/',
-      },
     ],
+    // REMOVED: additionalSitemaps array - this was causing the duplicate
+    // The main sitemap.xml should handle all sub-sitemaps automatically
   },
   sitemapSize: 5000,
   changefreq: 'weekly',
@@ -109,7 +131,7 @@ module.exports = {
     'de',
   ],
   exclude: [
-    '/api/*', // Exclude all API routes
+    '/api/*',
     '/hi/warehouses-for-rent',
     '/kn/warehouses-for-rent',
     '/te/warehouses-for-rent',
@@ -153,7 +175,7 @@ module.exports = {
       loc: path,
       changefreq: config.changefreq,
       priority: config.priority,
-      lastmod: new Date().toISOString(),  // General: Use build-time date for most pages
+      lastmod: new Date().toISOString(),
     };
 
     // Special handling for key pages
@@ -164,14 +186,14 @@ module.exports = {
       entry.changefreq = 'weekly';
       entry.priority = 0.9;
     } else if (path === '/warehouse-listings' || path === '/industrial-zones') {
-      entry.changefreq = 'weekly';  // Signal frequent updates
-      entry.priority = 0.9;  // Higher priority for new pages
-      entry.lastmod = '2025-08-22';  // Mark as recently updated (current date)
+      entry.changefreq = 'weekly';
+      entry.priority = 0.9;
+      entry.lastmod = '2025-08-22';
+    } else if (path === '/services' || path === '/about' || path === '/contact') {
+      entry.changefreq = 'monthly';
+      entry.priority = 0.8;
     }
 
     return entry;
   },
-  additionalSitemaps: [
-    'https://www.enoshinfra.com/sitemap-0.xml',
-  ],
 };
