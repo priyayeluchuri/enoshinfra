@@ -110,6 +110,30 @@ module.exports = {
         userAgent: 'DuckDuckBot',
         allow: '/',
       },
+      // Added: Grokbot for xAI/Grok
+      {
+        userAgent: 'Grokbot',
+        allow: '/',
+        crawlDelay: 1,
+      },
+      // Added: CCBot for CommonCrawl (used by some AIs for data)
+      {
+        userAgent: 'CCBot',
+        allow: '/',
+        crawlDelay: 1,
+      },
+      // Added: Bytespider for ByteDance/TikTok AI
+      {
+        userAgent: 'Bytespider',
+        allow: '/',
+        crawlDelay: 1,
+      },
+      // Added: Amazonbot for AWS AI services
+      {
+        userAgent: 'Amazonbot',
+        allow: '/',
+        crawlDelay: 1,
+      },
     ],
     // Override the robots.txt generation completely
     transformRobotsTxt: async (_, robotsTxt) => {
@@ -200,6 +224,22 @@ Allow: /
 
 User-agent: DuckDuckBot
 Allow: /
+
+User-agent: Grokbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: CCBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bytespider
+Allow: /
+Crawl-delay: 1
+
+User-agent: Amazonbot
+Allow: /
+Crawl-delay: 1
 
 # Sitemaps
 Sitemap: https://www.enoshinfra.com/sitemap.xml`;

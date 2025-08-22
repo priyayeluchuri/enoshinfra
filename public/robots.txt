@@ -85,5 +85,21 @@ Allow: /
 User-agent: DuckDuckBot
 Allow: /
 
+User-agent: Grokbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: CCBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bytespider
+Allow: /
+Crawl-delay: 1
+
+User-agent: Amazonbot
+Allow: /
+Crawl-delay: 1
+
 # Sitemaps
 Sitemap: https://www.enoshinfra.com/sitemap.xml
