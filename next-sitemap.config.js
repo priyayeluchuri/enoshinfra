@@ -148,10 +148,28 @@ module.exports = {
     if (path.includes('/industrial-zones') && path !== '/industrial-zones') {
       return null;
     }
-    
-    if (path === '/') return { loc: path, changefreq: 'daily', priority: 1.0 };
-    if (path === '/warehouses-for-rent') return { loc: path, changefreq: 'weekly', priority: 0.9 };
-    return { loc: path, changefreq: config.changefreq, priority: config.priority };
+
+    let entry = {
+      loc: path,
+      changefreq: config.changefreq,
+      priority: config.priority,
+      lastmod: new Date().toISOString(),  // General: Use build-time date for most pages
+    };
+
+    // Special handling for key pages
+    if (path === '/') {
+      entry.changefreq = 'daily';
+      entry.priority = 1.0;
+    } else if (path === '/warehouses-for-rent') {
+      entry.changefreq = 'weekly';
+      entry.priority = 0.9;
+    } else if (path === '/warehouse-listings' || path === '/industrial-zones') {
+      entry.changefreq = 'weekly';  // Signal frequent updates
+      entry.priority = 0.9;  // Higher priority for new pages
+      entry.lastmod = '2025-08-22';  // Mark as recently updated (current date)
+    }
+
+    return entry;
   },
   additionalSitemaps: [
     'https://www.enoshinfra.com/sitemap-0.xml',
