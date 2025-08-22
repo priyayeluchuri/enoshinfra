@@ -54,14 +54,27 @@ export default function HeroSection() {
          {t('hero.subheadline')}
 	</p>
 
-        {/* CTA Button */}
-        <div className="mt-6">
+        {/* CTA Buttons */}
+        <div className="mt-6 space-x-4">
           <a
 	    href={`/${i18n.language}/contact`} 
             className="px-6 py-3 bg-blue-600 hover:bg-blue-700 transition rounded-lg text-white font-medium text-lg"
           >
             {t('hero.cta')}
           </a>
+          <a
+            href="/warehouse-listings"
+            className="px-6 py-3 bg-green-600 hover:bg-green-700 transition rounded-lg text-white font-medium text-lg"
+          >
+            Check Listings
+          </a>
+	  <a
+            href="/services"
+            className="px-6 py-3 bg-yellow-600 hover:bg-green-700 transition rounded-lg text-white font-medium text-lg"
+          >
+            Our Services
+          </a>
+
         </div>
       </div>
     </section>
